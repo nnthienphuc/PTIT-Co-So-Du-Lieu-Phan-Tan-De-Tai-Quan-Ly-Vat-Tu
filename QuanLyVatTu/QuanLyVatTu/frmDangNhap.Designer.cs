@@ -34,7 +34,7 @@
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
-            this.cmbChiNhanh = new System.Windows.Forms.ComboBox();
+            this.cboChiNhanh = new System.Windows.Forms.ComboBox();
             this.lblChiNhanh = new System.Windows.Forms.Label();
             this.lblTittle = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -100,14 +100,14 @@
             this.lblTaiKhoan.TabIndex = 12;
             this.lblTaiKhoan.Text = "TÀI KHOẢN";
             // 
-            // cmbChiNhanh
+            // cboChiNhanh
             // 
-            this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(130, 80);
-            this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(215, 21);
-            this.cmbChiNhanh.TabIndex = 11;
-            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
+            this.cboChiNhanh.FormattingEnabled = true;
+            this.cboChiNhanh.Location = new System.Drawing.Point(130, 80);
+            this.cboChiNhanh.Name = "cboChiNhanh";
+            this.cboChiNhanh.Size = new System.Drawing.Size(215, 21);
+            this.cboChiNhanh.TabIndex = 11;
+            this.cboChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboChiNhanh_SelectedIndexChanged);
             // 
             // lblChiNhanh
             // 
@@ -140,7 +140,7 @@
             this.Controls.Add(this.lblMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
             this.Controls.Add(this.lblTaiKhoan);
-            this.Controls.Add(this.cmbChiNhanh);
+            this.Controls.Add(this.cboChiNhanh);
             this.Controls.Add(this.lblChiNhanh);
             this.Controls.Add(this.lblTittle);
             this.Name = "frmDangNhap";
@@ -160,7 +160,7 @@
         private System.Windows.Forms.Label lblMatKhau;
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.Label lblTaiKhoan;
-        private System.Windows.Forms.ComboBox cmbChiNhanh;
+        private System.Windows.Forms.ComboBox cboChiNhanh;
         private System.Windows.Forms.Label lblChiNhanh;
         private System.Windows.Forms.Label lblTittle;
     }

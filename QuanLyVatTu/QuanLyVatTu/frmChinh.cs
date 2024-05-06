@@ -103,5 +103,35 @@ namespace QuanLyVatTu
         {
             this.Close();
         }
+
+        private void btnNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmNhanVien));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmNhanVien form = new frmNhanVien();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmVatTu));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmVatTu form = new frmVatTu();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }

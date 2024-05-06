@@ -53,9 +53,9 @@ namespace QuanLyVatTu
             connPublisher.Close();
             Program.bindingSource.DataSource = dt;
 
-            cmbChiNhanh.DataSource = Program.bindingSource;
-            cmbChiNhanh.DisplayMember = "TENCN";
-            cmbChiNhanh.ValueMember = "TENSERVER";
+            cboChiNhanh.DataSource = Program.bindingSource;
+            cboChiNhanh.DisplayMember = "TENCN";
+            cboChiNhanh.ValueMember = "TENSERVER";
         }
 
         /******************************************************************
@@ -85,8 +85,8 @@ namespace QuanLyVatTu
                 return;
 
             layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
-            cmbChiNhanh.SelectedIndex = 0;
-            cmbChiNhanh.SelectedIndex = 1;
+            cboChiNhanh.SelectedIndex = 0;
+            cboChiNhanh.SelectedIndex = 1;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace QuanLyVatTu
                 return;
 
             /* Step 3*/
-            Program.brand = cmbChiNhanh.SelectedIndex;
+            Program.brand = cboChiNhanh.SelectedIndex;
             Program.currentLogin = Program.loginName;
             Program.currentPassword = Program.loginPassword;
 
@@ -147,11 +147,11 @@ namespace QuanLyVatTu
             Program.frmChinh.Close();
         }
 
-        private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                Program.serverName = cmbChiNhanh.SelectedValue.ToString();
+                Program.serverName = cboChiNhanh.SelectedValue.ToString();
             }
             catch (Exception) { }
         }

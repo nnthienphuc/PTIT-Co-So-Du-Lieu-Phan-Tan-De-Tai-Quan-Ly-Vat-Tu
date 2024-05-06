@@ -1,9 +1,10 @@
 ﻿using DevExpress.Skins;
 using DevExpress.UserSkins;
+using QuanLyVatTu.SubForm;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -71,10 +72,10 @@ namespace QuanLyVatTu
         // Các form của toàn dự án -> chỉ là con trỏ chưa phải là đối tượng (về sau mới là đối tượng)
         public static frmDangNhap frmDangNhap;
         public static frmChinh frmChinh;
-        //public static frmNhanVien frmNhanVien;
+        public static frmNhanVien frmNhanVien;
 
-        ////public static frmChuyenChiNhanh frmChuyenChiNhanh;
-        //public static frmVatTu frmVatTu;
+        public static frmChuyenChiNhanh frmChuyenChiNhanh;
+        public static frmVatTu frmVatTu;
         //public static frmKho frmKho;
 
         //public static frmDonDatHang frmDonDatHang;
