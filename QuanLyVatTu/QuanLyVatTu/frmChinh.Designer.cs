@@ -43,17 +43,22 @@
             this.btnDonHangKhongPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoatDongNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnTongHopNhapXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
+            this.btnTaoTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
             this.pageNhapXuat = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnNhapXuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnBaoCao = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.pageHeThong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.rbnHeThong = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.btnDangNhap = new DevExpress.XtraBars.BarButtonItem();
-            this.btnDangXuat = new DevExpress.XtraBars.BarButtonItem();
-            this.btnTaoTaiKhoan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnThoat = new DevExpress.XtraBars.BarButtonItem();
+            this.thongTinNhanVien = new System.Windows.Forms.StatusStrip();
+            this.maNhanVien = new System.Windows.Forms.ToolStripStatusLabel();
+            this.hoTen = new System.Windows.Forms.ToolStripStatusLabel();
+            this.vaiTro = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
+            this.thongTinNhanVien.SuspendLayout();
             this.SuspendLayout();
             // 
             // ribbonControl1
@@ -147,7 +152,7 @@
             // 
             this.btnDSNhanVien.Caption = "Danh Sách Nhân Viên";
             this.btnDSNhanVien.Id = 5;
-            this.btnDSNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDanhSachNhanVien.ImageOptions.SvgImage")));
+            this.btnDSNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSNhanVien.ImageOptions.SvgImage")));
             this.btnDSNhanVien.Name = "btnDSNhanVien";
             // 
             // btnDSVatTu
@@ -184,6 +189,37 @@
             this.btnTongHopNhapXuat.Id = 10;
             this.btnTongHopNhapXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTongHopNhapXuat.ImageOptions.SvgImage")));
             this.btnTongHopNhapXuat.Name = "btnTongHopNhapXuat";
+            // 
+            // btnDangNhap
+            // 
+            this.btnDangNhap.Caption = "Đăng Nhập";
+            this.btnDangNhap.Id = 14;
+            this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
+            this.btnDangNhap.Name = "btnDangNhap";
+            this.btnDangNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangNhap_ItemClick);
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Caption = "Đăng Xuất";
+            this.btnDangXuat.Id = 15;
+            this.btnDangXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangXuat.ImageOptions.SvgImage")));
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDangXuat_ItemClick);
+            // 
+            // btnTaoTaiKhoan
+            // 
+            this.btnTaoTaiKhoan.Caption = "Tạo Tài Khoản";
+            this.btnTaoTaiKhoan.Id = 16;
+            this.btnTaoTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoTaiKhoan.ImageOptions.SvgImage")));
+            this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Caption = "Thoát";
+            this.btnThoat.Id = 17;
+            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // pageNhapXuat
             // 
@@ -235,33 +271,38 @@
             this.rbnHeThong.Name = "rbnHeThong";
             this.rbnHeThong.Text = "QUẢN LÝ HỆ THỐNG";
             // 
-            // btnDangNhap
+            // thongTinNhanVien
             // 
-            this.btnDangNhap.Caption = "Đăng Nhập";
-            this.btnDangNhap.Id = 14;
-            this.btnDangNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangNhap.ImageOptions.SvgImage")));
-            this.btnDangNhap.Name = "btnDangNhap";
+            this.thongTinNhanVien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.maNhanVien,
+            this.hoTen,
+            this.vaiTro});
+            this.thongTinNhanVien.Location = new System.Drawing.Point(0, 677);
+            this.thongTinNhanVien.Name = "thongTinNhanVien";
+            this.thongTinNhanVien.Size = new System.Drawing.Size(1298, 22);
+            this.thongTinNhanVien.TabIndex = 2;
+            this.thongTinNhanVien.Text = "statusStrip1";
             // 
-            // btnDangXuat
+            // maNhanVien
             // 
-            this.btnDangXuat.Caption = "Đăng Xuất";
-            this.btnDangXuat.Id = 15;
-            this.btnDangXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDangXuat.ImageOptions.SvgImage")));
-            this.btnDangXuat.Name = "btnDangXuat";
+            this.maNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maNhanVien.Name = "maNhanVien";
+            this.maNhanVien.Size = new System.Drawing.Size(120, 17);
+            this.maNhanVien.Text = "MÃ NHÂN VIÊN";
             // 
-            // btnTaoTaiKhoan
+            // hoTen
             // 
-            this.btnTaoTaiKhoan.Caption = "Tạo Tài Khoản";
-            this.btnTaoTaiKhoan.Id = 16;
-            this.btnTaoTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoTaiKhoan.ImageOptions.SvgImage")));
-            this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            this.hoTen.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hoTen.Name = "hoTen";
+            this.hoTen.Size = new System.Drawing.Size(63, 17);
+            this.hoTen.Text = "HỌ TÊN";
             // 
-            // btnThoat
+            // vaiTro
             // 
-            this.btnThoat.Caption = "Thoát";
-            this.btnThoat.Id = 17;
-            this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
-            this.btnThoat.Name = "btnThoat";
+            this.vaiTro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vaiTro.Name = "vaiTro";
+            this.vaiTro.Size = new System.Drawing.Size(67, 17);
+            this.vaiTro.Text = "VAI TRÒ";
             // 
             // frmChinh
             // 
@@ -269,6 +310,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 699);
+            this.Controls.Add(this.thongTinNhanVien);
             this.Controls.Add(this.ribbonControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmChinh.IconOptions.Image")));
@@ -278,7 +320,10 @@
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ VẬT TƯ";
+            this.Load += new System.EventHandler(this.frmChinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
+            this.thongTinNhanVien.ResumeLayout(false);
+            this.thongTinNhanVien.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,6 +355,10 @@
         private DevExpress.XtraBars.BarButtonItem btnThoat;
         private DevExpress.XtraBars.Ribbon.RibbonPage pageHeThong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rbnHeThong;
+        private System.Windows.Forms.StatusStrip thongTinNhanVien;
+        public System.Windows.Forms.ToolStripStatusLabel maNhanVien;
+        public System.Windows.Forms.ToolStripStatusLabel hoTen;
+        public System.Windows.Forms.ToolStripStatusLabel vaiTro;
     }
 }
 

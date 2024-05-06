@@ -69,7 +69,7 @@ namespace QuanLyVatTu
         public static BindingSource bindingSource = new BindingSource();
 
         // Các form của toàn dự án -> chỉ là con trỏ chưa phải là đối tượng (về sau mới là đối tượng)
-        //public static frmDangNhap frmDangNhap;
+        public static frmDangNhap frmDangNhap;
         public static frmChinh frmChinh;
         //public static frmNhanVien frmNhanVien;
 
