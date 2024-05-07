@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKho));
+            System.Windows.Forms.Label mAKHOLabel;
+            System.Windows.Forms.Label tENKHOLabel;
+            System.Windows.Forms.Label dIACHILabel;
+            System.Windows.Forms.Label mACNLabel;
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -50,14 +54,23 @@
             this.dataSet = new QuanLyVatTu.DataSet();
             this.tableAdapterManager = new QuanLyVatTu.DataSetTableAdapters.TableAdapterManager();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.khoTableAdapter = new QuanLyVatTu.DataSetTableAdapters.KhoTableAdapter();
             this.khoGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.bdsKho = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDIACHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.khoTableAdapter = new QuanLyVatTu.DataSetTableAdapters.KhoTableAdapter();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.mAKHOTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.tENKHOTextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.dIACHITextEdit = new DevExpress.XtraEditors.TextEdit();
+            this.mACNTextEdit = new DevExpress.XtraEditors.TextEdit();
+            mAKHOLabel = new System.Windows.Forms.Label();
+            tENKHOLabel = new System.Windows.Forms.Label();
+            dIACHILabel = new System.Windows.Forms.Label();
+            mACNLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -65,8 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKho)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHOTextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mACNTextEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -239,10 +258,12 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.ChiNhanhTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.CTDDHTableAdapter = null;
             this.tableAdapterManager.CTPNTableAdapter = null;
             this.tableAdapterManager.CTPXTableAdapter = null;
             this.tableAdapterManager.DatHangTableAdapter = null;
+            this.tableAdapterManager.KhoTableAdapter = null;
             this.tableAdapterManager.NhanVienTableAdapter = null;
             this.tableAdapterManager.PhieuNhapTableAdapter = null;
             this.tableAdapterManager.PhieuXuatTableAdapter = null;
@@ -251,6 +272,7 @@
             // 
             // panelControl2
             // 
+            this.panelControl2.Controls.Add(this.panelControl3);
             this.panelControl2.Controls.Add(this.khoGridControl);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelControl2.Location = new System.Drawing.Point(0, 114);
@@ -259,21 +281,23 @@
             this.panelControl2.Size = new System.Drawing.Size(1067, 486);
             this.panelControl2.TabIndex = 7;
             // 
-            // khoTableAdapter
-            // 
-            this.khoTableAdapter.ClearBeforeFill = true;
-            // 
             // khoGridControl
             // 
             this.khoGridControl.DataSource = this.bdsKho;
-            this.khoGridControl.Location = new System.Drawing.Point(49, 57);
+            this.khoGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.khoGridControl.Location = new System.Drawing.Point(2, 2);
             this.khoGridControl.MainView = this.gridView1;
             this.khoGridControl.MenuManager = this.barManager1;
             this.khoGridControl.Name = "khoGridControl";
-            this.khoGridControl.Size = new System.Drawing.Size(996, 220);
+            this.khoGridControl.Size = new System.Drawing.Size(1063, 220);
             this.khoGridControl.TabIndex = 0;
             this.khoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // bdsKho
+            // 
+            this.bdsKho.DataMember = "Kho";
+            this.bdsKho.DataSource = this.dataSet;
             // 
             // gridView1
             // 
@@ -284,11 +308,6 @@
             this.colMACN});
             this.gridView1.GridControl = this.khoGridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // bdsKho
-            // 
-            this.bdsKho.DataMember = "Kho";
-            this.bdsKho.DataSource = this.dataSet;
             // 
             // colMAKHO
             // 
@@ -326,6 +345,98 @@
             this.colMACN.VisibleIndex = 3;
             this.colMACN.Width = 112;
             // 
+            // khoTableAdapter
+            // 
+            this.khoTableAdapter.ClearBeforeFill = true;
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(mACNLabel);
+            this.panelControl3.Controls.Add(this.mACNTextEdit);
+            this.panelControl3.Controls.Add(dIACHILabel);
+            this.panelControl3.Controls.Add(this.dIACHITextEdit);
+            this.panelControl3.Controls.Add(tENKHOLabel);
+            this.panelControl3.Controls.Add(this.tENKHOTextEdit);
+            this.panelControl3.Controls.Add(mAKHOLabel);
+            this.panelControl3.Controls.Add(this.mAKHOTextEdit);
+            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl3.Location = new System.Drawing.Point(2, 222);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(1063, 262);
+            this.panelControl3.TabIndex = 1;
+            // 
+            // mAKHOLabel
+            // 
+            mAKHOLabel.AutoSize = true;
+            mAKHOLabel.Location = new System.Drawing.Point(47, 43);
+            mAKHOLabel.Name = "mAKHOLabel";
+            mAKHOLabel.Size = new System.Drawing.Size(70, 19);
+            mAKHOLabel.TabIndex = 0;
+            mAKHOLabel.Text = "MAKHO:";
+            // 
+            // mAKHOTextEdit
+            // 
+            this.mAKHOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKho, "MAKHO", true));
+            this.mAKHOTextEdit.Location = new System.Drawing.Point(123, 40);
+            this.mAKHOTextEdit.MenuManager = this.barManager1;
+            this.mAKHOTextEdit.Name = "mAKHOTextEdit";
+            this.mAKHOTextEdit.Size = new System.Drawing.Size(150, 26);
+            this.mAKHOTextEdit.TabIndex = 1;
+            // 
+            // tENKHOLabel
+            // 
+            tENKHOLabel.AutoSize = true;
+            tENKHOLabel.Location = new System.Drawing.Point(505, 43);
+            tENKHOLabel.Name = "tENKHOLabel";
+            tENKHOLabel.Size = new System.Drawing.Size(77, 19);
+            tENKHOLabel.TabIndex = 2;
+            tENKHOLabel.Text = "TENKHO:";
+            // 
+            // tENKHOTextEdit
+            // 
+            this.tENKHOTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKho, "TENKHO", true));
+            this.tENKHOTextEdit.Location = new System.Drawing.Point(588, 40);
+            this.tENKHOTextEdit.MenuManager = this.barManager1;
+            this.tENKHOTextEdit.Name = "tENKHOTextEdit";
+            this.tENKHOTextEdit.Size = new System.Drawing.Size(150, 26);
+            this.tENKHOTextEdit.TabIndex = 3;
+            // 
+            // dIACHILabel
+            // 
+            dIACHILabel.AutoSize = true;
+            dIACHILabel.Location = new System.Drawing.Point(47, 158);
+            dIACHILabel.Name = "dIACHILabel";
+            dIACHILabel.Size = new System.Drawing.Size(70, 19);
+            dIACHILabel.TabIndex = 4;
+            dIACHILabel.Text = "DIACHI:";
+            // 
+            // dIACHITextEdit
+            // 
+            this.dIACHITextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKho, "DIACHI", true));
+            this.dIACHITextEdit.Location = new System.Drawing.Point(130, 155);
+            this.dIACHITextEdit.MenuManager = this.barManager1;
+            this.dIACHITextEdit.Name = "dIACHITextEdit";
+            this.dIACHITextEdit.Size = new System.Drawing.Size(209, 26);
+            this.dIACHITextEdit.TabIndex = 5;
+            // 
+            // mACNLabel
+            // 
+            mACNLabel.AutoSize = true;
+            mACNLabel.Location = new System.Drawing.Point(523, 158);
+            mACNLabel.Name = "mACNLabel";
+            mACNLabel.Size = new System.Drawing.Size(59, 19);
+            mACNLabel.TabIndex = 6;
+            mACNLabel.Text = "MACN:";
+            // 
+            // mACNTextEdit
+            // 
+            this.mACNTextEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsKho, "MACN", true));
+            this.mACNTextEdit.Location = new System.Drawing.Point(597, 151);
+            this.mACNTextEdit.MenuManager = this.barManager1;
+            this.mACNTextEdit.Name = "mACNTextEdit";
+            this.mACNTextEdit.Size = new System.Drawing.Size(150, 26);
+            this.mACNTextEdit.TabIndex = 7;
+            // 
             // frmKho
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -351,8 +462,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.khoGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKho)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mAKHOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tENKHOTextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dIACHITextEdit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mACNTextEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,5 +506,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDIACHI;
         private DevExpress.XtraGrid.Columns.GridColumn colMACN;
         private DataSetTableAdapters.KhoTableAdapter khoTableAdapter;
+        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.TextEdit mACNTextEdit;
+        private DevExpress.XtraEditors.TextEdit dIACHITextEdit;
+        private DevExpress.XtraEditors.TextEdit tENKHOTextEdit;
+        private DevExpress.XtraEditors.TextEdit mAKHOTextEdit;
     }
 }
