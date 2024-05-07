@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraBars;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -118,7 +119,7 @@ namespace QuanLyVatTu
                 form.Show();
             }
         }
-
+ 
         private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Form f = this.CheckExists(typeof(frmVatTu));
@@ -129,6 +130,22 @@ namespace QuanLyVatTu
             else
             {
                 frmVatTu form = new frmVatTu();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Console.WriteLine("click kho");
+            Form f = this.CheckExists(typeof(frmKho));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmKho form = new frmKho();
                 form.MdiParent = this;
                 form.Show();
             }

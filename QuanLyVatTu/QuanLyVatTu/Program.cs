@@ -76,7 +76,7 @@ namespace QuanLyVatTu
 
         public static frmChuyenChiNhanh frmChuyenChiNhanh;
         public static frmVatTu frmVatTu;
-        //public static frmKho frmKho;
+        public static frmKho frmKho;
 
         //public static frmDonDatHang frmDonDatHang;
         //public static frmChonKhoHang frmChonKhoHang;
