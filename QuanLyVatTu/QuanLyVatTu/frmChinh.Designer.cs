@@ -93,10 +93,11 @@
             this.pageNhapXuat,
             this.pageBaoCao,
             this.pageHeThong});
-            this.ribbonControl1.Size = new System.Drawing.Size(1298, 158);
+            this.ribbonControl1.Size = new System.Drawing.Size(1298, 231);
             // 
             // btnNhanVien
             // 
+            this.btnNhanVien.AllowDrawArrowInMenu = false;
             this.btnNhanVien.Caption = "Nhân Viên";
             this.btnNhanVien.Id = 1;
             this.btnNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNhanVien.ImageOptions.SvgImage")));
@@ -117,6 +118,7 @@
             this.btnKho.Id = 3;
             this.btnKho.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKho.ImageOptions.SvgImage")));
             this.btnKho.Name = "btnKho";
+            this.btnKho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKho_ItemClick);
             // 
             // btnLapPhieu
             // 
@@ -275,13 +277,14 @@
             // 
             // thongTinNhanVien
             // 
+            this.thongTinNhanVien.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.thongTinNhanVien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.maNhanVien,
             this.hoTen,
             this.vaiTro});
-            this.thongTinNhanVien.Location = new System.Drawing.Point(0, 677);
+            this.thongTinNhanVien.Location = new System.Drawing.Point(0, 666);
             this.thongTinNhanVien.Name = "thongTinNhanVien";
-            this.thongTinNhanVien.Size = new System.Drawing.Size(1298, 22);
+            this.thongTinNhanVien.Size = new System.Drawing.Size(1298, 33);
             this.thongTinNhanVien.TabIndex = 2;
             this.thongTinNhanVien.Text = "statusStrip1";
             // 
@@ -289,27 +292,27 @@
             // 
             this.maNhanVien.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maNhanVien.Name = "maNhanVien";
-            this.maNhanVien.Size = new System.Drawing.Size(120, 17);
+            this.maNhanVien.Size = new System.Drawing.Size(178, 26);
             this.maNhanVien.Text = "MÃ NHÂN VIÊN";
             // 
             // hoTen
             // 
             this.hoTen.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.hoTen.Name = "hoTen";
-            this.hoTen.Size = new System.Drawing.Size(63, 17);
+            this.hoTen.Size = new System.Drawing.Size(94, 26);
             this.hoTen.Text = "HỌ TÊN";
             // 
             // vaiTro
             // 
             this.vaiTro.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vaiTro.Name = "vaiTro";
-            this.vaiTro.Size = new System.Drawing.Size(67, 17);
+            this.vaiTro.Size = new System.Drawing.Size(101, 26);
             this.vaiTro.Text = "VAI TRÒ";
             // 
             // frmChinh
             // 
             this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1298, 699);
             this.Controls.Add(this.thongTinNhanVien);
@@ -322,6 +325,7 @@
             this.Ribbon = this.ribbonControl1;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QUẢN LÝ VẬT TƯ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmChinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.thongTinNhanVien.ResumeLayout(false);
