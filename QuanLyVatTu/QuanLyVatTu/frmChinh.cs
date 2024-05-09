@@ -150,5 +150,20 @@ namespace QuanLyVatTu
                 form.Show();
             }
         }
+
+        private void btnDonDatHang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmDatHang));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmDatHang form = new frmDatHang();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }
