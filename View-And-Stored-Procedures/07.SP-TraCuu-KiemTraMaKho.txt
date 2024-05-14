@@ -1,0 +1,10 @@
+create procedure sp_TraCuu_KiemTraMaKho
+	@MAKHO nchar(4)
+as
+begin
+	if( exists( select 1 
+				from LINK2.QLVT_DATHANG.DBO.KHO as K 
+				where K.MAKHO = @MAKHO ) )
+		return 1;
+	return 0;
+end

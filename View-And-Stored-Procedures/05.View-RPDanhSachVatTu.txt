@@ -1,0 +1,4 @@
+CREATE VIEW [dbo].[view_DanhSachVatTu]
+AS
+Select MAVT, TENVT, DVT, SOLUONGTON
+from Vattu
