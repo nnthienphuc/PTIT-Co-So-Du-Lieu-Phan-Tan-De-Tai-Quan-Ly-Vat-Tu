@@ -63,6 +63,7 @@ namespace QuanLyVatTu.ReportForm
                     MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder ReportFiles",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                this.Close();
             }
             catch (IOException ex)
             {

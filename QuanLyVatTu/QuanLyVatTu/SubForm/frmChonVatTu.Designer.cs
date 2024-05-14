@@ -181,7 +181,8 @@
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.gclVatTu);
             this.Name = "frmChonVatTu";
-            this.Text = "frmChonVatTu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CHỌN VẬT TƯ";
             this.Load += new System.EventHandler(this.frmChonVatTu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsVatTu)).EndInit();

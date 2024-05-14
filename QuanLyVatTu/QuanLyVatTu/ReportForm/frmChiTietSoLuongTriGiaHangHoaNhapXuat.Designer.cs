@@ -161,7 +161,8 @@
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.lblChiTietSoLuongHangHoaNhapXuat);
             this.Name = "frmChiTietSoLuongTriGiaHangHoaNhapXuat";
-            this.Text = "frmChiTietSoLuongTriGiaHangHoaNhapXuat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CHI TIẾT SỐ LƯỢNG HÀNG HÓA NHẬP XUẤT";
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).EndInit();

@@ -263,7 +263,7 @@
             this.Controls.Add(this.lblDanhSachThongTinNhanVien);
             this.Name = "frmDanhSachNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmDanhSachNhanVien";
+            this.Text = "DANH SÁCH NHÂN VIÊN";
             this.Load += new System.EventHandler(this.frmDanhSachNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).EndInit();

@@ -250,7 +250,7 @@
             this.tableCell4.StylePriority.UseTextAlignment = false;
             this.tableCell4.Text = "CMND";
             this.tableCell4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell4.Weight = 0.17826477002108876D;
+            this.tableCell4.Weight = 0.15998988760533089D;
             // 
             // tableCell5
             // 
@@ -263,7 +263,7 @@
             this.tableCell5.StylePriority.UseTextAlignment = false;
             this.tableCell5.Text = "Địa Chỉ";
             this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.tableCell5.Weight = 0.14684391782234349D;
+            this.tableCell5.Weight = 0.16511880023810138D;
             // 
             // tableCell6
             // 
@@ -360,7 +360,7 @@
             this.tableCell11.StyleName = "DetailData1";
             this.tableCell11.StylePriority.UseTextAlignment = false;
             this.tableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.tableCell11.Weight = 0.17826477002108876D;
+            this.tableCell11.Weight = 0.1599898502115667D;
             // 
             // tableCell12
             // 
@@ -370,7 +370,7 @@
             this.tableCell12.StyleName = "DetailData1";
             this.tableCell12.StylePriority.UseTextAlignment = false;
             this.tableCell12.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.tableCell12.Weight = 0.14684391782234349D;
+            this.tableCell12.Weight = 0.16511883763186552D;
             // 
             // tableCell13
             // 

@@ -94,7 +94,8 @@ namespace QuanLyVatTu
                     return;
                 }
 
-                MessageBox.Show("Đăng kí tài khoản thành công\n\nTài khoản: " + taiKhoan + "\nMật khẩu: " + matKhau + "\n Mã Nhân Viên: " + maNhanVien + "\n Vai Trò: " + vaiTro, "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Đăng kí tài khoản thành công\n\nTài khoản: " + taiKhoan + "\nMật khẩu: " + matKhau + "\nMã Nhân Viên: " + maNhanVien + "\nVai Trò: " + vaiTro, "Thông Báo", MessageBoxButtons.OK);
+                this.Dispose();
             }
             catch (Exception ex)
             {
@@ -115,6 +116,11 @@ namespace QuanLyVatTu
             }
             rdoChiNhanh.Enabled = true;
             rdoUser.Enabled = true;
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

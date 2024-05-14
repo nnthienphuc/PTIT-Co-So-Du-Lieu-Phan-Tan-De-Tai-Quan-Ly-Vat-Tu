@@ -102,6 +102,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dteTuNgay.Properties.MaskSettings.Set("mask", "T");
             this.dteTuNgay.Size = new System.Drawing.Size(162, 28);
             this.dteTuNgay.TabIndex = 21;
             // 
@@ -162,7 +163,8 @@
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.lblTongHopNhapXuat);
             this.Name = "frmTongHopNhapXuat";
-            this.Text = "frmTongHopNhapXuat";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TỔNG HỢP NHẬP XUẤT";
             this.Load += new System.EventHandler(this.frmTongHopNhapXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties)).EndInit();

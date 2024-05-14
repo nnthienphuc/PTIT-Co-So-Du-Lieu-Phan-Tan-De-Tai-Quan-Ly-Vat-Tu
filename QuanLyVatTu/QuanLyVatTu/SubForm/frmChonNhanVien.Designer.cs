@@ -58,8 +58,8 @@
             this.colMACN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTrangThaiXoa = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btnChon = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnChon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -344,19 +344,6 @@
             this.panelControl2.Size = new System.Drawing.Size(1141, 129);
             this.panelControl2.TabIndex = 22;
             // 
-            // btnChon
-            // 
-            this.btnChon.BackColor = System.Drawing.Color.Blue;
-            this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
-            this.btnChon.ForeColor = System.Drawing.Color.White;
-            this.btnChon.Location = new System.Drawing.Point(325, 41);
-            this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(126, 31);
-            this.btnChon.TabIndex = 0;
-            this.btnChon.Text = "CHỌN";
-            this.btnChon.UseVisualStyleBackColor = false;
-            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
-            // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
@@ -369,6 +356,19 @@
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnChon
+            // 
+            this.btnChon.BackColor = System.Drawing.Color.Blue;
+            this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.btnChon.ForeColor = System.Drawing.Color.White;
+            this.btnChon.Location = new System.Drawing.Point(325, 41);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(126, 31);
+            this.btnChon.TabIndex = 0;
+            this.btnChon.Text = "CHỌN";
+            this.btnChon.UseVisualStyleBackColor = false;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
             // frmChonNhanVien
             // 
@@ -387,7 +387,8 @@
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
             this.Name = "frmChonNhanVien";
-            this.Text = "frmChonNhanVien";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "CHỌN NHÂN VIÊN";
             this.Load += new System.EventHandler(this.frmChonNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhanVien)).EndInit();

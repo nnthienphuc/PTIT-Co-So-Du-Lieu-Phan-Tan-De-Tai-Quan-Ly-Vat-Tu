@@ -110,6 +110,7 @@
             this.txtMatKhau.PasswordChar = '*';
             this.txtMatKhau.Size = new System.Drawing.Size(162, 23);
             this.txtMatKhau.TabIndex = 6;
+            this.txtMatKhau.Text = "123456";
             // 
             // txtXacNhanMatKhau
             // 
@@ -119,6 +120,7 @@
             this.txtXacNhanMatKhau.PasswordChar = '*';
             this.txtXacNhanMatKhau.Size = new System.Drawing.Size(162, 23);
             this.txtXacNhanMatKhau.TabIndex = 7;
+            this.txtXacNhanMatKhau.Text = "123456";
             // 
             // rdoChiNhanh
             // 
@@ -155,6 +157,7 @@
             this.btnThoat.TabIndex = 19;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnXacNhan
             // 
@@ -199,7 +202,8 @@
             this.Controls.Add(this.lblMaNV);
             this.Controls.Add(this.lblTaoTaiKhoan);
             this.Name = "frmTaoTaiKhoan";
-            this.Text = "frmTaoTaiKhoan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "TẠO TÀI KHOẢN";
             this.Load += new System.EventHandler(this.frmTaoTaiKhoan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

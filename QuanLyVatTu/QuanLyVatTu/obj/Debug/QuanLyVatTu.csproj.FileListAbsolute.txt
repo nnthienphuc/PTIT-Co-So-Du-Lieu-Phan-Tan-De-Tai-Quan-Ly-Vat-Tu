@@ -141,3 +141,14 @@ D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVa
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.frmKho.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmDanhSachNhanVien.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptDanhSachNhanVien.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.frmTaoTaiKhoan.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmChiTietSoLuongTriGiaHangHoaNhapXuat.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmDanhSachVatTu.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmDonHangKhongPhieuNhap.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmHoatDongNhanVien.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.frmTongHopNhapXuat.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptDanhSachVatTu.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptDonHangKhongPhieuNhap.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptTongHopNhapXuat.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonNhanVien.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonVatTu.resources

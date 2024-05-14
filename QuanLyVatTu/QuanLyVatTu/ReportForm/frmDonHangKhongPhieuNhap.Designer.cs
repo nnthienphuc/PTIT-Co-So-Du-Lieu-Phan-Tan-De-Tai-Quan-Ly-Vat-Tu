@@ -99,7 +99,8 @@
             this.Controls.Add(this.lblChiNhanh);
             this.Controls.Add(this.lblDonHangKhongPhieuNhap);
             this.Name = "frmDonHangKhongPhieuNhap";
-            this.Text = "frmDonHangKhongPhieuNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ĐƠN HÀNG KHÔNG PHIẾU NHẬP";
             this.ResumeLayout(false);
             this.PerformLayout();
 

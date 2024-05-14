@@ -179,7 +179,8 @@
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.lblDanhSachThongTinVatTu);
             this.Name = "frmDanhSachVatTu";
-            this.Text = "frmDanhSachVatTu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "DANH SÁCH VẬT TƯ";
             this.Load += new System.EventHandler(this.frmDanhSachVatTu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).EndInit();

@@ -211,7 +211,16 @@ namespace QuanLyVatTu
 
         private void btnTaoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            Form f = this.CheckExists(typeof(frmTaoTaiKhoan));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmTaoTaiKhoan form = new frmTaoTaiKhoan();
+                form.Show();
+            }
         }
     }
 }
