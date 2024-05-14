@@ -212,7 +212,7 @@ namespace QuanLyVatTu
             String diaChi = drv["DIACHI"].ToString();
             String cauTruyVan =
                     "DECLARE	@result int " +
-                    "EXEC @result = sp_KiemTraMaKho '" +
+                    "EXEC @result = sp_TraCuu_KiemTraMaKho '" +
                     maKhoHang + "' " +
                     "SELECT 'Value' = @result";
             SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);

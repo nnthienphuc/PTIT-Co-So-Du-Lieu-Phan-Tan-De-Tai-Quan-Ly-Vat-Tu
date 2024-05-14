@@ -103,7 +103,7 @@
             lblMaKho.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             lblMaKho.Location = new System.Drawing.Point(47, 43);
             lblMaKho.Name = "lblMaKho";
-            lblMaKho.Size = new System.Drawing.Size(74, 22);
+            lblMaKho.Size = new System.Drawing.Size(52, 16);
             lblMaKho.TabIndex = 0;
             lblMaKho.Text = "Mã Kho";
             // 
@@ -112,7 +112,7 @@
             lblTenKho.AutoSize = true;
             lblTenKho.Location = new System.Drawing.Point(519, 43);
             lblTenKho.Name = "lblTenKho";
-            lblTenKho.Size = new System.Drawing.Size(68, 19);
+            lblTenKho.Size = new System.Drawing.Size(46, 13);
             lblTenKho.TabIndex = 2;
             lblTenKho.Text = "Tên Kho";
             // 
@@ -121,7 +121,7 @@
             lblDiaChi.AutoSize = true;
             lblDiaChi.Location = new System.Drawing.Point(47, 109);
             lblDiaChi.Name = "lblDiaChi";
-            lblDiaChi.Size = new System.Drawing.Size(60, 19);
+            lblDiaChi.Size = new System.Drawing.Size(41, 13);
             lblDiaChi.TabIndex = 4;
             lblDiaChi.Text = "Địa Chỉ";
             // 
@@ -130,7 +130,7 @@
             lblMaChiNhanh.AutoSize = true;
             lblMaChiNhanh.Location = new System.Drawing.Point(519, 113);
             lblMaChiNhanh.Name = "lblMaChiNhanh";
-            lblMaChiNhanh.Size = new System.Drawing.Size(108, 19);
+            lblMaChiNhanh.Size = new System.Drawing.Size(73, 13);
             lblMaChiNhanh.TabIndex = 6;
             lblMaChiNhanh.Text = "Mã Chi Nhánh";
             // 
@@ -247,7 +247,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1180, 55);
+            this.barDockControlTop.Size = new System.Drawing.Size(1180, 45);
             // 
             // barDockControlBottom
             // 
@@ -261,24 +261,24 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 55);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 507);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 517);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1180, 55);
+            this.barDockControlRight.Location = new System.Drawing.Point(1180, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 507);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 517);
             // 
             // panelControl1
             // 
             this.panelControl1.Controls.Add(this.cboChiNhanh);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 55);
+            this.panelControl1.Location = new System.Drawing.Point(0, 45);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(1180, 59);
@@ -286,10 +286,11 @@
             // 
             // cboChiNhanh
             // 
+            this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChiNhanh.FormattingEnabled = true;
             this.cboChiNhanh.Location = new System.Drawing.Point(376, 14);
             this.cboChiNhanh.Name = "cboChiNhanh";
-            this.cboChiNhanh.Size = new System.Drawing.Size(520, 27);
+            this.cboChiNhanh.Size = new System.Drawing.Size(520, 21);
             this.cboChiNhanh.TabIndex = 1;
             // 
             // label1
@@ -298,7 +299,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(119, 14);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 27);
+            this.label1.Size = new System.Drawing.Size(74, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Chi Nhánh";
             // 
@@ -328,10 +329,10 @@
             this.panelControl2.Controls.Add(this.pnlNhapLieu);
             this.panelControl2.Controls.Add(this.gcKho);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 114);
+            this.panelControl2.Location = new System.Drawing.Point(0, 104);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1180, 448);
+            this.panelControl2.Size = new System.Drawing.Size(1180, 458);
             this.panelControl2.TabIndex = 7;
             // 
             // pnlNhapLieu
@@ -347,7 +348,7 @@
             this.pnlNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlNhapLieu.Location = new System.Drawing.Point(2, 222);
             this.pnlNhapLieu.Name = "pnlNhapLieu";
-            this.pnlNhapLieu.Size = new System.Drawing.Size(1176, 224);
+            this.pnlNhapLieu.Size = new System.Drawing.Size(1176, 234);
             this.pnlNhapLieu.TabIndex = 1;
             // 
             // txtMaChiNhanh
@@ -356,7 +357,7 @@
             this.txtMaChiNhanh.Location = new System.Drawing.Point(685, 110);
             this.txtMaChiNhanh.MenuManager = this.barManager1;
             this.txtMaChiNhanh.Name = "txtMaChiNhanh";
-            this.txtMaChiNhanh.Size = new System.Drawing.Size(321, 26);
+            this.txtMaChiNhanh.Size = new System.Drawing.Size(321, 20);
             this.txtMaChiNhanh.TabIndex = 7;
             // 
             // bdsKho
@@ -370,7 +371,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(142, 106);
             this.txtDiaChi.MenuManager = this.barManager1;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(349, 26);
+            this.txtDiaChi.Size = new System.Drawing.Size(349, 20);
             this.txtDiaChi.TabIndex = 5;
             // 
             // txtTenKho
@@ -379,7 +380,7 @@
             this.txtTenKho.Location = new System.Drawing.Point(685, 36);
             this.txtTenKho.MenuManager = this.barManager1;
             this.txtTenKho.Name = "txtTenKho";
-            this.txtTenKho.Size = new System.Drawing.Size(321, 26);
+            this.txtTenKho.Size = new System.Drawing.Size(321, 20);
             this.txtTenKho.TabIndex = 3;
             // 
             // txtMaKho
@@ -388,7 +389,7 @@
             this.txtMaKho.Location = new System.Drawing.Point(142, 41);
             this.txtMaKho.MenuManager = this.barManager1;
             this.txtMaKho.Name = "txtMaKho";
-            this.txtMaKho.Size = new System.Drawing.Size(265, 26);
+            this.txtMaKho.Size = new System.Drawing.Size(265, 20);
             this.txtMaKho.TabIndex = 1;
             // 
             // gcKho
@@ -483,7 +484,7 @@
             // 
             // frmKho
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1180, 582);
             this.Controls.Add(this.panelControl2);

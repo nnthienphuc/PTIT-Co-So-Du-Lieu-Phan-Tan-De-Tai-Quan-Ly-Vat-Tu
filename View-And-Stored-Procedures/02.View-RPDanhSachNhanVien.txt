@@ -1,8 +1,0 @@
-CREATE VIEW [dbo].[view_DanhSachNhanVien] 
-AS
-	SELECT MANV, CONCAT(HO, ' ', TEN, ' - ', MANV) as HOTEN
-	FROM NHANVIEN 
-	WHERE TrangThaiXoa = 0 
-	AND NOT EXISTS( SELECT SUSER_SNAME(sid) 
-				FROM sys.sysusers 
-				WHERE name = CAST(MANV AS NVARCHAR))

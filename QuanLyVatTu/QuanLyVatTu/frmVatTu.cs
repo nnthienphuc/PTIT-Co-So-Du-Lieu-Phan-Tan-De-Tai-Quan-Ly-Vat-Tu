@@ -313,7 +313,7 @@ namespace QuanLyVatTu
 
             String cauTruyVan =
                     "DECLARE	@result int " +
-                    "EXEC @result = sp_KiemTraMaVatTu '" +
+                    "EXEC @result = sp_TraCuu_KiemTraMaVatTu '" +
                     maVatTu + "' " +
                     "SELECT 'Value' = @result";
             SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);

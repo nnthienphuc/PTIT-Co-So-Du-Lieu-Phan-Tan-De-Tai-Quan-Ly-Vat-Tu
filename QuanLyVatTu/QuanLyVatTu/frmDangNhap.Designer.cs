@@ -102,6 +102,7 @@
             // 
             // cboChiNhanh
             // 
+            this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChiNhanh.FormattingEnabled = true;
             this.cboChiNhanh.Location = new System.Drawing.Point(130, 80);
             this.cboChiNhanh.Name = "cboChiNhanh";

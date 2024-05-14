@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using QuanLyVatTu.ReportForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -162,6 +163,20 @@ namespace QuanLyVatTu
             {
                 frmDatHang form = new frmDatHang();
                 form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnDSNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmDanhSachNhanVien));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmDanhSachNhanVien form = new frmDanhSachNhanVien();
                 form.Show();
             }
         }
