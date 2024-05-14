@@ -96,3 +96,5 @@ D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\Qua
 D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVa.6E15CABF.Up2Date
 D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.exe
 D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.pdb
+D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.frmDatHang.resources
+D:\CSDLPT_QLVT\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.frmKho.resources

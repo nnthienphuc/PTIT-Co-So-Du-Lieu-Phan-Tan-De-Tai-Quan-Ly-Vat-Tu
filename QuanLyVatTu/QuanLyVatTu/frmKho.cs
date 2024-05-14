@@ -135,7 +135,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtMaKho.Text, @"^[a-zA-Z0-9]+$") == false)
+            if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
             {
                 MessageBox.Show("Mã kho chỉ chấp nhận chữ và số", "Thông báo", MessageBoxButtons.OK);
                 txtMaKho.Focus();
@@ -156,9 +156,9 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtTenKho.Text, @"^[a-zA-Z0-9 ]+$") == false)
+            if (Regex.IsMatch(txtTenKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
             {
-                MessageBox.Show("Mã kho bao gồm chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Tên kho bao gồm chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                 txtTenKho.Focus();
                 return false;
             }
@@ -177,7 +177,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtDiaChi.Text, @"^[a-zA-Z0-9, ]+$") == false)
+            if (Regex.IsMatch(txtDiaChi.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
             {
                 MessageBox.Show("Địa chỉ chỉ gồm chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                 txtDiaChi.Focus();

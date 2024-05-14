@@ -80,6 +80,7 @@
             this.txtSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.txtMaVatTu = new DevExpress.XtraEditors.TextEdit();
             this.gcChiTietDonDatHang = new DevExpress.XtraGrid.GridControl();
+            this.bdsChiTietDonDatHang = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMasoDDH1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -88,7 +89,6 @@
             this.ChiTietDonDatHangTableAdapter = new QuanLyVatTu.DataSetTableAdapters.CTDDHTableAdapter();
             this.bdsPhieuNhap = new System.Windows.Forms.BindingSource(this.components);
             this.PhieuNhapTableAdapter = new QuanLyVatTu.DataSetTableAdapters.PhieuNhapTableAdapter();
-            this.bdsChiTietDonDatHang = new System.Windows.Forms.BindingSource(this.components);
             masoDDHLabel = new System.Windows.Forms.Label();
             lblNgay = new System.Windows.Forms.Label();
             lblNCC = new System.Windows.Forms.Label();
@@ -118,9 +118,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVatTu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).BeginInit();
             this.SuspendLayout();
             // 
             // masoDDHLabel
@@ -628,6 +628,11 @@
             this.gcChiTietDonDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
             // 
+            // bdsChiTietDonDatHang
+            // 
+            this.bdsChiTietDonDatHang.DataMember = "CTDDH";
+            this.bdsChiTietDonDatHang.DataSource = this.dataSet;
+            // 
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -691,11 +696,6 @@
             // 
             this.PhieuNhapTableAdapter.ClearBeforeFill = true;
             // 
-            // bdsChiTietDonDatHang
-            // 
-            this.bdsChiTietDonDatHang.DataMember = "CTDDH";
-            this.bdsChiTietDonDatHang.DataSource = this.dataSet;
-            // 
             // frmDatHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -738,9 +738,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVatTu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
