@@ -63,6 +63,7 @@ namespace QuanLyVatTu
         //  Phục vụ cho tính năng HOẠT ĐỘNG NHÂN VIÊN
         public static string maNhanVienDuocChon = "";
         public static string hoTen = "";
+        public static string soCMND = "";
         public static string diaChi = "";
         public static string ngaySinh = "";
 
@@ -88,12 +89,12 @@ namespace QuanLyVatTu
         //public static frmPhieuXuat frmPhieuXuat;
 
         public static frmDanhSachNhanVien frmDanhSachNhanVien;
-        //public static frmDanhSachVatTu frmDanhSachVatTu;
+        public static frmDanhSachVatTu frmDanhSachVatTu;
         //public static frmDonHangKhongPhieuNhap frmDonHangKhongPhieuNhap;
 
         //public static frmChiTietSoLuongTriGiaHangHoaNhapXuat frmChiTietSoLuongTriGiaHangHoaNhapXuat;
         //public static frmHoatDongNhanVien frmHoatDongNhanVien;
-        //public static frmTongHopNhapXuat frmTongHopNhapXuat;
+        public static frmTongHopNhapXuat frmTongHopNhapXuat;
 
         // Kết nối tới server phân mảnh
         public static int KetNoi()

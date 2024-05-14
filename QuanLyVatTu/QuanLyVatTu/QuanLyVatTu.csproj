@@ -105,6 +105,12 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaoTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVatTu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,24 @@
     <Compile Include="ReportForm\rptDonHangKhongPhieuNhap.Designer.cs">
       <DependentUpon>rptDonHangKhongPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\rptTongHopNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportForm\rptTongHopNhapXuat.Designer.cs">
+      <DependentUpon>rptTongHopNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\frmChonNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmChonNhanVien.Designer.cs">
+      <DependentUpon>frmChonNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\frmChonVatTu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmChonVatTu.Designer.cs">
+      <DependentUpon>frmChonVatTu.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\frmChuyenChiNhanh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaoTaiKhoan.resx">
+      <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVatTu.resx">
       <DependentUpon>frmVatTu.cs</DependentUpon>
@@ -227,6 +254,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\rptDonHangKhongPhieuNhap.resx">
       <DependentUpon>rptDonHangKhongPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\rptTongHopNhapXuat.resx">
+      <DependentUpon>rptTongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmChonNhanVien.resx">
+      <DependentUpon>frmChonNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmChonVatTu.resx">
+      <DependentUpon>frmChonVatTu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmChuyenChiNhanh.resx">
       <DependentUpon>frmChuyenChiNhanh.cs</DependentUpon>

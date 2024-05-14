@@ -180,5 +180,38 @@ namespace QuanLyVatTu
                 form.Show();
             }
         }
+
+        private void btnDSVatTu_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmDanhSachVatTu));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmDanhSachVatTu form = new frmDanhSachVatTu();
+                form.Show();
+            }
+        }
+
+        private void btnTongHopNhapXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmTongHopNhapXuat));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmTongHopNhapXuat form = new frmTongHopNhapXuat();
+                form.Show();
+            }
+        }
+
+        private void btnTaoTaiKhoan_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }

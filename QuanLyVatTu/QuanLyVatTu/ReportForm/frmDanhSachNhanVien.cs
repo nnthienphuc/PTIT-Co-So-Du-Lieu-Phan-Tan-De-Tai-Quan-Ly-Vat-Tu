@@ -85,7 +85,6 @@ namespace QuanLyVatTu.ReportForm
             layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
             cboChiNhanh.SelectedIndex = 0;
             cboChiNhanh.SelectedIndex = 1;
-
         }
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)

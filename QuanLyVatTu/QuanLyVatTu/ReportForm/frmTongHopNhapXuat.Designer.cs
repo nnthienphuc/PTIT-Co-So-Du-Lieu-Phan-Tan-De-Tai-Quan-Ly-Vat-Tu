@@ -53,6 +53,7 @@
             this.btnXuatBan.TabIndex = 14;
             this.btnXuatBan.Text = "XUẤT BẢN";
             this.btnXuatBan.UseVisualStyleBackColor = false;
+            this.btnXuatBan.Click += new System.EventHandler(this.btnXuatBan_Click);
             // 
             // btnXemTruoc
             // 
@@ -64,6 +65,7 @@
             this.btnXemTruoc.TabIndex = 13;
             this.btnXemTruoc.Text = "XEM TRƯỚC";
             this.btnXemTruoc.UseVisualStyleBackColor = false;
+            this.btnXemTruoc.Click += new System.EventHandler(this.btnXemTruoc_Click);
             // 
             // lblTongHopNhapXuat
             // 
@@ -133,6 +135,7 @@
             this.cboChiNhanh.Name = "cboChiNhanh";
             this.cboChiNhanh.Size = new System.Drawing.Size(342, 28);
             this.cboChiNhanh.TabIndex = 24;
+            this.cboChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboChiNhanh_SelectedIndexChanged);
             // 
             // lblChiNhanh
             // 
@@ -160,6 +163,7 @@
             this.Controls.Add(this.lblTongHopNhapXuat);
             this.Name = "frmTongHopNhapXuat";
             this.Text = "frmTongHopNhapXuat";
+            this.Load += new System.EventHandler(this.frmTongHopNhapXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();

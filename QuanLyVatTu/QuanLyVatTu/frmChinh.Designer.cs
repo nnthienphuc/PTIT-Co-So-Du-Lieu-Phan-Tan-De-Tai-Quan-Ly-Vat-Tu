@@ -167,6 +167,7 @@
             this.btnDSVatTu.Id = 6;
             this.btnDSVatTu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDSVatTu.ImageOptions.SvgImage")));
             this.btnDSVatTu.Name = "btnDSVatTu";
+            this.btnDSVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSVatTu_ItemClick);
             // 
             // btnChiTietNhapXuat
             // 
@@ -195,6 +196,7 @@
             this.btnTongHopNhapXuat.Id = 10;
             this.btnTongHopNhapXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTongHopNhapXuat.ImageOptions.SvgImage")));
             this.btnTongHopNhapXuat.Name = "btnTongHopNhapXuat";
+            this.btnTongHopNhapXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTongHopNhapXuat_ItemClick);
             // 
             // btnDangNhap
             // 
@@ -218,6 +220,7 @@
             this.btnTaoTaiKhoan.Id = 16;
             this.btnTaoTaiKhoan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTaoTaiKhoan.ImageOptions.SvgImage")));
             this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
+            this.btnTaoTaiKhoan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTaoTaiKhoan_ItemClick);
             // 
             // btnThoat
             // 

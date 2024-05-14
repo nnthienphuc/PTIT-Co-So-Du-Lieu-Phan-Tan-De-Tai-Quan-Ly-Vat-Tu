@@ -1,6 +1,6 @@
-﻿namespace QuanLyVatTu.ReportForm
+﻿namespace QuanLyVatTu.SubForm
 {
-    partial class frmDanhSachVatTu
+    partial class frmChonVatTu
     {
         /// <summary>
         /// Required designer variable.
@@ -29,68 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnXuatBan = new System.Windows.Forms.Button();
-            this.btnXemTruoc = new System.Windows.Forms.Button();
-            this.lblDanhSachThongTinVatTu = new System.Windows.Forms.Label();
             this.dataSet = new QuanLyVatTu.DataSet();
-            this.vattuBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsVatTu = new System.Windows.Forms.BindingSource(this.components);
             this.vattuTableAdapter = new QuanLyVatTu.DataSetTableAdapters.VattuTableAdapter();
             this.tableAdapterManager = new QuanLyVatTu.DataSetTableAdapters.TableAdapterManager();
-            this.vattuGridControl = new DevExpress.XtraGrid.GridControl();
+            this.gclVatTu = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTENVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOLUONGTON = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnChon = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsVatTu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gclVatTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnXuatBan
-            // 
-            this.btnXuatBan.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnXuatBan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatBan.Location = new System.Drawing.Point(409, 118);
-            this.btnXuatBan.Name = "btnXuatBan";
-            this.btnXuatBan.Size = new System.Drawing.Size(196, 39);
-            this.btnXuatBan.TabIndex = 7;
-            this.btnXuatBan.Text = "XUẤT BẢN";
-            this.btnXuatBan.UseVisualStyleBackColor = false;
-            this.btnXuatBan.Click += new System.EventHandler(this.btnXuatBan_Click);
-            // 
-            // btnXemTruoc
-            // 
-            this.btnXemTruoc.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnXemTruoc.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemTruoc.Location = new System.Drawing.Point(146, 118);
-            this.btnXemTruoc.Name = "btnXemTruoc";
-            this.btnXemTruoc.Size = new System.Drawing.Size(196, 39);
-            this.btnXemTruoc.TabIndex = 6;
-            this.btnXemTruoc.Text = "XEM TRƯỚC";
-            this.btnXemTruoc.UseVisualStyleBackColor = false;
-            this.btnXemTruoc.Click += new System.EventHandler(this.btnXemTruoc_Click);
-            // 
-            // lblDanhSachThongTinVatTu
-            // 
-            this.lblDanhSachThongTinVatTu.AutoSize = true;
-            this.lblDanhSachThongTinVatTu.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDanhSachThongTinVatTu.Location = new System.Drawing.Point(197, 59);
-            this.lblDanhSachThongTinVatTu.Name = "lblDanhSachThongTinVatTu";
-            this.lblDanhSachThongTinVatTu.Size = new System.Drawing.Size(367, 25);
-            this.lblDanhSachThongTinVatTu.TabIndex = 5;
-            this.lblDanhSachThongTinVatTu.Text = "DANH SÁCH THÔNG TIN VẬT TƯ";
             // 
             // dataSet
             // 
             this.dataSet.DataSetName = "DataSet";
             this.dataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // vattuBindingSource
+            // bdsVatTu
             // 
-            this.vattuBindingSource.DataMember = "Vattu";
-            this.vattuBindingSource.DataSource = this.dataSet;
+            this.bdsVatTu.DataMember = "Vattu";
+            this.bdsVatTu.DataSource = this.dataSet;
             // 
             // vattuTableAdapter
             // 
@@ -111,16 +79,16 @@
             this.tableAdapterManager.UpdateOrder = QuanLyVatTu.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VattuTableAdapter = this.vattuTableAdapter;
             // 
-            // vattuGridControl
+            // gclVatTu
             // 
-            this.vattuGridControl.DataSource = this.vattuBindingSource;
-            this.vattuGridControl.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.vattuGridControl.Location = new System.Drawing.Point(0, 163);
-            this.vattuGridControl.MainView = this.gridView1;
-            this.vattuGridControl.Name = "vattuGridControl";
-            this.vattuGridControl.Size = new System.Drawing.Size(801, 433);
-            this.vattuGridControl.TabIndex = 8;
-            this.vattuGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gclVatTu.DataSource = this.bdsVatTu;
+            this.gclVatTu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gclVatTu.Location = new System.Drawing.Point(0, 0);
+            this.gclVatTu.MainView = this.gridView1;
+            this.gclVatTu.Name = "gclVatTu";
+            this.gclVatTu.Size = new System.Drawing.Size(1127, 394);
+            this.gclVatTu.TabIndex = 1;
+            this.gclVatTu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -130,7 +98,7 @@
             this.colTENVT,
             this.colDVT,
             this.colSOLUONGTON});
-            this.gridView1.GridControl = this.vattuGridControl;
+            this.gridView1.GridControl = this.gclVatTu;
             this.gridView1.Name = "gridView1";
             // 
             // colMAVT
@@ -169,41 +137,76 @@
             this.colSOLUONGTON.Visible = true;
             this.colSOLUONGTON.VisibleIndex = 3;
             // 
-            // frmDanhSachVatTu
+            // panelControl2
+            // 
+            this.panelControl2.Controls.Add(this.btnThoat);
+            this.panelControl2.Controls.Add(this.btnChon);
+            this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelControl2.Location = new System.Drawing.Point(0, 394);
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(1127, 120);
+            this.panelControl2.TabIndex = 23;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Red;
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.btnThoat.ForeColor = System.Drawing.Color.White;
+            this.btnThoat.Location = new System.Drawing.Point(620, 41);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(126, 31);
+            this.btnThoat.TabIndex = 1;
+            this.btnThoat.Text = "THOÁT";
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnChon
+            // 
+            this.btnChon.BackColor = System.Drawing.Color.Blue;
+            this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
+            this.btnChon.ForeColor = System.Drawing.Color.White;
+            this.btnChon.Location = new System.Drawing.Point(325, 41);
+            this.btnChon.Name = "btnChon";
+            this.btnChon.Size = new System.Drawing.Size(126, 31);
+            this.btnChon.TabIndex = 0;
+            this.btnChon.Text = "CHỌN";
+            this.btnChon.UseVisualStyleBackColor = false;
+            this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
+            // 
+            // frmChonVatTu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 596);
-            this.Controls.Add(this.vattuGridControl);
-            this.Controls.Add(this.btnXuatBan);
-            this.Controls.Add(this.btnXemTruoc);
-            this.Controls.Add(this.lblDanhSachThongTinVatTu);
-            this.Name = "frmDanhSachVatTu";
-            this.Text = "frmDanhSachVatTu";
-            this.Load += new System.EventHandler(this.frmDanhSachVatTu_Load);
+            this.ClientSize = new System.Drawing.Size(1127, 514);
+            this.Controls.Add(this.panelControl2);
+            this.Controls.Add(this.gclVatTu);
+            this.Name = "frmChonVatTu";
+            this.Text = "frmChonVatTu";
+            this.Load += new System.EventHandler(this.frmChonVatTu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vattuGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsVatTu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gclVatTu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnXuatBan;
-        private System.Windows.Forms.Button btnXemTruoc;
-        private System.Windows.Forms.Label lblDanhSachThongTinVatTu;
         private DataSet dataSet;
-        private System.Windows.Forms.BindingSource vattuBindingSource;
+        private System.Windows.Forms.BindingSource bdsVatTu;
         private DataSetTableAdapters.VattuTableAdapter vattuTableAdapter;
         private DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraGrid.GridControl vattuGridControl;
+        private DevExpress.XtraGrid.GridControl gclVatTu;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
         private DevExpress.XtraGrid.Columns.GridColumn colTENVT;
         private DevExpress.XtraGrid.Columns.GridColumn colDVT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOLUONGTON;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private System.Windows.Forms.Button btnThoat;
+        private System.Windows.Forms.Button btnChon;
     }
 }

@@ -24,7 +24,6 @@ namespace QuanLyVatTu.ReportForm
             this.Validate();
             this.vattuBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dataSet);
-
         }
 
         private void frmDanhSachVatTu_Load(object sender, EventArgs e)
@@ -44,6 +43,33 @@ namespace QuanLyVatTu.ReportForm
         private void btnXuatBan_Click(object sender, EventArgs e)
         {
             rptDanhSachVatTu report = new rptDanhSachVatTu();
+            try
+            {
+                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf"))
+                {
+                    DialogResult dr = MessageBox.Show("File ReportDanhSachVatTu.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
+                        "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.Yes)
+                    {
+                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf");
+                        MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder ReportFiles",
+                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
+                }
+                else
+                {
+                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf");
+                    MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder ReportFiles",
+                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (IOException ex)
+            {
+                MessageBox.Show("Vui lòng đóng file ReportDanhSachVatTu.pdf",
+                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
         }
     }
 }
