@@ -108,6 +108,18 @@
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuNhap.Designer.cs">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPhieuXuat.Designer.cs">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -182,6 +194,24 @@
     <Compile Include="ReportForm\rptTongHopNhapXuat.Designer.cs">
       <DependentUpon>rptTongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="SubForm\frmChonChiTietDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmChonChiTietDonDatHang.Designer.cs">
+      <DependentUpon>frmChonChiTietDonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\frmChonDonDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmChonDonDatHang.Designer.cs">
+      <DependentUpon>frmChonDonDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubForm\frmChonKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubForm\frmChonKhoHang.Designer.cs">
+      <DependentUpon>frmChonKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubForm\frmChonNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuNhap.resx">
+      <DependentUpon>frmPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaoTaiKhoan.resx">
       <DependentUpon>frmTaoTaiKhoan.cs</DependentUpon>
@@ -260,6 +296,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\rptTongHopNhapXuat.resx">
       <DependentUpon>rptTongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmChonChiTietDonDatHang.resx">
+      <DependentUpon>frmChonChiTietDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmChonDonDatHang.resx">
+      <DependentUpon>frmChonDonDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubForm\frmChonKhoHang.resx">
+      <DependentUpon>frmChonKhoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SubForm\frmChonNhanVien.resx">
       <DependentUpon>frmChonNhanVien.cs</DependentUpon>

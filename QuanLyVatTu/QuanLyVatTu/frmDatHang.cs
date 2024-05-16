@@ -627,17 +627,10 @@ namespace QuanLyVatTu
             }
         }
 
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e) // btn Chọn Chế Độ
-        {
-
-            // nút đã xóa
-        }
-
         private void btnChonKhoHang_Click(object sender, EventArgs e)
         {
             // liên quan tới subform
-            frmDatHang form = new frmDatHang();
+            frmChonKhoHang form = new frmChonKhoHang();
             form.ShowDialog();
 
 
@@ -647,10 +640,9 @@ namespace QuanLyVatTu
 
         private void btnChonVatTu_Click(object sender, EventArgs e)
         {
-            //liên quan subform
-            //FormChonVatTu form = new FormChonVatTu();
-            //form.ShowDialog();
-            //this.txtMaVatTu.Text = Program.maVatTuDuocChon;
+            frmChonVatTu form = new frmChonVatTu();
+            form.ShowDialog();
+            this.txtMaVatTu.Text = Program.maVatTuDuocChon;
         }
         /**
          * Step 1: lấy chế độ đang sử dụng và đặt dangThemMoi = true để phục vụ điều kiện tạo câu truy

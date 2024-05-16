@@ -83,10 +83,12 @@
             // 
             this.gclVatTu.DataSource = this.bdsVatTu;
             this.gclVatTu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gclVatTu.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gclVatTu.Location = new System.Drawing.Point(0, 0);
             this.gclVatTu.MainView = this.gridView1;
+            this.gclVatTu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gclVatTu.Name = "gclVatTu";
-            this.gclVatTu.Size = new System.Drawing.Size(1127, 394);
+            this.gclVatTu.Size = new System.Drawing.Size(1029, 324);
             this.gclVatTu.TabIndex = 1;
             this.gclVatTu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -98,53 +100,64 @@
             this.colTENVT,
             this.colDVT,
             this.colSOLUONGTON});
+            this.gridView1.DetailHeight = 538;
             this.gridView1.GridControl = this.gclVatTu;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 1200;
             // 
             // colMAVT
             // 
             this.colMAVT.Caption = "Mã Vật Tư";
             this.colMAVT.FieldName = "MAVT";
+            this.colMAVT.MinWidth = 30;
             this.colMAVT.Name = "colMAVT";
             this.colMAVT.OptionsColumn.AllowEdit = false;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 0;
+            this.colMAVT.Width = 112;
             // 
             // colTENVT
             // 
             this.colTENVT.Caption = "Tên Vật Tư";
             this.colTENVT.FieldName = "TENVT";
+            this.colTENVT.MinWidth = 30;
             this.colTENVT.Name = "colTENVT";
             this.colTENVT.OptionsColumn.AllowEdit = false;
             this.colTENVT.Visible = true;
             this.colTENVT.VisibleIndex = 1;
+            this.colTENVT.Width = 112;
             // 
             // colDVT
             // 
             this.colDVT.Caption = "Đơn Vị Tính";
             this.colDVT.FieldName = "DVT";
+            this.colDVT.MinWidth = 30;
             this.colDVT.Name = "colDVT";
             this.colDVT.OptionsColumn.AllowEdit = false;
             this.colDVT.Visible = true;
             this.colDVT.VisibleIndex = 2;
+            this.colDVT.Width = 112;
             // 
             // colSOLUONGTON
             // 
             this.colSOLUONGTON.Caption = "Số Lượng Tồn";
             this.colSOLUONGTON.FieldName = "SOLUONGTON";
+            this.colSOLUONGTON.MinWidth = 30;
             this.colSOLUONGTON.Name = "colSOLUONGTON";
             this.colSOLUONGTON.OptionsColumn.AllowEdit = false;
             this.colSOLUONGTON.Visible = true;
             this.colSOLUONGTON.VisibleIndex = 3;
+            this.colSOLUONGTON.Width = 112;
             // 
             // panelControl2
             // 
             this.panelControl2.Controls.Add(this.btnThoat);
             this.panelControl2.Controls.Add(this.btnChon);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl2.Location = new System.Drawing.Point(0, 394);
+            this.panelControl2.Location = new System.Drawing.Point(0, 324);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1127, 120);
+            this.panelControl2.Size = new System.Drawing.Size(1029, 176);
             this.panelControl2.TabIndex = 23;
             // 
             // btnThoat
@@ -152,9 +165,10 @@
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(620, 41);
+            this.btnThoat.Location = new System.Drawing.Point(562, 52);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(126, 31);
+            this.btnThoat.Size = new System.Drawing.Size(189, 48);
             this.btnThoat.TabIndex = 1;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -165,9 +179,10 @@
             this.btnChon.BackColor = System.Drawing.Color.Blue;
             this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.btnChon.ForeColor = System.Drawing.Color.White;
-            this.btnChon.Location = new System.Drawing.Point(325, 41);
+            this.btnChon.Location = new System.Drawing.Point(224, 52);
+            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(126, 31);
+            this.btnChon.Size = new System.Drawing.Size(189, 48);
             this.btnChon.TabIndex = 0;
             this.btnChon.Text = "CHỌN";
             this.btnChon.UseVisualStyleBackColor = false;
@@ -175,11 +190,12 @@
             // 
             // frmChonVatTu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 514);
+            this.ClientSize = new System.Drawing.Size(1029, 500);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.gclVatTu);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmChonVatTu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHỌN VẬT TƯ";

@@ -373,7 +373,6 @@
             this.btnChonChe.Id = 6;
             this.btnChonChe.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChonChe.ImageOptions.SvgImage")));
             this.btnChonChe.Name = "btnChonChe";
-            this.btnChonChe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // panelControl1
             // 
