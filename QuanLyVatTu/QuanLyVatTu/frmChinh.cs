@@ -222,5 +222,80 @@ namespace QuanLyVatTu
                 form.Show();
             }
         }
+
+        private void btnPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(gclChiTietPhieuNhap));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                gclChiTietPhieuNhap form = new gclChiTietPhieuNhap();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnPhieuXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmPhieuXuat));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmPhieuXuat form = new frmPhieuXuat();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnChiTietNhapXuat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmChiTietSoLuongTriGiaHangHoaNhapXuat));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmChiTietSoLuongTriGiaHangHoaNhapXuat form = new frmChiTietSoLuongTriGiaHangHoaNhapXuat();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnDonHangKhongPhieuNhap_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmDonHangKhongPhieuNhap));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmDonHangKhongPhieuNhap form = new frmDonHangKhongPhieuNhap();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnHoatDongNhanVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(frmHoatDongNhanVien));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                frmHoatDongNhanVien form = new frmHoatDongNhanVien();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }

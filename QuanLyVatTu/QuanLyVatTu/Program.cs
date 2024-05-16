@@ -80,20 +80,20 @@ namespace QuanLyVatTu
         public static frmVatTu frmVatTu;
         public static frmKho frmKho;
 
-        //public static frmDonDatHang frmDonDatHang;
-        //public static frmChonKhoHang frmChonKhoHang;
-        //public static frmPhieuNhap frmPhieuNhap;
+        public static frmDatHang frmDatHang;
+        public static frmChonKhoHang frmChonKhoHang;
+        public static gclChiTietPhieuNhap gclChiTietPhieuNhap;
 
-        //public static frmChonDonDatHang frmChonDonDatHang;
-        //public static frmChonChiTietDonHang frmChonChiTietDonHang;
-        //public static frmPhieuXuat frmPhieuXuat;
+        public static frmChonDonDatHang frmChonDonDatHang;
+        public static frmChonChiTietDonDatHang frmChonChiTietDonDatHang;
+        public static frmPhieuXuat frmPhieuXuat;
 
         public static frmDanhSachNhanVien frmDanhSachNhanVien;
         public static frmDanhSachVatTu frmDanhSachVatTu;
-        //public static frmDonHangKhongPhieuNhap frmDonHangKhongPhieuNhap;
+        public static frmDonHangKhongPhieuNhap frmDonHangKhongPhieuNhap;
 
-        //public static frmChiTietSoLuongTriGiaHangHoaNhapXuat frmChiTietSoLuongTriGiaHangHoaNhapXuat;
-        //public static frmHoatDongNhanVien frmHoatDongNhanVien;
+        public static frmChiTietSoLuongTriGiaHangHoaNhapXuat frmChiTietSoLuongTriGiaHangHoaNhapXuat;
+        public static frmHoatDongNhanVien frmHoatDongNhanVien;
         public static frmTongHopNhapXuat frmTongHopNhapXuat;
 
         // Kết nối tới server phân mảnh

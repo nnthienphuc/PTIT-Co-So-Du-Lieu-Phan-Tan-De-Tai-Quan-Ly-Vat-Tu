@@ -152,3 +152,9 @@ D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVa
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptTongHopNhapXuat.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonNhanVien.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonVatTu.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.gclChiTietPhieuNhap.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.frmPhieuXuat.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonChiTietDonDatHang.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonDonDatHang.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonKhoHang.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptHoatDongNhanVien1.resources

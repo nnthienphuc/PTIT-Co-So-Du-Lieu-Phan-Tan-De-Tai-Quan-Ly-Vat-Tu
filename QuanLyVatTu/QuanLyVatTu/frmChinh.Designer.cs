@@ -145,6 +145,7 @@
             this.btnPhieuNhap.Id = 12;
             this.btnPhieuNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhieuNhap.ImageOptions.SvgImage")));
             this.btnPhieuNhap.Name = "btnPhieuNhap";
+            this.btnPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuNhap_ItemClick);
             // 
             // btnPhieuXuat
             // 
@@ -152,6 +153,7 @@
             this.btnPhieuXuat.Id = 13;
             this.btnPhieuXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhieuXuat.ImageOptions.SvgImage")));
             this.btnPhieuXuat.Name = "btnPhieuXuat";
+            this.btnPhieuXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhieuXuat_ItemClick);
             // 
             // btnDSNhanVien
             // 
@@ -175,6 +177,7 @@
             this.btnChiTietNhapXuat.Id = 7;
             this.btnChiTietNhapXuat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChiTietNhapXuat.ImageOptions.SvgImage")));
             this.btnChiTietNhapXuat.Name = "btnChiTietNhapXuat";
+            this.btnChiTietNhapXuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChiTietNhapXuat_ItemClick);
             // 
             // btnDonHangKhongPhieuNhap
             // 
@@ -182,6 +185,7 @@
             this.btnDonHangKhongPhieuNhap.Id = 8;
             this.btnDonHangKhongPhieuNhap.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDonHangKhongPhieuNhap.ImageOptions.SvgImage")));
             this.btnDonHangKhongPhieuNhap.Name = "btnDonHangKhongPhieuNhap";
+            this.btnDonHangKhongPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDonHangKhongPhieuNhap_ItemClick);
             // 
             // btnHoatDongNhanVien
             // 
@@ -189,6 +193,7 @@
             this.btnHoatDongNhanVien.Id = 9;
             this.btnHoatDongNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoatDongNhanVien.ImageOptions.SvgImage")));
             this.btnHoatDongNhanVien.Name = "btnHoatDongNhanVien";
+            this.btnHoatDongNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoatDongNhanVien_ItemClick);
             // 
             // btnTongHopNhapXuat
             // 

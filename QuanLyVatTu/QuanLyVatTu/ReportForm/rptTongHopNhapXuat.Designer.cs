@@ -351,6 +351,7 @@
             this.tableCell7.StyleName = "DetailData1";
             this.tableCell7.StylePriority.UseTextAlignment = false;
             this.tableCell7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell7.TextFormatString = "{0:#,#}";
             this.tableCell7.Weight = 0.16596265728964191D;
             // 
             // tableCell8
@@ -371,6 +372,7 @@
             this.tableCell9.StyleName = "DetailData1";
             this.tableCell9.StylePriority.UseTextAlignment = false;
             this.tableCell9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell9.TextFormatString = "{0:#,#}";
             this.tableCell9.Weight = 0.16141477155913578D;
             // 
             // tableCell10
@@ -484,7 +486,7 @@
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(252.0833F, 23F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(209.5454F, 23F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.StylePriority.UseTextAlignment = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;

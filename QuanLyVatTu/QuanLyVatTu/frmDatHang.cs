@@ -744,7 +744,8 @@ namespace QuanLyVatTu
                 undoList.Pop();
             }
         }
-        private void cmbCHINHANH_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
             /*
             /*Neu combobox khong co so lieu thi ket thuc luon*/
@@ -782,7 +783,5 @@ namespace QuanLyVatTu
                 this.PhieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
             }
         }
-
-
     }
 }

@@ -55,6 +55,7 @@
             this.cboChiNhanh.Name = "cboChiNhanh";
             this.cboChiNhanh.Size = new System.Drawing.Size(342, 28);
             this.cboChiNhanh.TabIndex = 4;
+            this.cboChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboChiNhanh_SelectedIndexChanged);
             // 
             // lblChiNhanh
             // 
@@ -76,6 +77,7 @@
             this.btnXuatBan.TabIndex = 9;
             this.btnXuatBan.Text = "XUẤT BẢN";
             this.btnXuatBan.UseVisualStyleBackColor = false;
+            this.btnXuatBan.Click += new System.EventHandler(this.btnXuatBan_Click);
             // 
             // btnXemTruoc
             // 
@@ -87,6 +89,7 @@
             this.btnXemTruoc.TabIndex = 8;
             this.btnXemTruoc.Text = "XEM TRƯỚC";
             this.btnXemTruoc.UseVisualStyleBackColor = false;
+            this.btnXemTruoc.Click += new System.EventHandler(this.btnXemTruoc_Click);
             // 
             // frmDonHangKhongPhieuNhap
             // 
@@ -101,6 +104,7 @@
             this.Name = "frmDonHangKhongPhieuNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐƠN HÀNG KHÔNG PHIẾU NHẬP";
+            this.Load += new System.EventHandler(this.frmDonHangKhongPhieuNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

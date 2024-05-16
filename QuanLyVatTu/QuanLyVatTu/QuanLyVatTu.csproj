@@ -188,6 +188,12 @@
     <Compile Include="ReportForm\rptDonHangKhongPhieuNhap.Designer.cs">
       <DependentUpon>rptDonHangKhongPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportForm\rptHoatDongNhanVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportForm\rptHoatDongNhanVien.Designer.cs">
+      <DependentUpon>rptHoatDongNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm\rptTongHopNhapXuat.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -293,6 +299,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\rptDonHangKhongPhieuNhap.resx">
       <DependentUpon>rptDonHangKhongPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm\rptHoatDongNhanVien.resx">
+      <DependentUpon>rptHoatDongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportForm\rptTongHopNhapXuat.resx">
       <DependentUpon>rptTongHopNhapXuat.cs</DependentUpon>

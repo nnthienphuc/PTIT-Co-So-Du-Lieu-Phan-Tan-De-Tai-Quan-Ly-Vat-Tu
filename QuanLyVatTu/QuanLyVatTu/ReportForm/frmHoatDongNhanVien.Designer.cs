@@ -32,8 +32,6 @@
             this.lblLoaiPhieu = new System.Windows.Forms.Label();
             this.lblMaNV = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
-            this.lblCMND = new System.Windows.Forms.Label();
-            this.lblDiaChi = new System.Windows.Forms.Label();
             this.dteToiNgay = new DevExpress.XtraEditors.DateEdit();
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.lblToiNgay = new System.Windows.Forms.Label();
@@ -41,13 +39,9 @@
             this.cboLoaiPhieu = new System.Windows.Forms.ComboBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
-            this.txtCMND = new System.Windows.Forms.TextBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.btnChonNhanVien = new System.Windows.Forms.Button();
             this.btnXuatBan = new System.Windows.Forms.Button();
             this.btnXemTruoc = new System.Windows.Forms.Button();
-            this.txtNgaySinh = new System.Windows.Forms.TextBox();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).BeginInit();
@@ -98,32 +92,10 @@
             this.lblHoTen.TabIndex = 3;
             this.lblHoTen.Text = "Họ Tên";
             // 
-            // lblCMND
-            // 
-            this.lblCMND.AutoSize = true;
-            this.lblCMND.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCMND.Location = new System.Drawing.Point(435, 271);
-            this.lblCMND.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblCMND.Name = "lblCMND";
-            this.lblCMND.Size = new System.Drawing.Size(91, 21);
-            this.lblCMND.TabIndex = 4;
-            this.lblCMND.Text = "Số CMND";
-            // 
-            // lblDiaChi
-            // 
-            this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaChi.Location = new System.Drawing.Point(435, 336);
-            this.lblDiaChi.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblDiaChi.Name = "lblDiaChi";
-            this.lblDiaChi.Size = new System.Drawing.Size(69, 21);
-            this.lblDiaChi.TabIndex = 7;
-            this.lblDiaChi.Text = "Địa Chỉ";
-            // 
             // dteToiNgay
             // 
             this.dteToiNgay.EditValue = null;
-            this.dteToiNgay.Location = new System.Drawing.Point(544, 396);
+            this.dteToiNgay.Location = new System.Drawing.Point(548, 333);
             this.dteToiNgay.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dteToiNgay.Name = "dteToiNgay";
             this.dteToiNgay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
@@ -139,7 +111,7 @@
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
-            this.dteTuNgay.Location = new System.Drawing.Point(194, 396);
+            this.dteTuNgay.Location = new System.Drawing.Point(194, 333);
             this.dteTuNgay.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dteTuNgay.Name = "dteTuNgay";
             this.dteTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
@@ -156,7 +128,7 @@
             // 
             this.lblToiNgay.AutoSize = true;
             this.lblToiNgay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToiNgay.Location = new System.Drawing.Point(435, 403);
+            this.lblToiNgay.Location = new System.Drawing.Point(442, 336);
             this.lblToiNgay.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblToiNgay.Name = "lblToiNgay";
             this.lblToiNgay.Size = new System.Drawing.Size(80, 21);
@@ -168,7 +140,7 @@
             // 
             this.lblTuNgay.AutoSize = true;
             this.lblTuNgay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuNgay.Location = new System.Drawing.Point(43, 403);
+            this.lblTuNgay.Location = new System.Drawing.Point(43, 340);
             this.lblTuNgay.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTuNgay.Name = "lblTuNgay";
             this.lblTuNgay.Size = new System.Drawing.Size(76, 21);
@@ -200,22 +172,6 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(199, 29);
             this.txtHoTen.TabIndex = 25;
-            // 
-            // txtCMND
-            // 
-            this.txtCMND.Location = new System.Drawing.Point(544, 263);
-            this.txtCMND.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Size = new System.Drawing.Size(199, 29);
-            this.txtCMND.TabIndex = 26;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(544, 333);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(199, 29);
-            this.txtDiaChi.TabIndex = 27;
             // 
             // btnChonNhanVien
             // 
@@ -251,37 +207,14 @@
             this.btnXemTruoc.Text = "XEM TRƯỚC";
             this.btnXemTruoc.UseVisualStyleBackColor = false;
             // 
-            // txtNgaySinh
-            // 
-            this.txtNgaySinh.Location = new System.Drawing.Point(197, 328);
-            this.txtNgaySinh.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.txtNgaySinh.Name = "txtNgaySinh";
-            this.txtNgaySinh.Size = new System.Drawing.Size(199, 29);
-            this.txtNgaySinh.TabIndex = 32;
-            // 
-            // lblNgaySinh
-            // 
-            this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgaySinh.Location = new System.Drawing.Point(43, 336);
-            this.lblNgaySinh.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(87, 21);
-            this.lblNgaySinh.TabIndex = 31;
-            this.lblNgaySinh.Text = "Ngày Sinh";
-            // 
             // frmHoatDongNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 596);
-            this.Controls.Add(this.txtNgaySinh);
-            this.Controls.Add(this.lblNgaySinh);
             this.Controls.Add(this.btnXuatBan);
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.btnChonNhanVien);
-            this.Controls.Add(this.txtDiaChi);
-            this.Controls.Add(this.txtCMND);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.cboLoaiPhieu);
@@ -289,8 +222,6 @@
             this.Controls.Add(this.dteTuNgay);
             this.Controls.Add(this.lblToiNgay);
             this.Controls.Add(this.lblTuNgay);
-            this.Controls.Add(this.lblDiaChi);
-            this.Controls.Add(this.lblCMND);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.lblMaNV);
             this.Controls.Add(this.lblLoaiPhieu);
@@ -315,8 +246,6 @@
         private System.Windows.Forms.Label lblLoaiPhieu;
         private System.Windows.Forms.Label lblMaNV;
         private System.Windows.Forms.Label lblHoTen;
-        private System.Windows.Forms.Label lblCMND;
-        private System.Windows.Forms.Label lblDiaChi;
         private DevExpress.XtraEditors.DateEdit dteToiNgay;
         private DevExpress.XtraEditors.DateEdit dteTuNgay;
         private System.Windows.Forms.Label lblToiNgay;
@@ -324,12 +253,8 @@
         private System.Windows.Forms.ComboBox cboLoaiPhieu;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtHoTen;
-        private System.Windows.Forms.TextBox txtCMND;
-        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Button btnChonNhanVien;
         private System.Windows.Forms.Button btnXuatBan;
         private System.Windows.Forms.Button btnXemTruoc;
-        private System.Windows.Forms.TextBox txtNgaySinh;
-        private System.Windows.Forms.Label lblNgaySinh;
     }
 }

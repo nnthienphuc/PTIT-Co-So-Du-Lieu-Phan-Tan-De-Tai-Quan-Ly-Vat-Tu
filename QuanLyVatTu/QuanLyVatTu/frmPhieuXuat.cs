@@ -161,41 +161,6 @@ namespace QuanLyVatTu
 
             }
         }
-        private void cmbCHINHANH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            /*Neu combobox khong co so lieu thi ket thuc luon*/
-            if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
-
-            Program.serverName = cboChiNhanh.SelectedValue.ToString();
-
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
-            if (cboChiNhanh.SelectedIndex != Program.brand)
-            {
-                Program.loginName = Program.remoteLogin;
-                Program.loginPassword = Program.remotePassword;
-            }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
-            else
-            {
-                Program.loginName = Program.currentLogin;
-                Program.loginPassword = Program.currentPassword;
-            }
-
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
-            }
-            else
-            {
-                this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.phieuXuatTableAdapter.Fill(this.dataSet.PhieuXuat);
-
-                this.chiTietPhieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.chiTietPhieuXuatTableAdapter.Fill(this.dataSet.CTPX);
-            }
-        }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -799,6 +764,40 @@ namespace QuanLyVatTu
             {
                 // xoa cau truy van hoan tac di
                 undoList.Pop();
+            }
+        }
+
+        private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+
+            Program.serverName = cboChiNhanh.SelectedValue.ToString();
+
+            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
+            if (cboChiNhanh.SelectedIndex != Program.brand)
+            {
+                Program.loginName = Program.remoteLogin;
+                Program.loginPassword = Program.remotePassword;
+            }
+            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
+            else
+            {
+                Program.loginName = Program.currentLogin;
+                Program.loginPassword = Program.currentPassword;
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.phieuXuatTableAdapter.Fill(this.dataSet.PhieuXuat);
+
+                this.chiTietPhieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.chiTietPhieuXuatTableAdapter.Fill(this.dataSet.CTPX);
             }
         }
     }
