@@ -241,6 +241,8 @@
             this.colTrangThaiXoa});
             this.gridView1.GridControl = this.gclNhanVien;
             this.gridView1.Name = "gridView1";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colMANV
             // 
@@ -268,6 +270,9 @@
             this.colTEN.FieldName = "TEN";
             this.colTEN.Name = "colTEN";
             this.colTEN.OptionsColumn.AllowEdit = false;
+            this.colTEN.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.True;
+            this.colTEN.OptionsFilter.FilterBySortField = DevExpress.Utils.DefaultBoolean.True;
+            this.colTEN.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.colTEN.Visible = true;
             this.colTEN.VisibleIndex = 2;
             this.colTEN.Width = 124;
