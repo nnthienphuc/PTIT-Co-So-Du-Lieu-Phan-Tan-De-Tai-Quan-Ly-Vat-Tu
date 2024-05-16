@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\quanlyvattu\\frmdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\subform\\frmchonnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\subform\\frmchonnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\frmdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmdathang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\frmkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\quanlyvattu\\frmkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmkho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 52,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,7 +54,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "frmChonNhanVien.cs [Design]",
+              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\SubForm\\frmChonNhanVien.cs",
+              "RelativeDocumentMoniker": "QuanLyVatTu\\SubForm\\frmChonNhanVien.cs",
+              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\SubForm\\frmChonNhanVien.cs [Design]",
+              "RelativeToolTip": "QuanLyVatTu\\SubForm\\frmChonNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-16T04:25:31.024Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "frmKho.cs",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmKho.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\frmKho.cs",
@@ -58,49 +74,46 @@
               "RelativeToolTip": "QuanLyVatTu\\frmKho.cs",
               "ViewState": "AQIAACYAAAAAAAAAAAApwDwBAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T10:37:13.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-15T10:37:13.932Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmKho.cs [Design]",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmKho.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\frmKho.cs",
               "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmKho.cs [Design]",
               "RelativeToolTip": "QuanLyVatTu\\frmKho.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T10:37:11.94Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-15T10:37:11.94Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmDatHang.cs",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDatHang.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\frmDatHang.cs",
               "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDatHang.cs",
               "RelativeToolTip": "QuanLyVatTu\\frmDatHang.cs",
-              "ViewState": "AQIAAA0DAAAAAAAAAAAAAAwDAAAQAAAA",
+              "ViewState": "AQIAAK0AAAAAAAAAAAAkwOwAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-15T10:32:47.278Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmDatHang.cs [Design]",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDatHang.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\frmDatHang.cs",
               "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDatHang.cs [Design]",
               "RelativeToolTip": "QuanLyVatTu\\frmDatHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-15T10:32:42.429Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-05-15T10:32:42.429Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\Program.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\Program.cs",
