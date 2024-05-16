@@ -106,7 +106,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteToiNgay.Size = new System.Drawing.Size(202, 28);
             this.dteToiNgay.TabIndex = 22;
-            this.dteToiNgay.EditValueChanged += new System.EventHandler(this.dteToiNgay_EditValueChanged);
             // 
             // dteTuNgay
             // 
@@ -122,7 +121,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Size = new System.Drawing.Size(202, 28);
             this.dteTuNgay.TabIndex = 21;
-            this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
             // 
             // lblToiNgay
             // 
@@ -134,7 +132,6 @@
             this.lblToiNgay.Size = new System.Drawing.Size(80, 21);
             this.lblToiNgay.TabIndex = 20;
             this.lblToiNgay.Text = "Tới Ngày";
-            this.lblToiNgay.Click += new System.EventHandler(this.lblToiNgay_Click);
             // 
             // lblTuNgay
             // 
@@ -146,7 +143,6 @@
             this.lblTuNgay.Size = new System.Drawing.Size(76, 21);
             this.lblTuNgay.TabIndex = 19;
             this.lblTuNgay.Text = "Từ Ngày";
-            this.lblTuNgay.Click += new System.EventHandler(this.lblTuNgay_Click);
             // 
             // cboLoaiPhieu
             // 
@@ -175,13 +171,14 @@
             // 
             // btnChonNhanVien
             // 
-            this.btnChonNhanVien.Location = new System.Drawing.Point(473, 138);
+            this.btnChonNhanVien.Location = new System.Drawing.Point(504, 195);
             this.btnChonNhanVien.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnChonNhanVien.Name = "btnChonNhanVien";
             this.btnChonNhanVien.Size = new System.Drawing.Size(154, 55);
             this.btnChonNhanVien.TabIndex = 28;
             this.btnChonNhanVien.Text = "Chọn Nhân Viên";
             this.btnChonNhanVien.UseVisualStyleBackColor = true;
+            this.btnChonNhanVien.Click += new System.EventHandler(this.btnChonNhanVien_Click);
             // 
             // btnXuatBan
             // 
@@ -194,6 +191,7 @@
             this.btnXuatBan.TabIndex = 30;
             this.btnXuatBan.Text = "XUẤT BẢN";
             this.btnXuatBan.UseVisualStyleBackColor = false;
+            this.btnXuatBan.Click += new System.EventHandler(this.btnXuatBan_Click);
             // 
             // btnXemTruoc
             // 
@@ -206,6 +204,7 @@
             this.btnXemTruoc.TabIndex = 29;
             this.btnXemTruoc.Text = "XEM TRƯỚC";
             this.btnXemTruoc.UseVisualStyleBackColor = false;
+            this.btnXemTruoc.Click += new System.EventHandler(this.btnXemTruoc_Click);
             // 
             // frmHoatDongNhanVien
             // 
@@ -231,6 +230,7 @@
             this.Name = "frmHoatDongNhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HOẠT ĐỘNG NHÂN VIÊN";
+            this.Load += new System.EventHandler(this.frmHoatDongNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();

@@ -131,7 +131,7 @@ namespace QuanLyVatTu.ReportForm
                     if (dr == DialogResult.Yes)
                     {
                         report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf");
-                        MessageBox.Show("File ReportDSNhanVien.pdf đã được ghi thành công tại tại folder ReportFiles",
+                        MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf đã được ghi thành công tại tại folder ReportFiles",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
