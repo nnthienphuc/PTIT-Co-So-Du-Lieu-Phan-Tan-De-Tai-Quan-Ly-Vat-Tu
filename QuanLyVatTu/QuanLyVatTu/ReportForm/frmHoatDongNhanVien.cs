@@ -1,4 +1,5 @@
-﻿using QuanLyVatTu.SubForm;
+﻿using DevExpress.XtraReports.UI;
+using QuanLyVatTu.SubForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,13 +26,13 @@ namespace QuanLyVatTu.ReportForm
             string loaiPhieu = (cboLoaiPhieu.SelectedItem.ToString() == "NHAP") ? "NHAP" : "XUAT";
             DateTime fromDate = dteTuNgay.DateTime;
             DateTime toDate = dteToiNgay.DateTime;
-            rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, loaiPhieu, fromDate, toDate);
-            /*GAN TEN CHI NHANH CHO BAO CAO*/
-            report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
-            report.txtMaNhanVien.Text = Program.maNhanVienDuocChon;
-            report.txtHoTen.Text = Program.hoTen;
+            rptHoatDongNhanVien1 report = new rptHoatDongNhanVien1(maNhanVien, loaiPhieu, fromDate, toDate);
+            report.txtHoTenNV.Text = Program.hoTen;
             report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-            report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
+            report.txtDenNgay.Text = dteToiNgay.EditValue.ToString();
+            report.txtNgayLapBaoCao.Text = toDate.ToString();
+            ReportPrintTool printTool = new ReportPrintTool(report);
+            printTool.ShowPreviewDialog();
         }
 
         private void btnChonNhanVien_Click(object sender, EventArgs e)
@@ -60,13 +61,11 @@ namespace QuanLyVatTu.ReportForm
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
 
-                rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, loaiPhieu, fromDate, toDate);
-
-                report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
-                report.txtMaNhanVien.Text = Program.maNhanVienDuocChon;
-                report.txtHoTen.Text = Program.hoTen;
+                rptHoatDongNhanVien1 report = new rptHoatDongNhanVien1(maNhanVien, loaiPhieu, fromDate, toDate);
+                report.txtHoTenNV.Text = Program.hoTen;
                 report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-                report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
+                report.txtDenNgay.Text = dteToiNgay.EditValue.ToString();
+                report.txtNgayLapBaoCao.Text = toDate.ToString();
 
                 if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf"))
                 {

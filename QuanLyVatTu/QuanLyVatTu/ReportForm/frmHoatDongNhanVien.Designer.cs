@@ -146,7 +146,11 @@
             // 
             // cboLoaiPhieu
             // 
+            this.cboLoaiPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLoaiPhieu.FormattingEnabled = true;
+            this.cboLoaiPhieu.Items.AddRange(new object[] {
+            "NHAP",
+            "XUAT"});
             this.cboLoaiPhieu.Location = new System.Drawing.Point(197, 130);
             this.cboLoaiPhieu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.cboLoaiPhieu.Name = "cboLoaiPhieu";
@@ -155,6 +159,7 @@
             // 
             // txtMaNV
             // 
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(197, 195);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtMaNV.Name = "txtMaNV";
@@ -163,6 +168,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.Enabled = false;
             this.txtHoTen.Location = new System.Drawing.Point(197, 263);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtHoTen.Name = "txtHoTen";
