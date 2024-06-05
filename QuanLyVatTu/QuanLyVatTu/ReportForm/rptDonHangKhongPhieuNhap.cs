@@ -11,6 +11,8 @@ namespace QuanLyVatTu.ReportForm
         public rptDonHangKhongPhieuNhap()
         {
             InitializeComponent();
+            this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
+            this.sqlDataSource1.Fill();
         }
 
     }

@@ -878,5 +878,10 @@ namespace QuanLyVatTu
                 this.phieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
             }
         }
+
+        private void gcChiTietPhieuNhap_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

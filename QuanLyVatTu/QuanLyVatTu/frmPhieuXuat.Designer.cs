@@ -392,7 +392,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 45);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1530, 59);
+            this.panelControl1.Size = new System.Drawing.Size(1530, 38);
             this.panelControl1.TabIndex = 8;
             // 
             // cboChiNhanh
@@ -451,11 +451,11 @@
             // 
             this.gcPhieuXuat.DataSource = this.bdsPhieuXuat;
             this.gcPhieuXuat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcPhieuXuat.Location = new System.Drawing.Point(0, 104);
+            this.gcPhieuXuat.Location = new System.Drawing.Point(0, 83);
             this.gcPhieuXuat.MainView = this.gridView1;
             this.gcPhieuXuat.MenuManager = this.barManager1;
             this.gcPhieuXuat.Name = "gcPhieuXuat";
-            this.gcPhieuXuat.Size = new System.Drawing.Size(1530, 220);
+            this.gcPhieuXuat.Size = new System.Drawing.Size(1530, 167);
             this.gcPhieuXuat.TabIndex = 9;
             this.gcPhieuXuat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -476,6 +476,7 @@
             this.colMAPX.FieldName = "MAPX";
             this.colMAPX.MinWidth = 30;
             this.colMAPX.Name = "colMAPX";
+            this.colMAPX.OptionsColumn.AllowEdit = false;
             this.colMAPX.Visible = true;
             this.colMAPX.VisibleIndex = 0;
             this.colMAPX.Width = 112;
@@ -485,6 +486,7 @@
             this.colNGAY.FieldName = "NGAY";
             this.colNGAY.MinWidth = 30;
             this.colNGAY.Name = "colNGAY";
+            this.colNGAY.OptionsColumn.AllowEdit = false;
             this.colNGAY.Visible = true;
             this.colNGAY.VisibleIndex = 1;
             this.colNGAY.Width = 112;
@@ -494,6 +496,7 @@
             this.colHOTENKH.FieldName = "HOTENKH";
             this.colHOTENKH.MinWidth = 30;
             this.colHOTENKH.Name = "colHOTENKH";
+            this.colHOTENKH.OptionsColumn.AllowEdit = false;
             this.colHOTENKH.Visible = true;
             this.colHOTENKH.VisibleIndex = 2;
             this.colHOTENKH.Width = 112;
@@ -503,6 +506,7 @@
             this.colMANV.FieldName = "MANV";
             this.colMANV.MinWidth = 30;
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
             this.colMANV.Width = 112;
@@ -512,6 +516,7 @@
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.MinWidth = 30;
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.AllowEdit = false;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
             this.colMAKHO.Width = 112;
@@ -532,6 +537,7 @@
             this.gclChiTietPhieuXuat.TabIndex = 9;
             this.gclChiTietPhieuXuat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
+            this.gclChiTietPhieuXuat.Click += new System.EventHandler(this.gclChiTietPhieuXuat_Click);
             // 
             // gridView2
             // 
@@ -548,6 +554,7 @@
             this.colMAPX1.FieldName = "MAPX";
             this.colMAPX1.MinWidth = 30;
             this.colMAPX1.Name = "colMAPX1";
+            this.colMAPX1.OptionsColumn.AllowEdit = false;
             this.colMAPX1.Visible = true;
             this.colMAPX1.VisibleIndex = 0;
             this.colMAPX1.Width = 112;
@@ -557,6 +564,7 @@
             this.colMAVT.FieldName = "MAVT";
             this.colMAVT.MinWidth = 30;
             this.colMAVT.Name = "colMAVT";
+            this.colMAVT.OptionsColumn.AllowEdit = false;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 1;
             this.colMAVT.Width = 112;
@@ -566,6 +574,7 @@
             this.colSOLUONG.FieldName = "SOLUONG";
             this.colSOLUONG.MinWidth = 30;
             this.colSOLUONG.Name = "colSOLUONG";
+            this.colSOLUONG.OptionsColumn.AllowEdit = false;
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 2;
             this.colSOLUONG.Width = 112;
@@ -575,6 +584,7 @@
             this.colDONGIA.FieldName = "DONGIA";
             this.colDONGIA.MinWidth = 30;
             this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.OptionsColumn.AllowEdit = false;
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
             this.colDONGIA.Width = 112;
@@ -599,9 +609,9 @@
             this.gbxPhieuXuat.Controls.Add(this.txtNgay);
             this.gbxPhieuXuat.Controls.Add(lblMaPhieuXuat);
             this.gbxPhieuXuat.Controls.Add(this.txtMaPhieuXuat);
-            this.gbxPhieuXuat.Location = new System.Drawing.Point(0, 340);
+            this.gbxPhieuXuat.Location = new System.Drawing.Point(0, 302);
             this.gbxPhieuXuat.Name = "gbxPhieuXuat";
-            this.gbxPhieuXuat.Size = new System.Drawing.Size(991, 324);
+            this.gbxPhieuXuat.Size = new System.Drawing.Size(834, 362);
             this.gbxPhieuXuat.TabIndex = 10;
             this.gbxPhieuXuat.TabStop = false;
             this.gbxPhieuXuat.Text = "Ngày";

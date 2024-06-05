@@ -16,7 +16,7 @@ namespace QuanLyVatTu
         // Kết nối đến cơ sở dữ liệu gốc
         public static SqlConnection conn = new SqlConnection(); // biến để kết nối đến csdl gốc
         public static String connstr = "";                      
-        public static String connstrPublisher = "Data Source=DESKTOP-KG4DHV6; Initial Catalog=QLVT; Integrated Security=true"; // Bat mode dang nhap bang tai khoan
+        public static String connstrPublisher = "Data Source=RUFFA; Initial Catalog=QLVT_DATHANG; Integrated Security=true"; // Bat mode dang nhap bang tai khoan
         public static SqlDataReader myReader;
 
         // Đăng nhập vào server phân mảnh
@@ -28,9 +28,9 @@ namespace QuanLyVatTu
         public static String loginPassword = "";
 
         // Remote
-        public static String database = "QLVT"; // Tên CSDL cần làm việc
+        public static String database = "QLVT_DATHANG"; // Tên CSDL cần làm việc
         // Remote login và remote password dùng để kết nối đến server còn lại
-        public static String remoteLogin = "HTKN";
+        public static String remoteLogin = "HOTROKETNOI";
         public static String remotePassword = "123456";
         // current Login và current Password để quay trở lại server hiện tại
         public static String currentLogin = "";

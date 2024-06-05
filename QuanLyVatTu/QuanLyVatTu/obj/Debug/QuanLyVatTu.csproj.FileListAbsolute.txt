@@ -158,3 +158,4 @@ D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVa
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.XtraDiagram.v23.2.xml
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.Diagram.v23.2.Core.xml
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVa.6E15CABF.Up2Date
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptChiTietSoLuongTriGiaHangHoaNhapXuat.resources

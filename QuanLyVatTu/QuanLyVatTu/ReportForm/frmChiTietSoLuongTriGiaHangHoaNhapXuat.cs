@@ -41,6 +41,9 @@ namespace QuanLyVatTu.ReportForm
 
         private void frmChiTietSoLuongTriGiaHangHoaNhapXuat_Load(object sender, EventArgs e)
         {
+            this.cboLoaiPhieu.SelectedIndex = 1;
+            this.dteTuNgay.EditValue = "01-01-2017";
+            this.dteToiNgay.EditValue = "01-01-2018";
 
         }
 
@@ -53,7 +56,7 @@ namespace QuanLyVatTu.ReportForm
 
             DateTime fromDate = dteTuNgay.DateTime;
             DateTime toDate = dteToiNgay.DateTime;
-            ReportChiTietSoLuongTriGiaHangHoa report = new ReportChiTietSoLuongTriGiaHangHoa(vaiTro, loaiPhieu, fromDate, toDate);
+            rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
             report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
@@ -72,34 +75,27 @@ namespace QuanLyVatTu.ReportForm
 
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
-
-
-
-                ReportChiTietSoLuongTriGiaHangHoa report = new ReportChiTietSoLuongTriGiaHangHoa(vaiTro, loaiPhieu, fromDate, toDate);
-
-
-                /*GAN TEN CHI NHANH CHO BAO CAO*/
+                rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
                 report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
                 report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
                 report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
 
-
-                if (File.Exists(@"D:\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf"))
+                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf"))
                 {
-                    DialogResult dr = MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf tại ổ D đã có!\nBạn có muốn tạo lại?",
+                    DialogResult dr = MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        report.ExportToPdf(@"D:\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
-                        MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại ổ D",
+                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
+                        MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại folder ReportFiles",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                 }
                 else
                 {
-                    report.ExportToPdf(@"D:\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
-                    MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại ổ D",
+                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
+                    MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại folder ReportFiles",
                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

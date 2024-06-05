@@ -800,6 +800,11 @@ namespace QuanLyVatTu
                 this.chiTietPhieuXuatTableAdapter.Fill(this.dataSet.CTPX);
             }
         }
+
+        private void gclChiTietPhieuXuat_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 
