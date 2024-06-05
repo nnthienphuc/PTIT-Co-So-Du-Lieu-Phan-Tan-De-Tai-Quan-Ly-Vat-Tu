@@ -71,7 +71,10 @@ namespace QuanLyVatTu
             taiKhoan = Program.hoTen;
             matKhau = txtMatKhau.Text;
             maNhanVien = Program.maNhanVienDuocChon;
-            vaiTro = (rdoChiNhanh.Checked == true) ? "CHINHANH" : "USER";
+            if (vaiTro != "CONGTY")
+            {
+                vaiTro = (rdoChiNhanh.Checked == true) ? "CHINHANH" : "USER";
+            }
 
             Console.WriteLine(taiKhoan);
             Console.WriteLine(matKhau);
@@ -114,8 +117,12 @@ namespace QuanLyVatTu
                 rdoChiNhanh.Enabled = false;
                 rdoUser.Enabled = false;
             }
-            rdoChiNhanh.Enabled = true;
-            rdoUser.Enabled = true;
+            else
+            {
+                rdoChiNhanh.Enabled = true;
+                rdoChiNhanh.Checked = true;
+                rdoUser.Enabled = true;
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

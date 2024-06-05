@@ -125,19 +125,19 @@
             // rdoChiNhanh
             // 
             this.rdoChiNhanh.AutoSize = true;
-            this.rdoChiNhanh.Checked = true;
+            this.rdoChiNhanh.Enabled = false;
             this.rdoChiNhanh.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoChiNhanh.Location = new System.Drawing.Point(217, 262);
             this.rdoChiNhanh.Name = "rdoChiNhanh";
             this.rdoChiNhanh.Size = new System.Drawing.Size(85, 20);
             this.rdoChiNhanh.TabIndex = 8;
-            this.rdoChiNhanh.TabStop = true;
             this.rdoChiNhanh.Text = "Chi Nhánh";
             this.rdoChiNhanh.UseVisualStyleBackColor = true;
             // 
             // rdoUser
             // 
             this.rdoUser.AutoSize = true;
+            this.rdoUser.Enabled = false;
             this.rdoUser.Font = new System.Drawing.Font("Times New Roman", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdoUser.Location = new System.Drawing.Point(346, 261);
             this.rdoUser.Name = "rdoUser";
