@@ -48,6 +48,7 @@ namespace QuanLyVatTu
         }
         private void frmDatHang_Load(object sender, EventArgs e)
         {
+            this.txtMaNhanVien.Enabled = false;
             dataSet.EnforceConstraints = false;
             this.ChiTietDonDatHangTableAdapter.Connection.ConnectionString = Program.connstr;
             this.ChiTietDonDatHangTableAdapter.Fill(this.dataSet.CTDDH);
@@ -102,7 +103,7 @@ namespace QuanLyVatTu
             /*CONG TY chi xem du lieu*/
             if (Program.role == "CONGTY")
             {
-                cboChiNhanh.Enabled = true;
+                this.cboChiNhanh.Enabled = true;
                 this.btnThem.Enabled = false;
                 this.btnXoa.Enabled = false;
                 this.btnGhi.Enabled = false;
@@ -117,7 +118,7 @@ namespace QuanLyVatTu
              chuyen sang chi nhanh khac*/
                 if (Program.role == "CHINHANH" || Program.role == "USER")
                 {
-                    cboChiNhanh.Enabled = false;
+                    this.cboChiNhanh.Enabled = false;
 
                     this.btnThem.Enabled = true;
                     bool turnOn = (bdsDatHang.Count > 0) ? true : false;
