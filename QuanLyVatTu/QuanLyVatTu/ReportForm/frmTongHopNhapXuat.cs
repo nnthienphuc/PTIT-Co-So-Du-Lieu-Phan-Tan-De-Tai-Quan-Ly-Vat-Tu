@@ -76,7 +76,7 @@ namespace QuanLyVatTu.ReportForm
             cboChiNhanh.SelectedIndex = Program.brand;
 
             dteTuNgay.EditValue = "14-01-2000";
-            dteToiNgay.EditValue = DateTime.Today.ToString("dd-MM-yyyy");
+            dteToiNgay.EditValue = DateTime.Today.ToString("MM-dd-yyyy");
         }
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)

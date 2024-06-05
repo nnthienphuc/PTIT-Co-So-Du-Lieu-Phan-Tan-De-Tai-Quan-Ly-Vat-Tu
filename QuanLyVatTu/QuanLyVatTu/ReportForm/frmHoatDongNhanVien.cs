@@ -48,7 +48,7 @@ namespace QuanLyVatTu.ReportForm
         {
             cboLoaiPhieu.SelectedIndex = 1;
             dteTuNgay.EditValue = "01-01-2017";
-            dteToiNgay.EditValue = DateTime.Today.ToString("dd-MM-yyyy");
+            dteToiNgay.EditValue = DateTime.Today.ToString("MM-dd-yyyy");
         }
 
         private void btnXuatBan_Click(object sender, EventArgs e)
