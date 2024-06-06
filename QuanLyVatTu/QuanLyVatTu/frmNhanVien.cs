@@ -329,7 +329,6 @@ namespace QuanLyVatTu
             Console.WriteLine(cauTruyVanHoanTac);
             undoList.Push(cauTruyVanHoanTac);
 
-
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa nhân viên này không ?", "Thông báo",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {

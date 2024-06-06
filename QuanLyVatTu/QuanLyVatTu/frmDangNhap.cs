@@ -80,7 +80,7 @@ namespace QuanLyVatTu
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             txtTaiKhoan.Text = "NH";
-            txtMatKhau.Text = "123456"; // đặt nhanh mật khẩu đỡ phải nhập nhiều lần :v
+            txtMatKhau.Text = "123456";
             if (ketNoiDatabaseGoc() == 0)
                 return;
 
