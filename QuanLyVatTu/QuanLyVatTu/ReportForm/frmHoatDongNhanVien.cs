@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -67,23 +68,26 @@ namespace QuanLyVatTu.ReportForm
                 report.txtDenNgay.Text = dteToiNgay.EditValue.ToString();
                 report.txtNgayLapBaoCao.Text = toDate.ToString();
 
-                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf"))
+                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
+
+                if (File.Exists(filePath))
                 {
                     DialogResult dr = MessageBox.Show("File ReportHoatDongNhanVien.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf");
+                        report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        OpenPdf(filePath);
                     }
-
                 }
                 else
                 {
-                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf");
+                    report.ExportToPdf(filePath);
                     MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    OpenPdf(filePath);
                 }
             }
             catch (IOException ex)
@@ -91,6 +95,22 @@ namespace QuanLyVatTu.ReportForm
                 MessageBox.Show("Vui lòng đóng file ReportHoatDongNhanVien.pdf",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
+            }
+        }
+
+        private void OpenPdf(string filePath)
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = filePath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể mở file PDF: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

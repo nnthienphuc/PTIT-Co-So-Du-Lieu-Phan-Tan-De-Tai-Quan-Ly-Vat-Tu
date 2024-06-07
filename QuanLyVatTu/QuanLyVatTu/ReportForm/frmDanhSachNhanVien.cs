@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyVatTu.ReportForm;
 using System.IO;
+using System.Diagnostics;
 
 namespace QuanLyVatTu.ReportForm
 {
@@ -136,48 +137,56 @@ namespace QuanLyVatTu.ReportForm
                 /*GAN TEN CHI NHANH CHO BAO CAO*/
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
 
+                string filePath;
                 if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
                 {
-                    if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf"))
+                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf";
+
+                    if (File.Exists(filePath))
                     {
                         DialogResult dr = MessageBox.Show("File ReportDanhSachNhanVienChiNhanh1.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                             "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (dr == DialogResult.Yes)
                         {
-                            report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf");
+                            report.ExportToPdf(filePath);
                             MessageBox.Show("File ReportDanhSachNhanVienChiNhanh1.pdf đã được ghi thành công tại folder ReportFiles",
-                    "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Program.OpenPdf(filePath);
                         }
-
                     }
                     else
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf");
+                        report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportDanhSachNhanVienChiNhanh1.pdf đã được ghi thành công tại folder ReportFiles",
-                    "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.OpenPdf(filePath);
                     }
                 }
                 else
                 {
-                    if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf"))
+                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf";
+
+                    if (File.Exists(filePath))
                     {
                         DialogResult dr = MessageBox.Show("File ReportDanhSachNhanVienChiNhanh2.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                             "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                         if (dr == DialogResult.Yes)
                         {
-                            report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf");
+                            report.ExportToPdf(filePath);
                             MessageBox.Show("File ReportDanhSachNhanVienChiNhanh2.pdf đã được ghi thành công tại folder ReportFiles",
-                    "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Program.OpenPdf(filePath);
                         }
-
                     }
                     else
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf");
+                        report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportDanhSachNhanVienChiNhanh2.pdf đã được ghi thành công tại folder ReportFiles",
-                    "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.OpenPdf(filePath);
                     }
                 }
+
                 if (Program.role != "CONGTY")
                 {
                     this.Close();
@@ -188,16 +197,16 @@ namespace QuanLyVatTu.ReportForm
                 if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
                 {
                     MessageBox.Show("Vui lòng đóng file ReportDanhSachNhanVienChiNhanh1.pdf",
-                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    return;
+                        "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
-                 else
+                else
                 {
                     MessageBox.Show("Vui lòng đóng file ReportDanhSachNhanVienChiNhanh2.pdf",
-                    "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                    return;
-                } 
+                        "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
             }
         }
+
+        
     }
 }

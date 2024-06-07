@@ -8,6 +8,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using QuanLyVatTu.ReportForm;
+using System.Diagnostics;
 
 namespace QuanLyVatTu
 {
@@ -95,6 +96,23 @@ namespace QuanLyVatTu
         public static frmChiTietSoLuongTriGiaHangHoaNhapXuat frmChiTietSoLuongTriGiaHangHoaNhapXuat;
         public static frmHoatDongNhanVien frmHoatDongNhanVien;
         public static frmTongHopNhapXuat frmTongHopNhapXuat;
+
+        // Mo file pdf
+        public static void OpenPdf(string filePath)
+        {
+            try
+            {
+                Process process = new Process();
+                process.StartInfo.FileName = filePath;
+                process.StartInfo.UseShellExecute = true;
+                process.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể mở file PDF: " + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
         // Kết nối tới server phân mảnh
         public static int KetNoi()

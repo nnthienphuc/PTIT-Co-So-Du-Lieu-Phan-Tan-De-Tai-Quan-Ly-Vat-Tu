@@ -43,25 +43,28 @@ namespace QuanLyVatTu.ReportForm
         private void btnXuatBan_Click(object sender, EventArgs e)
         {
             rptDanhSachVatTu report = new rptDanhSachVatTu();
+            string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf";
+
             try
             {
-                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf"))
+                if (File.Exists(filePath))
                 {
                     DialogResult dr = MessageBox.Show("File ReportDanhSachVatTu.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf");
+                        report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.OpenPdf(filePath);
                     }
-
                 }
                 else
                 {
-                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf");
+                    report.ExportToPdf(filePath);
                     MessageBox.Show("File ReportDanhSachVatTu.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Program.OpenPdf(filePath);
                 }
                 this.Close();
             }
@@ -69,7 +72,6 @@ namespace QuanLyVatTu.ReportForm
             {
                 MessageBox.Show("Vui lòng đóng file ReportDanhSachVatTu.pdf",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                return;
             }
         }
     }

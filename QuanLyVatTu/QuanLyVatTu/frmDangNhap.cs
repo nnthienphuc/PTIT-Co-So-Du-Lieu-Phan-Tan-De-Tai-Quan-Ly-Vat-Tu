@@ -91,14 +91,12 @@ namespace QuanLyVatTu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            /* Step 1*/
             if (txtTaiKhoan.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
             {
                 MessageBox.Show("Tài khoản & mật khẩu không thể bỏ trống", "Thông Báo", MessageBoxButtons.OK);
                 return;
             }
 
-            /* Step 2*/
             Program.loginName = txtTaiKhoan.Text.Trim();
             Program.loginPassword = txtMatKhau.Text.Trim();
             if (Program.KetNoi() == 0)
