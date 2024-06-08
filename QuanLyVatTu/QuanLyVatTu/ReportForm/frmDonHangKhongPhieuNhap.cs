@@ -122,32 +122,36 @@ namespace QuanLyVatTu.ReportForm
             try
             {
                 rptDonHangKhongPhieuNhap report = new rptDonHangKhongPhieuNhap();
-                /*GAN TEN CHI NHANH CHO BAO CAO*/
+                /* GÁN TÊN CHI NHÁNH CHO BÁO CÁO */
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
-                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf"))
+
+                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf";
+
+                if (File.Exists(filePath))
                 {
                     DialogResult dr = MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf");
-                        MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf đã được ghi thành công tại tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        report.ExportToPdf(filePath);
+                        MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf đã được ghi thành công tại folder ReportFiles",
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.OpenPdf(filePath);
                     }
 
                 }
                 else
                 {
-                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf");
-                    MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf đã được ghi thành công tại tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    report.ExportToPdf(filePath);
+                    MessageBox.Show("File ReportDonHangKhongPhieuNhap.pdf đã được ghi thành công tại folder ReportFiles",
+                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Program.OpenPdf(filePath);
                 }
             }
             catch (IOException ex)
             {
                 MessageBox.Show("Vui lòng đóng file ReportDonHangKhongPhieuNhap.pdf",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                return;
             }
         }
 

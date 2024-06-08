@@ -72,38 +72,40 @@ namespace QuanLyVatTu.ReportForm
 
             try
             {
-
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
+
                 rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
                 report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
                 report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
                 report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
 
-                if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf"))
+                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf";
+
+                if (File.Exists(filePath))
                 {
                     DialogResult dr = MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
                         "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (dr == DialogResult.Yes)
                     {
-                        report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
+                        report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Program.OpenPdf(filePath);
                     }
-
                 }
                 else
                 {
-                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf");
+                    report.ExportToPdf(filePath);
                     MessageBox.Show("File ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf đã được ghi thành công tại folder ReportFiles",
-                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Program.OpenPdf(filePath);
                 }
             }
             catch (IOException ex)
             {
                 MessageBox.Show("Vui lòng đóng file ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-                return;
             }
         }
     }
