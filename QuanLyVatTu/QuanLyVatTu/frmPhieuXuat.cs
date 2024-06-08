@@ -138,9 +138,41 @@ namespace QuanLyVatTu
 
                 this.gbxPhieuXuat.Enabled = false;
             }
+            if (Program.role == "CHINHANH" || Program.role == "USER")
+            {
+                cboChiNhanh.Enabled = false;
+
+                this.btnThem.Enabled = true;
+                bool turnOn = (bdsPhieuXuat.Count > 0) ? true : false;
+                this.btnXoa.Enabled = turnOn;
+                this.btnGhi.Enabled = true;
+
+                this.btnHoanTac.Enabled = false;
+                this.btnLamMoi.Enabled = true;
+                this.btnMeNuChonCheDo.Enabled = true;
+                this.btnThoat.Enabled = true;
+
+                //this.txtMaDonDatHang.Enabled = false;
+
+            }
         }
         private void btnCheDoChiTietPhieuXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (Program.role == "CONGTY")
+            {
+                cboChiNhanh.Enabled = true;
+
+                this.btnThem.Enabled = false;
+                this.btnXoa.Enabled = false;
+                this.btnGhi.Enabled = false;
+
+                this.btnHoanTac.Enabled = false;
+                this.btnLamMoi.Enabled = true;
+                this.btnMeNuChonCheDo.Enabled = true;
+                this.btnThoat.Enabled = true;
+
+                this.gbxPhieuXuat.Enabled = false;
+            }
             /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
              chuyen sang chi nhanh khac*/
             if (Program.role == "CHINHANH" || Program.role == "USER")

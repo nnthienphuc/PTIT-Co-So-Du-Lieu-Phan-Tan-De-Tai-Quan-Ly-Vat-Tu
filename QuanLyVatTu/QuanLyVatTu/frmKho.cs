@@ -98,6 +98,26 @@ namespace QuanLyVatTu
             }
             /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
             chuyen sang chi nhanh khac*/
+
+
+            // CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
+            // chuyen sang chi nhanh khac
+            if (Program.role == "CHINHANH" || Program.role == "USER")
+            {
+                cboChiNhanh.Enabled = false;
+
+                this.btnThem.Enabled = true;
+                this.btnXoa.Enabled = true;
+                this.btnGhi.Enabled = true;
+
+                this.btnHoanTac.Enabled = false;
+                this.btnLamMoi.Enabled = true;
+            
+                this.btnThoat.Enabled = true;
+
+                this.pnlNhapLieu.Enabled = true;
+                this.txtMaKho.Enabled = false;
+            }
         }
 
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

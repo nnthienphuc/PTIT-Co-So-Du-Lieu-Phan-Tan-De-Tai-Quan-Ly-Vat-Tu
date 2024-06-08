@@ -67,6 +67,7 @@ namespace QuanLyVatTu
             cboChiNhanh.SelectedIndex = Program.brand;
             bds = bdsDatHang;
             gc = gcDatHang;
+
         }
 
         /*********************************************************
@@ -85,8 +86,10 @@ namespace QuanLyVatTu
             /*Bat chuc nang cua don dat hang*/
             txtMaDonDatHang.Enabled = false;
             dteNgay.Enabled = false;
+            
             txtNhaCungCap.Enabled = true;
             txtMaNhanVien.Enabled = false;
+
             txtMaKho.Enabled = false;
             btnChonKhoHang.Enabled = true;
 
@@ -113,7 +116,7 @@ namespace QuanLyVatTu
                 this.btnMeNuChonCheDo.Enabled = false;
                 this.btnThoat.Enabled = true;
                 this.gbxDonDatHang.Enabled = false;
-
+            }
                 /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
              chuyen sang chi nhanh khac*/
                 if (Program.role == "CHINHANH" || Program.role == "USER")
@@ -133,7 +136,6 @@ namespace QuanLyVatTu
                     this.txtMaDonDatHang.Enabled = false;
 
                 }
-            }
         }
 
         private void btnCheDoChiTietDonDatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -633,8 +635,6 @@ namespace QuanLyVatTu
             // liên quan tới subform
             frmChonKhoHang form = new frmChonKhoHang();
             form.ShowDialog();
-
-
             this.txtMaKho.Text = Program.maKhoDuocChon;
 
         }
