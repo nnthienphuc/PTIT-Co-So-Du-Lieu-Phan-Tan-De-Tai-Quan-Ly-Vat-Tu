@@ -145,7 +145,7 @@ namespace QuanLyVatTu
             btnMeNuChonCheDo.Links[0].Caption = "Chi Tiết Đơn Đặt Hàng";
 
             /*Step 1*/
-            bds = bdsChiTietDonDatHang;
+            bds = bdsCTDH;
             gc = gcChiTietDonDatHang;
             //MessageBox.Show("Chế Độ Làm Việc Chi Tiết Đơn Đặt Hàng", "Thông báo", MessageBoxButtons.OK);
 
@@ -197,7 +197,7 @@ namespace QuanLyVatTu
                 cboChiNhanh.Enabled = false;
 
                 this.btnThem.Enabled = true;
-                bool turnOn = (bdsChiTietDonDatHang.Count > 0) ? true : false;
+                bool turnOn = (bdsCTDH.Count > 0) ? true : false;
                 this.btnXoa.Enabled = turnOn;
                 this.btnGhi.Enabled = false;
 
@@ -243,7 +243,7 @@ namespace QuanLyVatTu
                 if (Program.userName != maNhanVien)
                 {
                     MessageBox.Show("Bạn không thêm chi tiết đơn hàng trên phiếu không phải do mình tạo", "Thông báo", MessageBoxButtons.OK);
-                    bdsChiTietDonDatHang.RemoveCurrent();
+                    bdsCTDH.RemoveCurrent();
                     return;
                 }
                 this.txtMaVatTu.Enabled = false;
@@ -372,7 +372,7 @@ namespace QuanLyVatTu
             /*Dang chinh sua chi tiet don dat hang*/
             if (cheDo == "Chi Tiết Đơn Đặt Hàng" && dangThemMoi == false)
             {
-                drv = ((DataRowView)bdsChiTietDonDatHang[bdsChiTietDonDatHang.Position]);
+                drv = ((DataRowView)bdsCTDH[bdsCTDH.Position]);
 
                 cauTruyVan = "UPDATE DBO.CTDDH " +
                     "SET " +
@@ -479,11 +479,11 @@ namespace QuanLyVatTu
                         if (cheDo == "Chi Tiết Đơn Đặt Hàng" && dangThemMoi == true)
                         {
                             /*Gan tu dong may truong du lieu nay*/
-                            ((DataRowView)(bdsChiTietDonDatHang.Current))["MasoDDH"] = ((DataRowView)(bdsDatHang.Current))["MasoDDH"];
-                            ((DataRowView)(bdsChiTietDonDatHang.Current))["MAVT"] = Program.maVatTuDuocChon;
-                            ((DataRowView)(bdsChiTietDonDatHang.Current))["SOLUONG"] =
+                            ((DataRowView)(bdsCTDH.Current))["MasoDDH"] = ((DataRowView)(bdsDatHang.Current))["MasoDDH"];
+                            ((DataRowView)(bdsCTDH.Current))["MAVT"] = Program.maVatTuDuocChon;
+                            ((DataRowView)(bdsCTDH.Current))["SOLUONG"] =
                                 txtSoLuong.Value;
-                            ((DataRowView)(bdsChiTietDonDatHang.Current))["DONGIA"] =
+                            ((DataRowView)(bdsCTDH.Current))["DONGIA"] =
                                 (int)txtDonGia.Value;
 
                             cauTruyVanHoanTac =
@@ -499,7 +499,7 @@ namespace QuanLyVatTu
                         //Console.WriteLine(cauTruyVanHoanTac);
 
                         this.bdsDatHang.EndEdit();
-                        this.bdsChiTietDonDatHang.EndEdit();
+                        this.bdsCTDH.EndEdit();
                         this.datHangTableAdapter.Update(this.dataSet.DatHang);
                         this.ChiTietDonDatHangTableAdapter.Update(this.dataSet.CTDDH);
 
@@ -664,7 +664,7 @@ namespace QuanLyVatTu
                 /*Cái bdsChiTietDonHangHang là đại diện cho binding source riêng biệt của CTDDH
                  *Còn cTDDHBindingSource là lấy ngay từ trong data source DATHANG
                  */
-                if (bdsChiTietDonDatHang.Count > 0)
+                if (bdsCTDH.Count > 0)
                 {
                     MessageBox.Show("Không thể xóa đơn đặt hàng này vì có chi tiết đơn đặt hàng", "Thông báo", MessageBoxButtons.OK);
                     return;
@@ -709,7 +709,7 @@ namespace QuanLyVatTu
                     }
                     if (cheDo == "Chi Tiết Đơn Đặt Hàng")
                     {
-                        bdsChiTietDonDatHang.RemoveCurrent();
+                        bdsCTDH.RemoveCurrent();
                     }
 
 

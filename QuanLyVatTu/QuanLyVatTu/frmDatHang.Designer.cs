@@ -71,6 +71,13 @@
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcDDH = new DevExpress.XtraEditors.GroupControl();
+            this.gcChiTietDonDatHang = new DevExpress.XtraGrid.GridControl();
+            this.bdsCTDH = new System.Windows.Forms.BindingSource(this.components);
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMasoDDH1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gbxDonDatHang = new System.Windows.Forms.GroupBox();
             this.btnChonKhoHang = new System.Windows.Forms.Button();
             this.txtMaKho = new DevExpress.XtraEditors.TextEdit();
@@ -83,13 +90,6 @@
             this.txtDonGia = new DevExpress.XtraEditors.SpinEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.txtMaVatTu = new DevExpress.XtraEditors.TextEdit();
-            this.gcChiTietDonDatHang = new DevExpress.XtraGrid.GridControl();
-            this.bdsChiTietDonDatHang = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMasoDDH1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAVT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSOLUONG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDONGIA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.ChiTietDonDatHangTableAdapter = new QuanLyVatTu.DataSetTableAdapters.CTDDHTableAdapter();
             this.bdsPhieuNhap = new System.Windows.Forms.BindingSource(this.components);
             this.PhieuNhapTableAdapter = new QuanLyVatTu.DataSetTableAdapters.PhieuNhapTableAdapter();
@@ -110,6 +110,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDDH)).BeginInit();
             this.gcDDH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTDH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.gbxDonDatHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).BeginInit();
@@ -121,9 +124,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVatTu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).BeginInit();
             this.SuspendLayout();
             // 
@@ -352,7 +352,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 752);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 772);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1540, 20);
             // 
@@ -362,7 +362,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 55);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 697);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 717);
             // 
             // barDockControlRight
             // 
@@ -370,7 +370,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1540, 55);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 697);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 717);
             // 
             // btnChonChe
             // 
@@ -518,15 +518,78 @@
             // 
             // gcDDH
             // 
+            this.gcDDH.Controls.Add(this.gcChiTietDonDatHang);
             this.gcDDH.Controls.Add(this.gbxDonDatHang);
             this.gcDDH.Controls.Add(this.groupBox2);
-            this.gcDDH.Controls.Add(this.gcChiTietDonDatHang);
             this.gcDDH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcDDH.Location = new System.Drawing.Point(0, 334);
             this.gcDDH.Name = "gcDDH";
-            this.gcDDH.Size = new System.Drawing.Size(1540, 418);
+            this.gcDDH.Size = new System.Drawing.Size(1540, 438);
             this.gcDDH.TabIndex = 11;
             this.gcDDH.Text = "Thông Tin";
+            // 
+            // gcChiTietDonDatHang
+            // 
+            this.gcChiTietDonDatHang.DataSource = this.bdsCTDH;
+            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(695, 48);
+            this.gcChiTietDonDatHang.MainView = this.gridView2;
+            this.gcChiTietDonDatHang.MenuManager = this.barManager1;
+            this.gcChiTietDonDatHang.Name = "gcChiTietDonDatHang";
+            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(833, 220);
+            this.gcChiTietDonDatHang.TabIndex = 3;
+            this.gcChiTietDonDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // bdsCTDH
+            // 
+            this.bdsCTDH.DataMember = "FK_CTDDH_DatHang";
+            this.bdsCTDH.DataSource = this.bdsDatHang;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMasoDDH1,
+            this.colMAVT,
+            this.colSOLUONG,
+            this.colDONGIA});
+            this.gridView2.GridControl = this.gcChiTietDonDatHang;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colMasoDDH1
+            // 
+            this.colMasoDDH1.FieldName = "MasoDDH";
+            this.colMasoDDH1.MinWidth = 30;
+            this.colMasoDDH1.Name = "colMasoDDH1";
+            this.colMasoDDH1.Visible = true;
+            this.colMasoDDH1.VisibleIndex = 0;
+            this.colMasoDDH1.Width = 112;
+            // 
+            // colMAVT
+            // 
+            this.colMAVT.FieldName = "MAVT";
+            this.colMAVT.MinWidth = 30;
+            this.colMAVT.Name = "colMAVT";
+            this.colMAVT.Visible = true;
+            this.colMAVT.VisibleIndex = 1;
+            this.colMAVT.Width = 112;
+            // 
+            // colSOLUONG
+            // 
+            this.colSOLUONG.FieldName = "SOLUONG";
+            this.colSOLUONG.MinWidth = 30;
+            this.colSOLUONG.Name = "colSOLUONG";
+            this.colSOLUONG.Visible = true;
+            this.colSOLUONG.VisibleIndex = 2;
+            this.colSOLUONG.Width = 112;
+            // 
+            // colDONGIA
+            // 
+            this.colDONGIA.FieldName = "DONGIA";
+            this.colDONGIA.MinWidth = 30;
+            this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.Visible = true;
+            this.colDONGIA.VisibleIndex = 3;
+            this.colDONGIA.Width = 112;
             // 
             // gbxDonDatHang
             // 
@@ -683,79 +746,6 @@
             this.txtMaVatTu.Size = new System.Drawing.Size(150, 26);
             this.txtMaVatTu.TabIndex = 3;
             // 
-            // gcChiTietDonDatHang
-            // 
-            this.gcChiTietDonDatHang.DataSource = this.bdsChiTietDonDatHang;
-            this.gcChiTietDonDatHang.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gcChiTietDonDatHang.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(522, 34);
-            this.gcChiTietDonDatHang.MainView = this.gridView2;
-            this.gcChiTietDonDatHang.MenuManager = this.barManager1;
-            this.gcChiTietDonDatHang.Name = "gcChiTietDonDatHang";
-            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(1016, 382);
-            this.gcChiTietDonDatHang.TabIndex = 0;
-            this.gcChiTietDonDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // bdsChiTietDonDatHang
-            // 
-            this.bdsChiTietDonDatHang.DataMember = "CTDDH";
-            this.bdsChiTietDonDatHang.DataSource = this.dataSet;
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMasoDDH1,
-            this.colMAVT,
-            this.colSOLUONG,
-            this.colDONGIA});
-            this.gridView2.GridControl = this.gcChiTietDonDatHang;
-            this.gridView2.Name = "gridView2";
-            // 
-            // colMasoDDH1
-            // 
-            this.colMasoDDH1.Caption = "Mã DDH";
-            this.colMasoDDH1.FieldName = "MasoDDH";
-            this.colMasoDDH1.MinWidth = 30;
-            this.colMasoDDH1.Name = "colMasoDDH1";
-            this.colMasoDDH1.OptionsColumn.AllowEdit = false;
-            this.colMasoDDH1.Visible = true;
-            this.colMasoDDH1.VisibleIndex = 0;
-            this.colMasoDDH1.Width = 112;
-            // 
-            // colMAVT
-            // 
-            this.colMAVT.Caption = "Mã VT";
-            this.colMAVT.FieldName = "MAVT";
-            this.colMAVT.MinWidth = 30;
-            this.colMAVT.Name = "colMAVT";
-            this.colMAVT.OptionsColumn.AllowEdit = false;
-            this.colMAVT.Visible = true;
-            this.colMAVT.VisibleIndex = 1;
-            this.colMAVT.Width = 112;
-            // 
-            // colSOLUONG
-            // 
-            this.colSOLUONG.Caption = "Số Lượng";
-            this.colSOLUONG.FieldName = "SOLUONG";
-            this.colSOLUONG.MinWidth = 30;
-            this.colSOLUONG.Name = "colSOLUONG";
-            this.colSOLUONG.OptionsColumn.AllowEdit = false;
-            this.colSOLUONG.Visible = true;
-            this.colSOLUONG.VisibleIndex = 2;
-            this.colSOLUONG.Width = 112;
-            // 
-            // colDONGIA
-            // 
-            this.colDONGIA.Caption = "Đơn Giá";
-            this.colDONGIA.FieldName = "DONGIA";
-            this.colDONGIA.MinWidth = 30;
-            this.colDONGIA.Name = "colDONGIA";
-            this.colDONGIA.OptionsColumn.AllowEdit = false;
-            this.colDONGIA.Visible = true;
-            this.colDONGIA.VisibleIndex = 3;
-            this.colDONGIA.Width = 112;
-            // 
             // ChiTietDonDatHangTableAdapter
             // 
             this.ChiTietDonDatHangTableAdapter.ClearBeforeFill = true;
@@ -773,7 +763,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 772);
+            this.ClientSize = new System.Drawing.Size(1540, 792);
             this.Controls.Add(this.gcDDH);
             this.Controls.Add(this.gcDatHang);
             this.Controls.Add(this.panelControl1);
@@ -797,6 +787,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcDDH)).EndInit();
             this.gcDDH.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsCTDH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.gbxDonDatHang.ResumeLayout(false);
             this.gbxDonDatHang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKho.Properties)).EndInit();
@@ -810,9 +803,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaVatTu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcChiTietDonDatHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsChiTietDonDatHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsPhieuNhap)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -851,12 +841,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private DevExpress.XtraEditors.GroupControl gcDDH;
         private DataSetTableAdapters.CTDDHTableAdapter ChiTietDonDatHangTableAdapter;
-        private DevExpress.XtraGrid.GridControl gcChiTietDonDatHang;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
-        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
-        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private System.Windows.Forms.GroupBox gbxDonDatHang;
         private DevExpress.XtraEditors.TextEdit txtMaKho;
         private DevExpress.XtraEditors.TextEdit txtMaNhanVien;
@@ -871,10 +855,16 @@
         private DevExpress.XtraEditors.TextEdit txtMaVatTu;
         private System.Windows.Forms.BindingSource bdsPhieuNhap;
         private DataSetTableAdapters.PhieuNhapTableAdapter PhieuNhapTableAdapter;
-        private System.Windows.Forms.BindingSource bdsChiTietDonDatHang;
         private DevExpress.XtraBars.BarButtonItem btnChonChe;
         private DevExpress.XtraBars.BarSubItem btnMeNuChonCheDo;
         private DevExpress.XtraBars.BarButtonItem btnCheDoDonDatHang;
         private DevExpress.XtraBars.BarButtonItem btnCheDoChiTietDonDatHang;
+        private DevExpress.XtraGrid.GridControl gcChiTietDonDatHang;
+        private System.Windows.Forms.BindingSource bdsCTDH;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colMasoDDH1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMAVT;
+        private DevExpress.XtraGrid.Columns.GridColumn colSOLUONG;
+        private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
     }
 }
