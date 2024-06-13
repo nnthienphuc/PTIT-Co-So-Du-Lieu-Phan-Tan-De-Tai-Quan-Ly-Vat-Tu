@@ -2,4 +2,4 @@ CREATE VIEW [dbo].[view_DanhSachVatTu]
 AS
 SELECT        TOP (100) PERCENT MAVT, TENVT, DVT, SOLUONGTON
 FROM            dbo.Vattu
-ORDER BY TENVT
+With (INDEX = IX_TENVT)
