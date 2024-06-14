@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -224,6 +225,7 @@ namespace QuanLyVatTu
 
             if (btnMeNuChonCheDo.Links[0].Caption == "Đơn Đặt Hàng")
             {
+                this.gbxDonDatHang.Enabled = true;
                 this.txtMaDonDatHang.Enabled = true;
                 //this.txtMaKho.Text = "";
                 this.dteNgay.EditValue = DateTime.Now;
@@ -238,6 +240,7 @@ namespace QuanLyVatTu
             }
             if (btnMeNuChonCheDo.Links[0].Caption == "Chi Tiết Đơn Đặt Hàng")
             {
+                this.gbxDonDatHang.Enabled = true;
                 DataRowView drv = ((DataRowView)bdsDatHang[bdsDatHang.Position]);
                 String maNhanVien = drv["MANV"].ToString();
                 if (Program.userName != maNhanVien)
@@ -282,9 +285,15 @@ namespace QuanLyVatTu
                 }
                 if (txtMaDonDatHang.Text.Length > 8)
                 {
-                    MessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự ", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
+                if (Regex.IsMatch(txtMaDonDatHang.Text, @"^[A-Za-z ]+$") == false)
+                {
+                    MessageBox.Show("Mã đơn đặt hàng chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
+                
                 if (txtMaNhanVien.Text == "")
                 {
                     MessageBox.Show("Không thể bỏ trống mã nhân viên", "Thông báo", MessageBoxButtons.OK);
@@ -293,6 +302,11 @@ namespace QuanLyVatTu
                 if (txtNhaCungCap.Text == "")
                 {
                     MessageBox.Show("Không thể bỏ trống nhà cung cấp", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (Regex.IsMatch(txtNhaCungCap.Text, @"^[A-Za-z ]+$") == false)
+                {
+                    MessageBox.Show("Mã đơn đặt hàng chỉ có chữ cái và khoảng trắng ", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
                 if (txtNhaCungCap.Text.Length > 100)
@@ -542,7 +556,90 @@ namespace QuanLyVatTu
         * Step 1: kiểm tra undoList có trông hay không ?
         * Step 2: Neu undoList khong trống thì lấy ra khôi phục
         *********************************************************************/
-        private void btnHOANTAC_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+      
+        private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                // do du lieu moi tu dataSet vao gridControl NHANVIEN
+                this.datHangTableAdapter.Fill(this.dataSet.DatHang);
+                this.ChiTietDonDatHangTableAdapter.Fill(this.dataSet.CTDDH);
+
+                this.gcDatHang.Enabled = true;
+                this.gcChiTietDonDatHang.Enabled = true;
+                bdsDatHang.Position = viTri;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+        }
+
+        private void btnChonKhoHang_Click(object sender, EventArgs e)
+        {
+            // liên quan tới subform
+            frmChonKhoHang form = new frmChonKhoHang();
+            form.ShowDialog();
+            this.txtMaKho.Text = Program.maKhoDuocChon;
+
+        }
+
+        private void btnChonVatTu_Click(object sender, EventArgs e)
+        {
+            frmChonVatTu form = new frmChonVatTu();
+            form.ShowDialog();
+            this.txtMaVatTu.Text = Program.maVatTuDuocChon;
+        }
+        /**
+         * Step 1: lấy chế độ đang sử dụng và đặt dangThemMoi = true để phục vụ điều kiện tạo câu truy
+         * vấn hoàn tác
+         * Step 2: kiểm tra điều kiện theo chế độ đang sử dụng
+         * Step 3: nạp câu truy vấn hoàn tác vào undolist
+         * Step 4: Thực hiện xóa nếu OK
+         */
+       
+
+        private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*
+            /*Neu combobox khong co so lieu thi ket thuc luon*/
+            if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+
+            Program.serverName = cboChiNhanh.SelectedValue.ToString();
+
+            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
+            if (cboChiNhanh.SelectedIndex != Program.brand)
+            {
+                Program.loginName = Program.remoteLogin;
+                Program.loginPassword = Program.remotePassword;
+            }
+            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
+            else
+            {
+                Program.loginName = Program.currentLogin;
+                Program.loginPassword = Program.currentPassword;
+            }
+
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.ChiTietDonDatHangTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.ChiTietDonDatHangTableAdapter.Fill(this.dataSet.CTDDH);
+
+                this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.datHangTableAdapter.Fill(this.dataSet.DatHang);
+
+                this.PhieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.PhieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
+            }
+        }
+
+        private void btnHoanTac_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             /* Step 0 */
             if (dangThemMoi == true && this.btnThem.Enabled == false)
@@ -585,7 +682,7 @@ namespace QuanLyVatTu
 
                 bds.CancelEdit();
                 /*xoa dong hien tai*/
-                bds.RemoveCurrent();
+                
                 /* trở về lúc đầu con trỏ đang đứng*/
                 bds.Position = viTri;
                 return;
@@ -611,48 +708,8 @@ namespace QuanLyVatTu
 
             bdsDatHang.Position = viTri;
         }
-        private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            try
-            {
-                // do du lieu moi tu dataSet vao gridControl NHANVIEN
-                this.datHangTableAdapter.Fill(this.dataSet.DatHang);
-                this.ChiTietDonDatHangTableAdapter.Fill(this.dataSet.CTDDH);
 
-                this.gcDatHang.Enabled = true;
-                this.gcChiTietDonDatHang.Enabled = true;
-                bdsDatHang.Position = viTri;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi Làm mới" + ex.Message, "Thông báo", MessageBoxButtons.OK);
-                return;
-            }
-        }
-
-        private void btnChonKhoHang_Click(object sender, EventArgs e)
-        {
-            // liên quan tới subform
-            frmChonKhoHang form = new frmChonKhoHang();
-            form.ShowDialog();
-            this.txtMaKho.Text = Program.maKhoDuocChon;
-
-        }
-
-        private void btnChonVatTu_Click(object sender, EventArgs e)
-        {
-            frmChonVatTu form = new frmChonVatTu();
-            form.ShowDialog();
-            this.txtMaVatTu.Text = Program.maVatTuDuocChon;
-        }
-        /**
-         * Step 1: lấy chế độ đang sử dụng và đặt dangThemMoi = true để phục vụ điều kiện tạo câu truy
-         * vấn hoàn tác
-         * Step 2: kiểm tra điều kiện theo chế độ đang sử dụng
-         * Step 3: nạp câu truy vấn hoàn tác vào undolist
-         * Step 4: Thực hiện xóa nếu OK
-         */
-        private void btnXOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string cauTruyVan = "";
             string cheDo = (btnMeNuChonCheDo.Links[0].Caption == "Đơn Đặt Hàng") ? "Đơn Đặt Hàng" : "Chi Tiết Đơn Đặt Hàng";
@@ -743,45 +800,6 @@ namespace QuanLyVatTu
             {
                 // xoa cau truy van hoan tac di
                 undoList.Pop();
-            }
-        }
-
-        private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            /*
-            /*Neu combobox khong co so lieu thi ket thuc luon*/
-            if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
-
-            Program.serverName = cboChiNhanh.SelectedValue.ToString();
-
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
-            if (cboChiNhanh.SelectedIndex != Program.brand)
-            {
-                Program.loginName = Program.remoteLogin;
-                Program.loginPassword = Program.remotePassword;
-            }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
-            else
-            {
-                Program.loginName = Program.currentLogin;
-                Program.loginPassword = Program.currentPassword;
-            }
-
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
-            }
-            else
-            {
-                this.ChiTietDonDatHangTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.ChiTietDonDatHangTableAdapter.Fill(this.dataSet.CTDDH);
-
-                this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.datHangTableAdapter.Fill(this.dataSet.DatHang);
-
-                this.PhieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.PhieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
             }
         }
     }

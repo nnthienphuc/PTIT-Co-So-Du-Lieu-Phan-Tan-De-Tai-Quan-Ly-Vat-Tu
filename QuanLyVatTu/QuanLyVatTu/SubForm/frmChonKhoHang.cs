@@ -30,7 +30,7 @@ namespace QuanLyVatTu.SubForm
             dataSet.EnforceConstraints = false;
             this.khoTableAdapter.Connection.ConnectionString = Program.connstr;
             this.khoTableAdapter.Fill(this.dataSet.Kho);
-            this.Close();
+           
         }
 
         private Form CheckExists(Type ftype)
@@ -44,6 +44,7 @@ namespace QuanLyVatTu.SubForm
         {
             string maKhoHang = ((DataRowView)bdsKhoHang.Current)["MAKHO"].ToString();
             Program.maKhoDuocChon = maKhoHang;
+            this.Close();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

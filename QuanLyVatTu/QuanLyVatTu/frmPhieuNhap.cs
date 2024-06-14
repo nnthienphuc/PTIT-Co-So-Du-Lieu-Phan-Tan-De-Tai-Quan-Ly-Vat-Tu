@@ -271,6 +271,7 @@ namespace QuanLyVatTu
             bds.AddNew();
             if (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Nhập")
             {
+                this.gbxPhieuNhap.Enabled = true;
                 this.txtMaPhieuNhap.Enabled = true;
 
                 this.dteNgay.EditValue = DateTime.Now;
@@ -294,6 +295,7 @@ namespace QuanLyVatTu
 
             if (btnMeNuChonCheDo.Links[0].Caption == "Chi Tiết Phiếu Nhập")
             {
+             
                 DataRowView drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
                 String maNhanVien = drv["MANV"].ToString();
                 if (Program.userName != maNhanVien)
@@ -437,8 +439,6 @@ namespace QuanLyVatTu
 
                 bds.CancelEdit();
                 /*xoa dong hien tai*/
-                bds.RemoveCurrent();
-                /* trở về lúc đầu con trỏ đang đứng*/
                 bds.Position = viTri;
                 return;
             }
