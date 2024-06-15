@@ -276,6 +276,7 @@
             this.btnGhi.Id = 2;
             this.btnGhi.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGhi.ImageOptions.SvgImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnHoanTac
             // 
@@ -460,7 +461,7 @@
             this.gcPhieuXuat.MainView = this.gridView1;
             this.gcPhieuXuat.MenuManager = this.barManager1;
             this.gcPhieuXuat.Name = "gcPhieuXuat";
-            this.gcPhieuXuat.Size = new System.Drawing.Size(1530, 167);
+            this.gcPhieuXuat.Size = new System.Drawing.Size(1530, 225);
             this.gcPhieuXuat.TabIndex = 9;
             this.gcPhieuXuat.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -615,9 +616,9 @@
             this.gbxPhieuXuat.Controls.Add(lblMaPhieuXuat);
             this.gbxPhieuXuat.Controls.Add(this.txtMaPhieuXuat);
             this.gbxPhieuXuat.Enabled = false;
-            this.gbxPhieuXuat.Location = new System.Drawing.Point(0, 302);
+            this.gbxPhieuXuat.Location = new System.Drawing.Point(0, 324);
             this.gbxPhieuXuat.Name = "gbxPhieuXuat";
-            this.gbxPhieuXuat.Size = new System.Drawing.Size(834, 362);
+            this.gbxPhieuXuat.Size = new System.Drawing.Size(834, 340);
             this.gbxPhieuXuat.TabIndex = 10;
             this.gbxPhieuXuat.TabStop = false;
             this.gbxPhieuXuat.Text = "Ngày";

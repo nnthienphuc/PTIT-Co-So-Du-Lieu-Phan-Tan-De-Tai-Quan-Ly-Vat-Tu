@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -270,7 +271,8 @@ namespace QuanLyVatTu
             /*AddNew tự động nhảy xuống cuối thêm 1 dòng mới*/
             bds.AddNew();
             if (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Nhập")
-            {
+            {   
+               
                 this.gbxPhieuNhap.Enabled = true;
                 this.txtMaPhieuNhap.Enabled = true;
 
@@ -295,7 +297,7 @@ namespace QuanLyVatTu
 
             if (btnMeNuChonCheDo.Links[0].Caption == "Chi Tiết Phiếu Nhập")
             {
-             
+                this.gbxPhieuNhap.Enabled = true;
                 DataRowView drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
                 String maNhanVien = drv["MANV"].ToString();
                 if (Program.userName != maNhanVien)
@@ -518,6 +520,13 @@ namespace QuanLyVatTu
         {
             if (cheDo == "Phiếu Nhập")
             {
+
+                if (txtMaPhieuNhap.Text == "")
+                {
+                    MessageBox.Show("Không bỏ trống mã phiếu nhập !", "Thông báo", MessageBoxButtons.OK);
+                    txtMaPhieuNhap.Focus();
+                    return false;
+                }
                 if (txtMaPhieuNhap.Text == "")
                 {
                     MessageBox.Show("Không bỏ trống mã phiếu nhập !", "Thông báo", MessageBoxButtons.OK);
@@ -525,10 +534,9 @@ namespace QuanLyVatTu
                     return false;
                 }
 
-
-                if (txtMaNhanVien.Text == "")
+                if (Regex.IsMatch(txtMaPhieuNhap.Text, @"^[A-Za-z ]+$") == false)
                 {
-                    MessageBox.Show("Không bỏ trống mã nhân viên !", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("mã phiếu nhập chỉ có chữ cái và khoảng trắng !", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
 

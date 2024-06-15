@@ -9,6 +9,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -158,6 +159,9 @@ namespace QuanLyVatTu
         }
         private void btnCheDoChiTietPhieuXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            btnMeNuChonCheDo.Links[0].Caption = "Chi Tiết Phiếu Xuất";
+            bds = bdsChiTietPhieuXuat;
+
             if (Program.role == "CONGTY")
             {
                 cboChiNhanh.Enabled = true;
@@ -206,6 +210,7 @@ namespace QuanLyVatTu
             bds.AddNew();
             if (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Xuất")
             {
+                this.gbxPhieuXuat.Enabled =true;
                 this.txtMaPhieuXuat.Enabled = true;
 
                 this.txtNgay.EditValue = DateTime.Now;
@@ -311,6 +316,12 @@ namespace QuanLyVatTu
                     return false;
                 }
 
+                if (Regex.IsMatch(txtMaPhieuXuat.Text, @"^[A-Za-z ]+$") == false)
+                {
+                    MessageBox.Show("Mã phiếu nhập chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
+
                 if (txtMaPhieuXuat.Text.Length > 8)
                 {
                     MessageBox.Show("Mã phiếu xuất không thể quá 8 kí tự !", "Thông báo", MessageBoxButtons.OK);
@@ -325,6 +336,13 @@ namespace QuanLyVatTu
                     return false;
                 }
 
+                if (Regex.IsMatch(txtTenKhachHang.Text, @"^[A-Za-z ]+$") == false)
+                {
+                    MessageBox.Show("Tên khách hàng chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
+
+
                 if (txtTenKhachHang.Text.Length > 100)
                 {
                     MessageBox.Show("Tên khách hàng không quá 100 kí tự !", "Thông báo", MessageBoxButtons.OK);
@@ -337,6 +355,13 @@ namespace QuanLyVatTu
                     MessageBox.Show("Không bỏ trống mã kho !", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
+
+                if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-z ]+$") == false)
+                {
+                    MessageBox.Show("Mã kho chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
+
 
             }
 
@@ -465,133 +490,7 @@ namespace QuanLyVatTu
          *Step 4: dung stored procedure kiem tra xem phieu nhap da ton tai chua ?
          *Step 5: xu ly du lieu neu co
          */
-        private void btnGHI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            /*Step 1*/
-            String cheDo = (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Xuất") ? "Phiếu Xuất" : "Chi Tiết Phiếu Xuất";
-
-            /*Step 2*/
-            bool ketQua = kiemTraDuLieuDauVao(cheDo);
-            if (ketQua == false) return;
-
-
-
-            /*Step 3*/
-            string cauTruyVanHoanTac = taoCauTruyVanHoanTac(cheDo);
-            //Console.WriteLine("CAU TRUY VAN HOAN TAC");
-            //Console.WriteLine(cauTruyVanHoanTac);
-
-
-            /*Step 4*/
-            String maPhieuXuat = txtMaPhieuXuat.Text.Trim();
-            //Console.WriteLine(maPhieuNhap);
-            String cauTruyVan =
-                    "DECLARE	@result int " +
-                    "EXEC @result = sp_KiemTraMaPhieuXuat '" +
-                    maPhieuXuat + "' " +
-                    "SELECT 'Value' = @result";
-            SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);
-            try
-            {
-                Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
-                /*khong co ket qua tra ve thi ket thuc luon*/
-                if (Program.myReader == null)
-                {
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Console.WriteLine(ex.Message);
-                return;
-            }
-            Program.myReader.Read();
-            int result = int.Parse(Program.myReader.GetValue(0).ToString());
-            Program.myReader.Close();
-
-            /*Step 5*/
-            int viTriConTro = bdsPhieuXuat.Position;
-            int viTriMaPhieuXuat = bdsPhieuXuat.Find("MAPX", maPhieuXuat);
-
-            /*Dang them moi phieu nhap*/
-            if (result == 1 && cheDo == "Phiếu Xuất" && viTriMaPhieuXuat != viTriConTro)
-            {
-                MessageBox.Show("Mã phiếu xuất đã được sử dụng !", "Thông báo", MessageBoxButtons.OK);
-                txtMaPhieuXuat.Focus();
-                return;
-            }
-            else
-            {
-                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu ?", "Thông báo",
-                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (dr == DialogResult.OK)
-                {
-                    try
-                    {
-                        /*TH1: them moi phieu nhap*/
-                        if (cheDo == "Phiếu Xuất" && dangThemMoi == true)
-                        {
-                            cauTruyVanHoanTac =
-                                "DELETE FROM DBO.PHIEUXUAT " +
-                                "WHERE MAPX = '" + maPhieuXuat + "'";
-                        }
-
-                        /*TH2: them moi chi tiet don hang*/
-                        if (cheDo == "Chi Tiết Phiếu Xuất" && dangThemMoi == true)
-                        {
-                            cauTruyVanHoanTac =
-                                "DELETE FROM DBO.CTPN " +
-                                "WHERE MAPN = '" + maPhieuXuat + "' " +
-                                "AND MAVT = '" + Program.maVatTuDuocChon + "'";
-
-                            string maVatTu = txtMaVatTu.Text.Trim();
-                            string soLuong = txtSoLuong.Text.Trim();
-
-                            capNhatSoLuongVatTu(maVatTu, soLuong);
-                        }
-
-                        /*TH3: chinh sua phieu nhap -> chang co gi co the chinh sua
-                         * duoc -> chang can xu ly*/
-                        /*TH4: chinh sua chi tiet phieu nhap - > thi chi can may dong lenh duoi la xong*/
-                        undoList.Push(cauTruyVanHoanTac);
-                        Console.WriteLine("cau truy van hoan tac");
-                        Console.WriteLine(cauTruyVanHoanTac);
-
-                        this.bdsPhieuXuat.EndEdit();
-                        this.bdsChiTietPhieuXuat.EndEdit();
-                        this.phieuXuatTableAdapter.Update(this.dataSet.PhieuXuat);
-                        this.chiTietPhieuXuatTableAdapter.Update(this.dataSet.CTPX);
-
-                        this.txtMaPhieuXuat.Enabled = false;
-
-                        this.btnThem.Enabled = true;
-                        this.btnXoa.Enabled = true;
-                        this.btnGhi.Enabled = true;
-
-                        this.btnHoanTac.Enabled = true;
-                        this.btnLamMoi.Enabled = true;
-                        this.btnMeNuChonCheDo.Enabled = true;
-                        this.btnThoat.Enabled = true;
-
-                        this.gcPhieuXuat.Enabled = true;
-                        this.gclChiTietPhieuXuat.Enabled = true;
-                        /*cập nhật lại trạng thái thêm mới cho chắc*/
-                        dangThemMoi = false;
-                        MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        bds.RemoveCurrent();
-                        MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                }
-            }
-        }
+       
 
 
         /**********************************************************************
@@ -650,7 +549,7 @@ namespace QuanLyVatTu
 
                 bds.CancelEdit();
                 /*xoa dong hien tai*/
-                bds.RemoveCurrent();
+                //bds.RemoveCurrent();
                 /* trở về lúc đầu con trỏ đang đứng*/
                 bds.Position = viTri;
                 return;
@@ -777,7 +676,7 @@ namespace QuanLyVatTu
                     MessageBox.Show("Xóa thành công ", "Thông báo", MessageBoxButtons.OK);
                     this.btnHoanTac.Enabled = true;
                 }
-                catch (Exception ex)
+                catch (Exception ex)    
                 {
                     /*Step 4*/
                     MessageBox.Show("Lỗi xóa nhân viên. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
@@ -836,6 +735,134 @@ namespace QuanLyVatTu
         private void gclChiTietPhieuXuat_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGhi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            /*Step 1*/
+            String cheDo = (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Xuất") ? "Phiếu Xuất" : "Chi Tiết Phiếu Xuất";
+
+            /*Step 2*/
+            bool ketQua = kiemTraDuLieuDauVao(cheDo);
+            if (ketQua == false) return;
+
+
+
+            /*Step 3*/
+            string cauTruyVanHoanTac = taoCauTruyVanHoanTac(cheDo);
+            //Console.WriteLine("CAU TRUY VAN HOAN TAC");
+            //Console.WriteLine(cauTruyVanHoanTac);
+
+
+            /*Step 4*/
+            String maPhieuXuat = txtMaPhieuXuat.Text.Trim();
+            //Console.WriteLine(maPhieuNhap);
+            String cauTruyVan =
+                    "DECLARE	@result int " +
+                    "EXEC @result = sp_KiemTraMaPhieuXuat '" +
+                    maPhieuXuat + "' " +
+                    "SELECT 'Value' = @result";
+            SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);
+            try
+            {
+                Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
+                /*khong co ket qua tra ve thi ket thuc luon*/
+                if (Program.myReader == null)
+                {
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+                return;
+            }
+            Program.myReader.Read();
+            int result = int.Parse(Program.myReader.GetValue(0).ToString());
+            Program.myReader.Close();
+
+            /*Step 5*/
+            int viTriConTro = bdsPhieuXuat.Position;
+            int viTriMaPhieuXuat = bdsPhieuXuat.Find("MAPX", maPhieuXuat);
+
+            /*Dang them moi phieu nhap*/
+            if (result == 1 && cheDo == "Phiếu Xuất" && viTriMaPhieuXuat != viTriConTro)
+            {
+                MessageBox.Show("Mã phiếu xuất đã được sử dụng !", "Thông báo", MessageBoxButtons.OK);
+                txtMaPhieuXuat.Focus();
+                return;
+            }
+            else
+            {
+                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu ?", "Thông báo",
+                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (dr == DialogResult.OK)
+                {
+                    try
+                    {
+                        /*TH1: them moi phieu nhap*/
+                        if (cheDo == "Phiếu Xuất" && dangThemMoi == true)
+                        {
+                            cauTruyVanHoanTac =
+                                "DELETE FROM DBO.PHIEUXUAT " +
+                                "WHERE MAPX = '" + maPhieuXuat + "'";
+                        }
+
+                        /*TH2: them moi chi tiet don hang*/
+                        if (cheDo == "Chi Tiết Phiếu Xuất" && dangThemMoi == true)
+                        {
+                            cauTruyVanHoanTac =
+                                "DELETE FROM DBO.CTPN " +
+                                "WHERE MAPN = '" + maPhieuXuat + "' " +
+                                "AND MAVT = '" + Program.maVatTuDuocChon + "'";
+
+                            string maVatTu = txtMaVatTu.Text.Trim();
+                            string soLuong = txtSoLuong.Text.Trim();
+
+                            capNhatSoLuongVatTu(maVatTu, soLuong);
+                        }
+
+                        /*TH3: chinh sua phieu nhap -> chang co gi co the chinh sua
+                         * duoc -> chang can xu ly*/
+                        /*TH4: chinh sua chi tiet phieu nhap - > thi chi can may dong lenh duoi la xong*/
+                        undoList.Push(cauTruyVanHoanTac);
+                        Console.WriteLine("cau truy van hoan tac");
+                        Console.WriteLine(cauTruyVanHoanTac);
+
+                        this.bdsPhieuXuat.EndEdit();
+                        this.bdsChiTietPhieuXuat.EndEdit();
+                        this.phieuXuatTableAdapter.Update(this.dataSet.PhieuXuat);
+                        this.chiTietPhieuXuatTableAdapter.Update(this.dataSet.CTPX);
+
+                        this.txtMaPhieuXuat.Enabled = false;
+
+                        this.btnThem.Enabled = true;
+                        this.btnXoa.Enabled = true;
+                        this.btnGhi.Enabled = true;
+
+                        this.btnHoanTac.Enabled = true;
+                        this.btnLamMoi.Enabled = true;
+                        this.btnMeNuChonCheDo.Enabled = true;
+                        this.btnThoat.Enabled = true;
+
+                        this.gcPhieuXuat.Enabled = true;
+                        this.gclChiTietPhieuXuat.Enabled = true;
+                        /*cập nhật lại trạng thái thêm mới cho chắc*/
+                        dangThemMoi = false;
+                        MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                        bds.RemoveCurrent();
+                        MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                }
+            }
         }
     }
 
