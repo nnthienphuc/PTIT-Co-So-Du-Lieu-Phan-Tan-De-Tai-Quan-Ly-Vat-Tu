@@ -24,6 +24,5 @@ namespace QuanLyVatTu.ReportForm
 
             this.sqlDataSource1.Fill();
         }
-
     }
 }
