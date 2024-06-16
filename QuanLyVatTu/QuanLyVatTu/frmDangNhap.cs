@@ -85,7 +85,7 @@ namespace QuanLyVatTu
                 return;
 
             layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
-            cboChiNhanh.SelectedIndex = 0;
+            //cboChiNhanh.SelectedIndex = 0;
             cboChiNhanh.SelectedIndex = 1;
         }
 
@@ -102,12 +102,10 @@ namespace QuanLyVatTu
             if (Program.KetNoi() == 0)
                 return;
 
-            /* Step 3*/
             Program.brand = cboChiNhanh.SelectedIndex;
             Program.currentLogin = Program.loginName;
             Program.currentPassword = Program.loginPassword;
 
-            /* Step 4*/
             String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";
             Program.myReader = Program.ExecSqlDataReader(statement);
             if (Program.myReader == null)
@@ -116,7 +114,6 @@ namespace QuanLyVatTu
             // Nếu nhiều dòng thì phải dùng vòng lặp for để đọc
             Program.myReader.Read();
 
-            /* Step 5*/
             Program.userName = Program.myReader.GetString(0);// lấy userName
             if (Convert.IsDBNull(Program.userName))
             {
@@ -133,7 +130,6 @@ namespace QuanLyVatTu
             Program.frmChinh.hoTen.Text = "HỌ TÊN: " + Program.staff;
             Program.frmChinh.vaiTro.Text = "VAI TRÒ: " + Program.role;
 
-            /* Step 6*/
             this.Visible = false;
             Program.frmChinh.enableButtons();
         }

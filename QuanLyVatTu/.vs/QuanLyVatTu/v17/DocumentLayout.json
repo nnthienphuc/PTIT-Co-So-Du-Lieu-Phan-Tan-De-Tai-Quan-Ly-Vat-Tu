@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\frmdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 52,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,43 +26,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "frmNhanVien.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmNhanVien.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\frmNhanVien.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmNhanVien.cs [Design]*",
-              "RelativeToolTip": "QuanLyVatTu\\frmNhanVien.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T12:29:23.868Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "frmDangNhap.cs",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\frmDangNhap.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDangNhap.cs",
-              "RelativeToolTip": "QuanLyVatTu\\frmDangNhap.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAmwFIAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T12:27:02.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmDangNhap.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDangNhap.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\frmDangNhap.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\frmDangNhap.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\frmDangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-16T12:26:57.774Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }
