@@ -38,19 +38,19 @@ namespace QuanLyVatTu
         {
             if (txtMaNhanVien.Text == "")
             {
-                MessageBox.Show("Thiếu mã nhân viên", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không được để trống mã nhân viên", "Thông báo", MessageBoxButtons.OK);
                 return false;
             }
 
             if (txtMatKhau.Text == "")
             {
-                MessageBox.Show("Thiếu mật khẩu", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không được để trống mật khẩu", "Thông báo", MessageBoxButtons.OK);
                 return false;
             }
 
             if (txtXacNhanMatKhau.Text == "")
             {
-                MessageBox.Show("Thiếu mật khẩu xác nhận", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không được để trống mật khẩu xác nhận", "Thông báo", MessageBoxButtons.OK);
                 return false;
             }
 

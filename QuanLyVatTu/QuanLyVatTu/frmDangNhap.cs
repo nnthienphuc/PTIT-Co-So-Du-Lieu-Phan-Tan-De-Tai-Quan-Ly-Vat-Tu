@@ -108,12 +108,11 @@ namespace QuanLyVatTu
             Program.currentPassword = Program.loginPassword;
 
             /* Step 4*/
-            String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";// exec sp_DangNhap 'TP'
+            String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";
             Program.myReader = Program.ExecSqlDataReader(statement);
             if (Program.myReader == null)
                 return;
             // đọc một dòng của myReader - điều này là hiển nhiên vì kết quả chỉ có 1 dùng duy nhất
-            // dataReader lấy dữ liệu nhanh hơn dataTable nhưng không thể sửa dữ liệu
             // Nếu nhiều dòng thì phải dùng vòng lặp for để đọc
             Program.myReader.Read();
 
@@ -121,7 +120,7 @@ namespace QuanLyVatTu
             Program.userName = Program.myReader.GetString(0);// lấy userName
             if (Convert.IsDBNull(Program.userName))
             {
-                MessageBox.Show("Tài khoản này không có quyền truy cập \n Hãy thử tài khoản khác", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản này không có quyền truy cập\nHãy thử tài khoản khác", "Thông Báo", MessageBoxButtons.OK);
             }
 
             Program.staff = Program.myReader.GetString(1);
@@ -151,7 +150,7 @@ namespace QuanLyVatTu
             {
                 Program.serverName = cboChiNhanh.SelectedValue.ToString();
             }
-            catch (Exception) { }
+            catch (Exception) {}
         }
     }
 }

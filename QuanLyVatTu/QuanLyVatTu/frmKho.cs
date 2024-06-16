@@ -155,7 +155,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
+            if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9]+$") == false)
             {
                 MessageBox.Show("Mã kho chỉ chấp nhận chữ và số", "Thông báo", MessageBoxButtons.OK);
                 txtMaKho.Focus();

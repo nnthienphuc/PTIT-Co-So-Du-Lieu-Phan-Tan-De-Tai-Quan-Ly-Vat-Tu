@@ -351,7 +351,7 @@ namespace QuanLyVatTu
             }
             else
             {
-                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu ?", "Thông báo",
+                DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu?", "Thông báo",
                         MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
@@ -404,7 +404,7 @@ namespace QuanLyVatTu
                     {
                         Console.WriteLine(ex.Message);
                         bdsVatTu.RemoveCurrent();
-                        MessageBox.Show("Tên vật tư có thể đã được dùng !\n\n" + ex.Message, "Lỗi",
+                        MessageBox.Show("Tên vật tư có thể đã được dùng!\n\n" + ex.Message, "Lỗi",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
@@ -522,7 +522,7 @@ namespace QuanLyVatTu
             undoList.Push(cauTruyVanHoanTac);
 
             /*Step 2*/
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Thông báo",
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
                 MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
@@ -534,7 +534,7 @@ namespace QuanLyVatTu
                     this.vattuTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.vattuTableAdapter.Update(this.dataSet.Vattu);
 
-                    MessageBox.Show("Xóa thành công ", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK);
                     this.btnHoanTac.Enabled = true;
                 }
                 catch (Exception ex)

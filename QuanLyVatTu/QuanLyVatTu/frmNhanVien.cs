@@ -19,18 +19,11 @@ namespace QuanLyVatTu
         // vị trí của con trỏ trên grid view
         int viTri = 0;
 
-        // dùng dangThemMoi
-        // true -> đang dùng btnThem
         // false -> có thể là btnGhi hoặc btnXoa
-        // phục vụ cho btnHoanTac
         bool dangThemMoi = false;
 
         String maCN = "";
 
-        // phục vụ cho việc hoàn tác
-        // btnGhi là Insert
-        // btnXoa là Delete
-        // btnChuyenChiNhanh là ChangeBrand
         Stack undoList = new Stack();
 
         private Form CheckExists(Type ftype)
@@ -509,9 +502,9 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (txtLuong.Value < 4000000 || txtLuong.Value == 0)
+            if (txtLuong.Value < 4000000)
             {
-                MessageBox.Show("Mức lương không thể bỏ trống & tối thiểu 4.000.000 đồng", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Mức lương tối thiểu là 4,000,000 đồng", "Thông báo", MessageBoxButtons.OK);
                 txtLuong.Focus();
                 return false;
             }
@@ -691,15 +684,15 @@ namespace QuanLyVatTu
                 MessageBox.Show("Mã chi nhánh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Console.WriteLine("Ma chi nhanh hien tai : " + maChiNhanhHienTai);
-            Console.WriteLine("Ma chi nhanh Moi : " + maChiNhanhMoi);
+            Console.WriteLine("Ma chi nhanh hien tai: " + maChiNhanhHienTai);
+            Console.WriteLine("Ma chi nhanh moi: " + maChiNhanhMoi);
 
             /*Step 3*/
             String cauTruyVanHoanTac = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhHienTai + "'";
             undoList.Push(cauTruyVanHoanTac);
 
             Program.serverNameLeft = chiNhanh; /*Lấy tên chi nhánh tới để làm tính năng hoàn tác*/
-            Console.WriteLine("Ten server con lai" + Program.serverNameLeft);
+            Console.WriteLine("Ten server con lai: " + Program.serverNameLeft);
 
             /*Step 4*/
             String cauTruyVan = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhMoi + "'";
@@ -710,7 +703,7 @@ namespace QuanLyVatTu
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
-                MessageBox.Show("Chuyển chi nhánh thành công", "thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Chuyển chi nhánh thành công", "Thông báo", MessageBoxButtons.OK);
 
                 if (Program.myReader == null)
                 {
@@ -719,7 +712,7 @@ namespace QuanLyVatTu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("thực thi database thất bại!\n\n" + ex.Message, "thông báo",
+                MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
                 return;
@@ -742,7 +735,7 @@ namespace QuanLyVatTu
             /*Step 1 - Kiem tra trang thai xoa*/
             if (chkTrangThaiXoa.Checked)
             {
-                MessageBox.Show("Nhân viên này không có ở chi nhánh này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nhân viên này không còn ở chi nhánh này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             /*Step 2 Kiem tra xem form da co trong bo nho chua*/

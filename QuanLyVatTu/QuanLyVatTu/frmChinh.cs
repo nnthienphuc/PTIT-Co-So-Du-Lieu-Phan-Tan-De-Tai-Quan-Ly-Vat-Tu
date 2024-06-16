@@ -138,7 +138,6 @@ namespace QuanLyVatTu
 
         private void btnKho_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Console.WriteLine("click kho");
             Form f = this.CheckExists(typeof(frmKho));
             if (f != null)
             {

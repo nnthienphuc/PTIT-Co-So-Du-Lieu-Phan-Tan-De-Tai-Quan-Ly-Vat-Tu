@@ -204,10 +204,11 @@ namespace QuanLyVatTu.ReportForm
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
                 string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
+
                 rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
                 report.txtChiNhanh.Text = chiNhanh;
-                report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
-                report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
+                report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
+                report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
 
                 string filePath = "";
 
