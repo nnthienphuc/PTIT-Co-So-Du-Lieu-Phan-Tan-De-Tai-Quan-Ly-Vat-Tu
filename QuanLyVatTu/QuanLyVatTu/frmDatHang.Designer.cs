@@ -257,6 +257,7 @@
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnGhi
             // 
@@ -274,6 +275,7 @@
             this.btnHoanTac.Id = 3;
             this.btnHoanTac.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHoanTac.ImageOptions.SvgImage")));
             this.btnHoanTac.Name = "btnHoanTac";
+            this.btnHoanTac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHoanTac_ItemClick);
             // 
             // btnLamMoi
             // 
@@ -531,11 +533,11 @@
             // gcChiTietDonDatHang
             // 
             this.gcChiTietDonDatHang.DataSource = this.bdsCTDH;
-            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(695, 48);
+            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(702, 53);
             this.gcChiTietDonDatHang.MainView = this.gridView2;
             this.gcChiTietDonDatHang.MenuManager = this.barManager1;
             this.gcChiTietDonDatHang.Name = "gcChiTietDonDatHang";
-            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(833, 220);
+            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(833, 356);
             this.gcChiTietDonDatHang.TabIndex = 3;
             this.gcChiTietDonDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -560,6 +562,7 @@
             this.colMasoDDH1.FieldName = "MasoDDH";
             this.colMasoDDH1.MinWidth = 30;
             this.colMasoDDH1.Name = "colMasoDDH1";
+            this.colMasoDDH1.OptionsColumn.AllowEdit = false;
             this.colMasoDDH1.Visible = true;
             this.colMasoDDH1.VisibleIndex = 0;
             this.colMasoDDH1.Width = 112;
@@ -569,6 +572,7 @@
             this.colMAVT.FieldName = "MAVT";
             this.colMAVT.MinWidth = 30;
             this.colMAVT.Name = "colMAVT";
+            this.colMAVT.OptionsColumn.AllowEdit = false;
             this.colMAVT.Visible = true;
             this.colMAVT.VisibleIndex = 1;
             this.colMAVT.Width = 112;
@@ -578,15 +582,19 @@
             this.colSOLUONG.FieldName = "SOLUONG";
             this.colSOLUONG.MinWidth = 30;
             this.colSOLUONG.Name = "colSOLUONG";
+            this.colSOLUONG.OptionsColumn.AllowEdit = false;
             this.colSOLUONG.Visible = true;
             this.colSOLUONG.VisibleIndex = 2;
             this.colSOLUONG.Width = 112;
             // 
             // colDONGIA
             // 
+            this.colDONGIA.DisplayFormat.FormatString = "n0";
+            this.colDONGIA.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDONGIA.FieldName = "DONGIA";
             this.colDONGIA.MinWidth = 30;
             this.colDONGIA.Name = "colDONGIA";
+            this.colDONGIA.OptionsColumn.AllowEdit = false;
             this.colDONGIA.Visible = true;
             this.colDONGIA.VisibleIndex = 3;
             this.colDONGIA.Width = 112;
@@ -718,6 +726,7 @@
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtDonGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtDonGia.Size = new System.Drawing.Size(150, 28);
             this.txtDonGia.TabIndex = 7;
             // 

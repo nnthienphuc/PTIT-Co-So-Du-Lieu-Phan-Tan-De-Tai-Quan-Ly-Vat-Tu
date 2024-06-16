@@ -381,7 +381,7 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 55);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1538, 37);
+            this.panelControl1.Size = new System.Drawing.Size(1538, 62);
             this.panelControl1.TabIndex = 6;
             // 
             // cboChiNhanh
@@ -441,11 +441,11 @@
             this.gclPhieuNhap.DataSource = this.bdsPhieuNhap;
             this.gclPhieuNhap.Dock = System.Windows.Forms.DockStyle.Top;
             this.gclPhieuNhap.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.gclPhieuNhap.Location = new System.Drawing.Point(0, 92);
+            this.gclPhieuNhap.Location = new System.Drawing.Point(0, 117);
             this.gclPhieuNhap.MainView = this.gridView1;
             this.gclPhieuNhap.MenuManager = this.barManager1;
             this.gclPhieuNhap.Name = "gclPhieuNhap";
-            this.gclPhieuNhap.Size = new System.Drawing.Size(1538, 217);
+            this.gclPhieuNhap.Size = new System.Drawing.Size(1538, 196);
             this.gclPhieuNhap.TabIndex = 7;
             this.gclPhieuNhap.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});

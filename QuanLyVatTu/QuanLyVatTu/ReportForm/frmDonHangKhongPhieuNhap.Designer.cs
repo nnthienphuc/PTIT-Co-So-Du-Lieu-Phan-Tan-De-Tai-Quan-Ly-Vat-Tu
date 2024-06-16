@@ -39,21 +39,22 @@
             // 
             this.lblDonHangKhongPhieuNhap.AutoSize = true;
             this.lblDonHangKhongPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDonHangKhongPhieuNhap.Location = new System.Drawing.Point(96, 45);
+            this.lblDonHangKhongPhieuNhap.Location = new System.Drawing.Point(144, 69);
+            this.lblDonHangKhongPhieuNhap.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDonHangKhongPhieuNhap.Name = "lblDonHangKhongPhieuNhap";
-            this.lblDonHangKhongPhieuNhap.Size = new System.Drawing.Size(369, 25);
+            this.lblDonHangKhongPhieuNhap.Size = new System.Drawing.Size(527, 36);
             this.lblDonHangKhongPhieuNhap.TabIndex = 0;
             this.lblDonHangKhongPhieuNhap.Text = "ĐƠN HÀNG KHÔNG PHIẾU NHẬP";
             // 
             // cboChiNhanh
             // 
             this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboChiNhanh.Enabled = false;
             this.cboChiNhanh.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChiNhanh.FormattingEnabled = true;
-            this.cboChiNhanh.Location = new System.Drawing.Point(159, 108);
+            this.cboChiNhanh.Location = new System.Drawing.Point(238, 166);
+            this.cboChiNhanh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboChiNhanh.Name = "cboChiNhanh";
-            this.cboChiNhanh.Size = new System.Drawing.Size(342, 28);
+            this.cboChiNhanh.Size = new System.Drawing.Size(511, 41);
             this.cboChiNhanh.TabIndex = 4;
             this.cboChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboChiNhanh_SelectedIndexChanged);
             // 
@@ -61,9 +62,10 @@
             // 
             this.lblChiNhanh.AutoSize = true;
             this.lblChiNhanh.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiNhanh.Location = new System.Drawing.Point(41, 115);
+            this.lblChiNhanh.Location = new System.Drawing.Point(62, 177);
+            this.lblChiNhanh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChiNhanh.Name = "lblChiNhanh";
-            this.lblChiNhanh.Size = new System.Drawing.Size(89, 21);
+            this.lblChiNhanh.Size = new System.Drawing.Size(137, 33);
             this.lblChiNhanh.TabIndex = 3;
             this.lblChiNhanh.Text = "Chi Nhánh";
             // 
@@ -71,9 +73,10 @@
             // 
             this.btnXuatBan.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXuatBan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatBan.Location = new System.Drawing.Point(305, 187);
+            this.btnXuatBan.Location = new System.Drawing.Point(458, 288);
+            this.btnXuatBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXuatBan.Name = "btnXuatBan";
-            this.btnXuatBan.Size = new System.Drawing.Size(196, 39);
+            this.btnXuatBan.Size = new System.Drawing.Size(294, 60);
             this.btnXuatBan.TabIndex = 9;
             this.btnXuatBan.Text = "XUẤT BẢN";
             this.btnXuatBan.UseVisualStyleBackColor = false;
@@ -83,9 +86,10 @@
             // 
             this.btnXemTruoc.BackColor = System.Drawing.Color.PaleGreen;
             this.btnXemTruoc.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemTruoc.Location = new System.Drawing.Point(42, 187);
+            this.btnXemTruoc.Location = new System.Drawing.Point(63, 288);
+            this.btnXemTruoc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnXemTruoc.Name = "btnXemTruoc";
-            this.btnXemTruoc.Size = new System.Drawing.Size(196, 39);
+            this.btnXemTruoc.Size = new System.Drawing.Size(294, 60);
             this.btnXemTruoc.TabIndex = 8;
             this.btnXemTruoc.Text = "XEM TRƯỚC";
             this.btnXemTruoc.UseVisualStyleBackColor = false;
@@ -93,14 +97,15 @@
             // 
             // frmDonHangKhongPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 291);
+            this.ClientSize = new System.Drawing.Size(814, 448);
             this.Controls.Add(this.btnXuatBan);
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.cboChiNhanh);
             this.Controls.Add(this.lblChiNhanh);
             this.Controls.Add(this.lblDonHangKhongPhieuNhap);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDonHangKhongPhieuNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ĐƠN HÀNG KHÔNG PHIẾU NHẬP";
