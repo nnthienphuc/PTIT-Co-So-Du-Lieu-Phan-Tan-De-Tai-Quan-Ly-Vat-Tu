@@ -166,6 +166,9 @@
             this.colTrangThaiXoa});
             this.gridView1.GridControl = this.gclNhanVien;
             this.gridView1.Name = "gridView1";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTEN, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colHO, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colMANV
             // 

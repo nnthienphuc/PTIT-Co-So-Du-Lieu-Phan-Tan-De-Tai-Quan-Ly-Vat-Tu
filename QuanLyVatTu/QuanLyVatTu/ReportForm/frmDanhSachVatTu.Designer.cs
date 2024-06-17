@@ -132,6 +132,8 @@
             this.colSOLUONGTON});
             this.gridView1.GridControl = this.vattuGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTENVT, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colMAVT
             // 
