@@ -508,9 +508,6 @@ namespace QuanLyVatTu
                 return;
             }
 
-            /* Phần này phục vụ tính năng hoàn tác
-            * Đưa câu truy vấn hoàn tác vào undoList 
-            * để nếu chẳng may người dùng ấn hoàn tác thì quất luôn*/
             string cauTruyVanHoanTac =
             "INSERT INTO DBO.VATTU( MAVT,TENVT,DVT,SOLUONGTON) " +
             " VALUES( '" + txtMaVT.Text + "','" +
