@@ -1,4 +1,6 @@
-﻿using DevExpress.XtraReports.UI;
+﻿using DevExpress.CodeParser;
+using DevExpress.XtraPrinting.Native;
+using DevExpress.XtraReports.UI;
 using QuanLyVatTu.SubForm;
 using System;
 using System.Collections.Generic;
@@ -24,13 +26,12 @@ namespace QuanLyVatTu.ReportForm
         private void btnXemTruoc_Click(object sender, EventArgs e)
         {
             string maNhanVien = txtMaNV.Text;
-            string loaiPhieu = (cboLoaiPhieu.SelectedItem.ToString() == "NHAP") ? "NHAP" : "XUAT";
             DateTime fromDate = dteTuNgay.DateTime;
             DateTime toDate = dteToiNgay.DateTime;
-            rptHoatDongNhanVien1 report = new rptHoatDongNhanVien1(maNhanVien, loaiPhieu, fromDate, toDate);
+            rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
             report.txtHoTenNV.Text = Program.hoTen;
-            report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-            report.txtDenNgay.Text = dteToiNgay.EditValue.ToString();
+            report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
+            report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
             report.txtNgayLapBaoCao.Text = toDate.ToString();
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
@@ -47,9 +48,8 @@ namespace QuanLyVatTu.ReportForm
 
         private void frmHoatDongNhanVien_Load(object sender, EventArgs e)
         {
-            cboLoaiPhieu.SelectedIndex = 1;
-            dteTuNgay.EditValue = "01-01-2017";
-            dteToiNgay.EditValue = "01-01-2024";
+            dteTuNgay.EditValue = "16-08-2003";
+            dteToiNgay.EditValue = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void btnXuatBan_Click(object sender, EventArgs e)
@@ -57,16 +57,14 @@ namespace QuanLyVatTu.ReportForm
             try
             {
                 string maNhanVien = txtMaNV.Text;
-                string loaiPhieu = (cboLoaiPhieu.SelectedItem.ToString() == "NHAP") ? "NHAP" : "XUAT";
-
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
 
-                rptHoatDongNhanVien1 report = new rptHoatDongNhanVien1(maNhanVien, loaiPhieu, fromDate, toDate);
-                report.txtHoTenNV.Text = Program.hoTen;
-                report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-                report.txtDenNgay.Text = dteToiNgay.EditValue.ToString();
-                report.txtNgayLapBaoCao.Text = toDate.ToString();
+                rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
+                report.txtHoTenNV.Text = Program.hoTen + " - " + maNhanVien;
+                report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
+                report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
                 string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
 
@@ -112,6 +110,11 @@ namespace QuanLyVatTu.ReportForm
                 MessageBox.Show("Không thể mở file PDF: " + ex.Message,
                     "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void lblToiNgay_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

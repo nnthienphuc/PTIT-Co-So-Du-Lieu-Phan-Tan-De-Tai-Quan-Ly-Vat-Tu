@@ -1,18 +1,29 @@
-CREATE PROCEDURE [dbo].[sp_HoatDongNhanVien]
+create PROCEDURE [dbo].[sp_HoatDongNhanVien]
 @MANV int,
-@LOAI nvarchar(4),
 @DATEFROM DATETIME,
 @DATETO DATETIME
 AS
 BEGIN
-	IF( @LOAI = 'NHAP')
-	BEGIN
-		SELECT FORMAT(PN.NGAY,'MM-yyyy') AS THANGNAM,
+    -- Tạo bảng tạm để lưu kết quả
+    CREATE TABLE #TEMP (
+        THANGNAM NVARCHAR(7),
+        NGAY DATETIME,
+        MAPHIEU NVARCHAR(10),
+        LOAIPHIEU NVARCHAR(10),
+        HOTENKH NVARCHAR(100),
+        TENVT NVARCHAR(50),
+        SOLUONG INT,
+        DONGIA DECIMAL(18, 2)
+    );
+
+    -- Thêm dữ liệu từ PhieuNhap vào bảng tạm
+    INSERT INTO #TEMP
+    SELECT FORMAT(PN.NGAY,'MM-yyyy') AS THANGNAM,
 				PN.NGAY, 
 				PN.MAPN AS MAPHIEU,
 				N'Nhập' AS LOAIPHIEU,
+				null as HOTENKH,
 				TENVT, 
-				TENKHO, 
 				SOLUONG,
 				DONGIA
 		FROM (SELECT NGAY, 
@@ -25,18 +36,15 @@ BEGIN
 				(SELECT MAVT, TENVT FROM Vattu ) VT
 		WHERE PN.MAPN =CTPN.MAPN
 		AND VT.MAVT = CTPN.MAVT
-		ORDER BY NGAY, MAPHIEU, TENVT
-	END
 
-	ELSE
-	BEGIN
-		SELECT FORMAT(PX.NGAY,'MM-yyyy') AS THANGNAM,
+    -- Thêm dữ liệu từ PhieuXuat vào bảng tạm
+    INSERT INTO #TEMP
+    SELECT FORMAT(PX.NGAY,'MM-yyyy') AS THANGNAM,
 				PX.NGAY, 
 				PX.MAPX AS MAPHIEU,
 				N'Xuất' AS LOAIPHIEU,
 				HOTENKH,
 				TENVT, 
-				TENKHO, 
 				SOLUONG,
 				DONGIA
 		FROM (SELECT NGAY, 
@@ -51,7 +59,11 @@ BEGIN
 				(SELECT MAVT, TENVT FROM Vattu ) VT
 		WHERE PX.MAPX =CTPX.MAPX
 		AND VT.MAVT = CTPX.MAVT
-		
-		ORDER BY NGAY, MAPHIEU, TENVT
-	END
-END
+
+    -- Truy vấn kết quả từ bảng tạm và sắp xếp
+    SELECT * FROM #TEMP
+    ORDER BY NGAY, MAPHIEU, TENVT;
+
+    -- Xóa bảng tạm
+    DROP TABLE #TEMP;
+END;

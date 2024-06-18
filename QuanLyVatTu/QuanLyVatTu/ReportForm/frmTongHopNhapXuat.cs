@@ -75,8 +75,8 @@ namespace QuanLyVatTu.ReportForm
             layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
             cboChiNhanh.SelectedIndex = Program.brand;
 
-            dteTuNgay.EditValue = "14-01-2000";
-            dteToiNgay.EditValue = "14-06-2024";
+            dteTuNgay.EditValue = "16-08-2003";
+            dteToiNgay.EditValue = DateTime.Now.ToString();
         }
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)

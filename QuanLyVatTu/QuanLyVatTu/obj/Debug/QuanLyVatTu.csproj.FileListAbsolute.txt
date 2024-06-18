@@ -84,7 +84,6 @@ D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVa
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonChiTietDonDatHang.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonDonDatHang.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.SubForm.frmChonKhoHang.resources
-D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptHoatDongNhanVien1.resources
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.BonusSkins.v23.2.dll
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.Charts.v23.2.Core.dll
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.CodeParser.v23.2.dll
@@ -159,3 +158,6 @@ D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVa
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.Diagram.v23.2.Core.xml
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVa.6E15CABF.Up2Date
 D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptChiTietSoLuongTriGiaHangHoaNhapXuat.resources
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.Mvvm.v23.2.dll
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\bin\Debug\DevExpress.Mvvm.v23.2.xml
+D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\QuanLyVatTu\QuanLyVatTu\obj\Debug\QuanLyVatTu.ReportForm.rptHoatDongNhanVien.resources

@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rptchitietsoluongtrigiahanghoanhapxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rptchitietsoluongtrigiahanghoanhapxuat.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rpthoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rpthoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rpthoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rpthoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rptdonhangkhongphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rptdonhangkhongphieunhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rptdanhsachvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rptdanhsachvattu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\rptdanhsachnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\rptdanhsachnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\convertmoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\convertmoney.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\frmhoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\frmhoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|d:\\github\\ptit-co-so-du-lieu-phan-tan-de-tai-quan-ly-vat-tu\\quanlyvattu\\quanlyvattu\\reportform\\frmhoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{719813E2-7D76-4124-BDA6-B86CE1A4CBD4}|QuanLyVatTu\\QuanLyVatTu.csproj|solutionrelative:quanlyvattu\\reportform\\frmhoatdongnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 52,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -59,87 +43,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "rptHoatDongNhanVien.cs [Design]",
+              "Title": "ConvertMoney.cs",
+              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\ConvertMoney.cs",
+              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\ConvertMoney.cs",
+              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\ConvertMoney.cs",
+              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\ConvertMoney.cs",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAowEYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T13:12:10.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "rptHoatDongNhanVien.cs",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs [Design]",
+              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs",
+              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptHoatDongNhanVien.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAQwCMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:33:01.232Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-06-18T09:37:21.534Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "rptDonHangKhongPhieuNhap.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDonHangKhongPhieuNhap.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\rptDonHangKhongPhieuNhap.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDonHangKhongPhieuNhap.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptDonHangKhongPhieuNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:32:59.795Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "rptDanhSachVatTu.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDanhSachVatTu.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\rptDanhSachVatTu.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDanhSachVatTu.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptDanhSachVatTu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:32:58.539Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "rptDanhSachNhanVien.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDanhSachNhanVien.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\rptDanhSachNhanVien.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptDanhSachNhanVien.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptDanhSachNhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:32:54.322Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "frmHoatDongNhanVien.cs",
               "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
               "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
               "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
               "RelativeToolTip": "QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowDMAAAAwAAAA",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAcwEYAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:26:12.18Z",
+              "WhenOpened": "2024-06-18T09:39:57.351Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmHoatDongNhanVien.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\frmHoatDongNhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:26:06.697Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "rptChiTietSoLuongTriGiaHangHoaNhapXuat.cs [Design]",
-              "DocumentMoniker": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptChiTietSoLuongTriGiaHangHoaNhapXuat.cs",
-              "RelativeDocumentMoniker": "QuanLyVatTu\\ReportForm\\rptChiTietSoLuongTriGiaHangHoaNhapXuat.cs",
-              "ToolTip": "D:\\Github\\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\\QuanLyVatTu\\QuanLyVatTu\\ReportForm\\rptChiTietSoLuongTriGiaHangHoaNhapXuat.cs [Design]",
-              "RelativeToolTip": "QuanLyVatTu\\ReportForm\\rptChiTietSoLuongTriGiaHangHoaNhapXuat.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-18T06:21:27.284Z",
-              "EditorCaption": " [Design]"
             }
           ]
         }

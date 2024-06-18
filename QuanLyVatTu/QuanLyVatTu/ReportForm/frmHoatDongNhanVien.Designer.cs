@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.lblHoatDongNhanVien = new System.Windows.Forms.Label();
-            this.lblLoaiPhieu = new System.Windows.Forms.Label();
             this.lblMaNV = new System.Windows.Forms.Label();
             this.lblHoTen = new System.Windows.Forms.Label();
             this.dteToiNgay = new DevExpress.XtraEditors.DateEdit();
             this.dteTuNgay = new DevExpress.XtraEditors.DateEdit();
             this.lblToiNgay = new System.Windows.Forms.Label();
             this.lblTuNgay = new System.Windows.Forms.Label();
-            this.cboLoaiPhieu = new System.Windows.Forms.ComboBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.btnChonNhanVien = new System.Windows.Forms.Button();
@@ -52,29 +50,18 @@
             // 
             this.lblHoatDongNhanVien.AutoSize = true;
             this.lblHoatDongNhanVien.Font = new System.Drawing.Font("Times New Roman", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoatDongNhanVien.Location = new System.Drawing.Point(242, 55);
+            this.lblHoatDongNhanVien.Location = new System.Drawing.Point(192, 59);
             this.lblHoatDongNhanVien.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblHoatDongNhanVien.Name = "lblHoatDongNhanVien";
             this.lblHoatDongNhanVien.Size = new System.Drawing.Size(280, 25);
             this.lblHoatDongNhanVien.TabIndex = 0;
             this.lblHoatDongNhanVien.Text = "HOẠT ĐỘNG NHÂN VIÊN";
             // 
-            // lblLoaiPhieu
-            // 
-            this.lblLoaiPhieu.AutoSize = true;
-            this.lblLoaiPhieu.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaiPhieu.Location = new System.Drawing.Point(43, 138);
-            this.lblLoaiPhieu.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblLoaiPhieu.Name = "lblLoaiPhieu";
-            this.lblLoaiPhieu.Size = new System.Drawing.Size(89, 21);
-            this.lblLoaiPhieu.TabIndex = 1;
-            this.lblLoaiPhieu.Text = "Loại Phiếu";
-            // 
             // lblMaNV
             // 
             this.lblMaNV.AutoSize = true;
             this.lblMaNV.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMaNV.Location = new System.Drawing.Point(43, 203);
+            this.lblMaNV.Location = new System.Drawing.Point(46, 135);
             this.lblMaNV.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblMaNV.Name = "lblMaNV";
             this.lblMaNV.Size = new System.Drawing.Size(116, 21);
@@ -85,7 +72,7 @@
             // 
             this.lblHoTen.AutoSize = true;
             this.lblHoTen.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHoTen.Location = new System.Drawing.Point(43, 271);
+            this.lblHoTen.Location = new System.Drawing.Point(46, 187);
             this.lblHoTen.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblHoTen.Name = "lblHoTen";
             this.lblHoTen.Size = new System.Drawing.Size(67, 21);
@@ -95,7 +82,7 @@
             // dteToiNgay
             // 
             this.dteToiNgay.EditValue = null;
-            this.dteToiNgay.Location = new System.Drawing.Point(548, 333);
+            this.dteToiNgay.Location = new System.Drawing.Point(197, 298);
             this.dteToiNgay.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dteToiNgay.Name = "dteToiNgay";
             this.dteToiNgay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
@@ -110,7 +97,7 @@
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
-            this.dteTuNgay.Location = new System.Drawing.Point(194, 333);
+            this.dteTuNgay.Location = new System.Drawing.Point(197, 240);
             this.dteTuNgay.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.dteTuNgay.Name = "dteTuNgay";
             this.dteTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 14F);
@@ -126,58 +113,46 @@
             // 
             this.lblToiNgay.AutoSize = true;
             this.lblToiNgay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToiNgay.Location = new System.Drawing.Point(442, 336);
+            this.lblToiNgay.Location = new System.Drawing.Point(46, 301);
             this.lblToiNgay.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblToiNgay.Name = "lblToiNgay";
             this.lblToiNgay.Size = new System.Drawing.Size(80, 21);
             this.lblToiNgay.TabIndex = 20;
             this.lblToiNgay.Text = "Tới Ngày";
+            this.lblToiNgay.Click += new System.EventHandler(this.lblToiNgay_Click);
             // 
             // lblTuNgay
             // 
             this.lblTuNgay.AutoSize = true;
             this.lblTuNgay.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTuNgay.Location = new System.Drawing.Point(43, 340);
+            this.lblTuNgay.Location = new System.Drawing.Point(46, 243);
             this.lblTuNgay.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTuNgay.Name = "lblTuNgay";
             this.lblTuNgay.Size = new System.Drawing.Size(76, 21);
             this.lblTuNgay.TabIndex = 19;
             this.lblTuNgay.Text = "Từ Ngày";
             // 
-            // cboLoaiPhieu
-            // 
-            this.cboLoaiPhieu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboLoaiPhieu.FormattingEnabled = true;
-            this.cboLoaiPhieu.Items.AddRange(new object[] {
-            "NHAP",
-            "XUAT"});
-            this.cboLoaiPhieu.Location = new System.Drawing.Point(197, 130);
-            this.cboLoaiPhieu.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.cboLoaiPhieu.Name = "cboLoaiPhieu";
-            this.cboLoaiPhieu.Size = new System.Drawing.Size(199, 29);
-            this.cboLoaiPhieu.TabIndex = 23;
-            // 
             // txtMaNV
             // 
             this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(197, 195);
+            this.txtMaNV.Location = new System.Drawing.Point(197, 132);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(199, 29);
+            this.txtMaNV.Size = new System.Drawing.Size(202, 29);
             this.txtMaNV.TabIndex = 24;
             // 
             // txtHoTen
             // 
             this.txtHoTen.Enabled = false;
-            this.txtHoTen.Location = new System.Drawing.Point(197, 263);
+            this.txtHoTen.Location = new System.Drawing.Point(197, 184);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(199, 29);
+            this.txtHoTen.Size = new System.Drawing.Size(202, 29);
             this.txtHoTen.TabIndex = 25;
             // 
             // btnChonNhanVien
             // 
-            this.btnChonNhanVien.Location = new System.Drawing.Point(504, 195);
+            this.btnChonNhanVien.Location = new System.Drawing.Point(445, 153);
             this.btnChonNhanVien.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnChonNhanVien.Name = "btnChonNhanVien";
             this.btnChonNhanVien.Size = new System.Drawing.Size(154, 55);
@@ -190,7 +165,7 @@
             // 
             this.btnXuatBan.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXuatBan.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXuatBan.Location = new System.Drawing.Point(416, 456);
+            this.btnXuatBan.Location = new System.Drawing.Point(414, 371);
             this.btnXuatBan.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnXuatBan.Name = "btnXuatBan";
             this.btnXuatBan.Size = new System.Drawing.Size(196, 39);
@@ -203,7 +178,7 @@
             // 
             this.btnXemTruoc.BackColor = System.Drawing.Color.PaleGreen;
             this.btnXemTruoc.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXemTruoc.Location = new System.Drawing.Point(135, 456);
+            this.btnXemTruoc.Location = new System.Drawing.Point(89, 371);
             this.btnXemTruoc.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.btnXemTruoc.Name = "btnXemTruoc";
             this.btnXemTruoc.Size = new System.Drawing.Size(196, 39);
@@ -216,20 +191,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 596);
+            this.ClientSize = new System.Drawing.Size(694, 512);
             this.Controls.Add(this.btnXuatBan);
             this.Controls.Add(this.btnXemTruoc);
             this.Controls.Add(this.btnChonNhanVien);
             this.Controls.Add(this.txtHoTen);
             this.Controls.Add(this.txtMaNV);
-            this.Controls.Add(this.cboLoaiPhieu);
             this.Controls.Add(this.dteToiNgay);
             this.Controls.Add(this.dteTuNgay);
             this.Controls.Add(this.lblToiNgay);
             this.Controls.Add(this.lblTuNgay);
             this.Controls.Add(this.lblHoTen);
             this.Controls.Add(this.lblMaNV);
-            this.Controls.Add(this.lblLoaiPhieu);
             this.Controls.Add(this.lblHoatDongNhanVien);
             this.Font = new System.Drawing.Font("Times New Roman", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
@@ -249,14 +222,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblHoatDongNhanVien;
-        private System.Windows.Forms.Label lblLoaiPhieu;
         private System.Windows.Forms.Label lblMaNV;
         private System.Windows.Forms.Label lblHoTen;
         private DevExpress.XtraEditors.DateEdit dteToiNgay;
         private DevExpress.XtraEditors.DateEdit dteTuNgay;
         private System.Windows.Forms.Label lblToiNgay;
         private System.Windows.Forms.Label lblTuNgay;
-        private System.Windows.Forms.ComboBox cboLoaiPhieu;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.TextBox txtHoTen;
         private System.Windows.Forms.Button btnChonNhanVien;
