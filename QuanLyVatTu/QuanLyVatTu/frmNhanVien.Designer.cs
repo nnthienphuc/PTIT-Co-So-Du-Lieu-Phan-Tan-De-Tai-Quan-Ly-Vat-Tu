@@ -375,7 +375,7 @@
             this.pnlChiNhanh.Location = new System.Drawing.Point(0, 45);
             this.pnlChiNhanh.Margin = new System.Windows.Forms.Padding(4);
             this.pnlChiNhanh.Name = "pnlChiNhanh";
-            this.pnlChiNhanh.Size = new System.Drawing.Size(1141, 45);
+            this.pnlChiNhanh.Size = new System.Drawing.Size(1141, 65);
             this.pnlChiNhanh.TabIndex = 4;
             // 
             // cboChiNhanh
@@ -394,7 +394,7 @@
             // 
             this.lblChiNhanh.AutoSize = true;
             this.lblChiNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiNhanh.Location = new System.Drawing.Point(238, 30);
+            this.lblChiNhanh.Location = new System.Drawing.Point(260, 26);
             this.lblChiNhanh.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChiNhanh.Name = "lblChiNhanh";
             this.lblChiNhanh.Size = new System.Drawing.Size(71, 17);
@@ -435,12 +435,12 @@
             this.gclNhanVien.DataSource = this.bdsNhanVien;
             this.gclNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.gclNhanVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gclNhanVien.Location = new System.Drawing.Point(0, 90);
+            this.gclNhanVien.Location = new System.Drawing.Point(0, 110);
             this.gclNhanVien.MainView = this.gridView1;
             this.gclNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.gclNhanVien.MenuManager = this.barButton;
             this.gclNhanVien.Name = "gclNhanVien";
-            this.gclNhanVien.Size = new System.Drawing.Size(1141, 278);
+            this.gclNhanVien.Size = new System.Drawing.Size(1141, 384);
             this.gclNhanVien.TabIndex = 6;
             this.gclNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -586,10 +586,10 @@
             this.pnlNhapLieu.Controls.Add(lblMaNV);
             this.pnlNhapLieu.Controls.Add(this.txtMaNV);
             this.pnlNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNhapLieu.Location = new System.Drawing.Point(0, 368);
+            this.pnlNhapLieu.Location = new System.Drawing.Point(0, 494);
             this.pnlNhapLieu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNhapLieu.Name = "pnlNhapLieu";
-            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 133);
+            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 7);
             this.pnlNhapLieu.TabIndex = 7;
             // 
             // chkTrangThaiXoa

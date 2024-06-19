@@ -376,6 +376,7 @@
             this.tableCell13.StylePriority.UseBorders = false;
             this.tableCell13.StylePriority.UseTextAlignment = false;
             this.tableCell13.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell13.TextFormatString = "{0:dd/MM/yyyy}";
             this.tableCell13.Weight = 0.20446928228107555D;
             // 
             // tableCell14
@@ -391,6 +392,7 @@
             this.tableCell14.StylePriority.UseBorders = false;
             this.tableCell14.StylePriority.UseTextAlignment = false;
             this.tableCell14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell14.TextFormatString = "{0:#,#}";
             this.tableCell14.Weight = 0.15207566256728469D;
             // 
             // tableCell4

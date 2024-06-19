@@ -289,7 +289,7 @@
             this.pnlChiNhanh.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlChiNhanh.Location = new System.Drawing.Point(0, 45);
             this.pnlChiNhanh.Name = "pnlChiNhanh";
-            this.pnlChiNhanh.Size = new System.Drawing.Size(1141, 47);
+            this.pnlChiNhanh.Size = new System.Drawing.Size(1141, 65);
             this.pnlChiNhanh.TabIndex = 5;
             // 
             // cboChiNhanh
@@ -297,9 +297,9 @@
             this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboChiNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboChiNhanh.FormattingEnabled = true;
-            this.cboChiNhanh.Location = new System.Drawing.Point(252, 12);
+            this.cboChiNhanh.Location = new System.Drawing.Point(378, 18);
             this.cboChiNhanh.Name = "cboChiNhanh";
-            this.cboChiNhanh.Size = new System.Drawing.Size(367, 25);
+            this.cboChiNhanh.Size = new System.Drawing.Size(548, 25);
             this.cboChiNhanh.TabIndex = 1;
             this.cboChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cboChiNhanh_SelectedIndexChanged);
             // 
@@ -307,7 +307,7 @@
             // 
             this.lblChiNhanh.AutoSize = true;
             this.lblChiNhanh.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblChiNhanh.Location = new System.Drawing.Point(159, 20);
+            this.lblChiNhanh.Location = new System.Drawing.Point(260, 26);
             this.lblChiNhanh.Name = "lblChiNhanh";
             this.lblChiNhanh.Size = new System.Drawing.Size(71, 17);
             this.lblChiNhanh.TabIndex = 0;
@@ -358,11 +358,11 @@
             // 
             this.gclVatTu.DataSource = this.bdsVatTu;
             this.gclVatTu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gclVatTu.Location = new System.Drawing.Point(0, 92);
+            this.gclVatTu.Location = new System.Drawing.Point(0, 110);
             this.gclVatTu.MainView = this.gridView1;
             this.gclVatTu.MenuManager = this.barButton;
             this.gclVatTu.Name = "gclVatTu";
-            this.gclVatTu.Size = new System.Drawing.Size(1141, 293);
+            this.gclVatTu.Size = new System.Drawing.Size(1141, 384);
             this.gclVatTu.TabIndex = 6;
             this.gclVatTu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -498,9 +498,9 @@
             this.pnlNhapLieu.Controls.Add(this.txtDonViTinh);
             this.pnlNhapLieu.Controls.Add(lblTenVT);
             this.pnlNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlNhapLieu.Location = new System.Drawing.Point(0, 385);
+            this.pnlNhapLieu.Location = new System.Drawing.Point(0, 494);
             this.pnlNhapLieu.Name = "pnlNhapLieu";
-            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 116);
+            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 7);
             this.pnlNhapLieu.TabIndex = 23;
             // 
             // frmVatTu

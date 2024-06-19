@@ -150,6 +150,7 @@
             this.txtNgayLapBaoCao.StylePriority.UseTextAlignment = false;
             this.txtNgayLapBaoCao.Text = "txtNgayLapBaoCao";
             this.txtNgayLapBaoCao.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.txtNgayLapBaoCao.TextFormatString = "{0:dd-MMM-yy}";
             // 
             // lblNgayLapBaoCao
             // 
@@ -202,6 +203,7 @@
             this.txtDenNgay.StylePriority.UseTextAlignment = false;
             this.txtDenNgay.Text = "txtDenNgay";
             this.txtDenNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.txtDenNgay.TextFormatString = "{0:dd-MMM-yy}";
             // 
             // lblDenNgay
             // 
@@ -228,6 +230,7 @@
             this.txtTuNgay.StylePriority.UseTextAlignment = false;
             this.txtTuNgay.Text = "txtTuNgay";
             this.txtTuNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.txtTuNgay.TextFormatString = "{0:dd-MMM-yy}";
             // 
             // lblTuNgay
             // 
@@ -534,6 +537,7 @@
             this.tableCell10.StylePriority.UseBorders = false;
             this.tableCell10.StylePriority.UseTextAlignment = false;
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell10.TextFormatString = "{0:dd/MM/yyyy}";
             this.tableCell10.Weight = 0.12885690123822988D;
             // 
             // tableCell11
@@ -609,6 +613,7 @@
             this.tableCell15.StylePriority.UseBorders = false;
             this.tableCell15.StylePriority.UseTextAlignment = false;
             this.tableCell15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell15.TextFormatString = "{0:#,#}";
             this.tableCell15.Weight = 0.071364496828780044D;
             // 
             // tableCell16
@@ -760,7 +765,7 @@
             this.lblTongCong.StylePriority.UseFont = false;
             this.lblTongCong.StylePriority.UseTextAlignment = false;
             this.lblTongCong.Text = "Tổng Cộng:";
-            this.lblTongCong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.lblTongCong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             // 
             // txtTongTriGia
             // 
@@ -777,7 +782,7 @@
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.txtTongTriGia.Summary = xrSummary1;
             this.txtTongTriGia.Text = "[calTriGia]";
-            this.txtTongTriGia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.txtTongTriGia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
             this.txtTongTriGia.TextFormatString = "{0:#,#}";
             // 
             // rptHoatDongNhanVien

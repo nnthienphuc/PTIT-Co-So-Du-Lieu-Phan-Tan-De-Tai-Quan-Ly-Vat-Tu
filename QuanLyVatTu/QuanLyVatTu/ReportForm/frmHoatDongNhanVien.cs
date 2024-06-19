@@ -32,7 +32,7 @@ namespace QuanLyVatTu.ReportForm
             report.txtHoTenNV.Text = Program.hoTen;
             report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
             report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
-            report.txtNgayLapBaoCao.Text = toDate.ToString();
+            report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
@@ -87,6 +87,7 @@ namespace QuanLyVatTu.ReportForm
                         "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     OpenPdf(filePath);
                 }
+
             }
             catch (IOException ex)
             {
