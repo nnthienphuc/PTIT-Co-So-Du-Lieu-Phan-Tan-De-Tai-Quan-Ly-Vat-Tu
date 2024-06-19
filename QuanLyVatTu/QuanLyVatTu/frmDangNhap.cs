@@ -84,7 +84,7 @@ namespace QuanLyVatTu
             if (ketNoiDatabaseGoc() == 0)
                 return;
 
-            layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
+            layDanhSachPhanManh("SELECT * FROM view_DanhSachPhanManh");
             //cboChiNhanh.SelectedIndex = 0;
             cboChiNhanh.SelectedIndex = 1;
         }
