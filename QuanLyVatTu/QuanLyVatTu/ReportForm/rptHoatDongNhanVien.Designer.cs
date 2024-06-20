@@ -483,7 +483,7 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.table2});
-            this.Detail.HeightF = 25F;
+            this.Detail.HeightF = 27.12498F;
             this.Detail.Name = "Detail";
             // 
             // table2
@@ -517,6 +517,7 @@
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.tableCell9.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[THANGNAM]")});
+            this.tableCell9.KeepTogether = true;
             this.tableCell9.Name = "tableCell9";
             this.tableCell9.ProcessDuplicatesMode = DevExpress.XtraReports.UI.ProcessDuplicatesMode.Merge;
             this.tableCell9.StyleName = "DetailData1";
