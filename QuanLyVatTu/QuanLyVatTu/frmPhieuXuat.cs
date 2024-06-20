@@ -316,7 +316,7 @@ namespace QuanLyVatTu
                     return false;
                 }
 
-                if (Regex.IsMatch(txtMaPhieuXuat.Text, @"^[A-Za-z ]+$") == false)
+                if (Regex.IsMatch(txtMaPhieuXuat.Text, @"^[A-Za-z 0-9 ]+$") == false)
                 {
                     MessageBox.Show("Mã phiếu nhập chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                     return false;
@@ -356,7 +356,7 @@ namespace QuanLyVatTu
                     return false;
                 }
 
-                if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-z ]+$") == false)
+                if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-z 0-9 ]+$") == false)
                 {
                     MessageBox.Show("Mã kho chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                     return false;

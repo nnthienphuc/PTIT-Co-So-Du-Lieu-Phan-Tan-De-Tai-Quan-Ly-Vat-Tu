@@ -155,7 +155,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9]+$") == false)
+            if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-z 0-9]+$") == false)
             {
                 MessageBox.Show("Mã kho chỉ chấp nhận chữ và số", "Thông báo", MessageBoxButtons.OK);
                 txtMaKho.Focus();
@@ -176,7 +176,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtTenKho.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
+            if (Regex.IsMatch(txtTenKho.Text, @"^[A-Za-z 0-9 ]+$") == false)
             {
                 MessageBox.Show("Tên kho bao gồm chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                 txtTenKho.Focus();
@@ -197,7 +197,7 @@ namespace QuanLyVatTu
                 return false;
             }
 
-            if (Regex.IsMatch(txtDiaChi.Text, @"^[A-Za-zÀ-Ỹà-ỹ0-9 ]+$") == false)
+            if (Regex.IsMatch(txtDiaChi.Text, @"^[A-Za-z 0-9 ,]+$") == false)
             {
                 MessageBox.Show("Địa chỉ chỉ gồm chữ cái, số và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                 txtDiaChi.Focus();
@@ -262,7 +262,7 @@ namespace QuanLyVatTu
             if (result == 1 && viTriConTro != viTriMaKhoHang)
 
             {
-                MessageBox.Show("Max kho hàng này đã sử dụng", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Mã kho hàng này đã sử dụng", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             else
@@ -290,7 +290,8 @@ namespace QuanLyVatTu
                         {
                             cauTruyVanHoanTac = "" +
                                 "DELETE DBO.KHO" +
-                                "WHERE MAKHO = '" + txtMaKho.Text.Trim() + "'";
+                                " WHERE MAKHO = '" + txtMaKho.Text.ToString().Trim() + "'";
+                            Console.WriteLine("console ne +" + txtMaKho.Text.ToString().Trim());
                         }
                         /*trước khi ấn btnGHI là sửa thông tin kho*/
                         else
@@ -301,7 +302,6 @@ namespace QuanLyVatTu
                                 "TENKHO = '" + tenKhoHang + "'," +
                                 "DIACHI = '" + diaChi + "'" +
                                 "WHERE MAKHO = '" + maKhoHang + "'";
-
                         }
 
                         /*Đưa câu truy vấn hoàn tác vào undoList 
@@ -313,7 +313,6 @@ namespace QuanLyVatTu
                         /*cập nhật lại trạng thái thêm mới cho chắc*/
                         dangThemMoi = false;
                         MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
-
                     }
 
 
@@ -362,9 +361,9 @@ namespace QuanLyVatTu
 
 
             string cauTruyVanHoanTac =
-            "INSERT INTO DBO.KHO( MAKHO,TENKHO,DIACHI,MACN) " +
+            "INSERT INTO DBO.KHO(MAKHO,TENKHO,DIACHI,MACN) " +
             " VALUES( '" + txtMaKho.Text + "','" +
-                        txtDiaChi.Text + "','" +
+                        txtTenKho.Text + "','" +
                         txtDiaChi.Text + "', '" +
                         txtMaChiNhanh.Text.Trim() + "' ) ";
 

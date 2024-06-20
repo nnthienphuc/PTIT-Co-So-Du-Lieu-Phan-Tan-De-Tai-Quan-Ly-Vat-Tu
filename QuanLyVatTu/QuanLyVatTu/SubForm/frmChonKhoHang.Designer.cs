@@ -80,10 +80,12 @@
             // 
             this.khoGridControl.DataSource = this.bdsKhoHang;
             this.khoGridControl.Dock = System.Windows.Forms.DockStyle.Top;
+            this.khoGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.khoGridControl.Location = new System.Drawing.Point(0, 0);
             this.khoGridControl.MainView = this.gridView1;
+            this.khoGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.khoGridControl.Name = "khoGridControl";
-            this.khoGridControl.Size = new System.Drawing.Size(800, 325);
+            this.khoGridControl.Size = new System.Drawing.Size(533, 290);
             this.khoGridControl.TabIndex = 1;
             this.khoGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -95,58 +97,51 @@
             this.colTENKHO,
             this.colDIACHI,
             this.colMACN});
+            this.gridView1.DetailHeight = 227;
             this.gridView1.GridControl = this.khoGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsEditForm.PopupEditFormWidth = 533;
             // 
             // colMAKHO
             // 
             this.colMAKHO.FieldName = "MAKHO";
-            this.colMAKHO.MinWidth = 30;
             this.colMAKHO.Name = "colMAKHO";
             this.colMAKHO.OptionsColumn.AllowEdit = false;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 0;
-            this.colMAKHO.Width = 112;
             // 
             // colTENKHO
             // 
             this.colTENKHO.FieldName = "TENKHO";
-            this.colTENKHO.MinWidth = 30;
             this.colTENKHO.Name = "colTENKHO";
             this.colTENKHO.OptionsColumn.AllowEdit = false;
             this.colTENKHO.Visible = true;
             this.colTENKHO.VisibleIndex = 1;
-            this.colTENKHO.Width = 112;
             // 
             // colDIACHI
             // 
             this.colDIACHI.FieldName = "DIACHI";
-            this.colDIACHI.MinWidth = 30;
             this.colDIACHI.Name = "colDIACHI";
             this.colDIACHI.OptionsColumn.AllowEdit = false;
             this.colDIACHI.Visible = true;
             this.colDIACHI.VisibleIndex = 2;
-            this.colDIACHI.Width = 112;
             // 
             // colMACN
             // 
             this.colMACN.FieldName = "MACN";
-            this.colMACN.MinWidth = 30;
             this.colMACN.Name = "colMACN";
             this.colMACN.OptionsColumn.AllowEdit = false;
             this.colMACN.Visible = true;
             this.colMACN.VisibleIndex = 3;
-            this.colMACN.Width = 112;
             // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.btnThoat.ForeColor = System.Drawing.Color.White;
-            this.btnThoat.Location = new System.Drawing.Point(422, 362);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnThoat.Location = new System.Drawing.Point(281, 235);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(189, 48);
+            this.btnThoat.Size = new System.Drawing.Size(126, 31);
             this.btnThoat.TabIndex = 3;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -157,10 +152,9 @@
             this.btnChon.BackColor = System.Drawing.Color.Blue;
             this.btnChon.Font = new System.Drawing.Font("Times New Roman", 11F, System.Drawing.FontStyle.Bold);
             this.btnChon.ForeColor = System.Drawing.Color.White;
-            this.btnChon.Location = new System.Drawing.Point(171, 362);
-            this.btnChon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChon.Location = new System.Drawing.Point(114, 235);
             this.btnChon.Name = "btnChon";
-            this.btnChon.Size = new System.Drawing.Size(189, 48);
+            this.btnChon.Size = new System.Drawing.Size(126, 31);
             this.btnChon.TabIndex = 2;
             this.btnChon.Text = "CHỌN";
             this.btnChon.UseVisualStyleBackColor = false;
@@ -168,12 +162,13 @@
             // 
             // frmChonKhoHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.khoGridControl);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmChonKhoHang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CHỌN KHO HÀNG";

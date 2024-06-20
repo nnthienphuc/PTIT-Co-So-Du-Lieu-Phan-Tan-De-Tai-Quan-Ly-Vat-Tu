@@ -81,12 +81,12 @@
             // 
             this.datHangGridControl.DataSource = this.bdsDonDatHang;
             this.datHangGridControl.Dock = System.Windows.Forms.DockStyle.Top;
-            this.datHangGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datHangGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(2);
             this.datHangGridControl.Location = new System.Drawing.Point(0, 0);
             this.datHangGridControl.MainView = this.gridView1;
-            this.datHangGridControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datHangGridControl.Margin = new System.Windows.Forms.Padding(2);
             this.datHangGridControl.Name = "datHangGridControl";
-            this.datHangGridControl.Size = new System.Drawing.Size(533, 143);
+            this.datHangGridControl.Size = new System.Drawing.Size(533, 173);
             this.datHangGridControl.TabIndex = 1;
             this.datHangGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -108,6 +108,7 @@
             // 
             this.colMasoDDH.FieldName = "MasoDDH";
             this.colMasoDDH.Name = "colMasoDDH";
+            this.colMasoDDH.OptionsColumn.AllowEdit = false;
             this.colMasoDDH.Visible = true;
             this.colMasoDDH.VisibleIndex = 0;
             // 
@@ -115,6 +116,7 @@
             // 
             this.colNGAY.FieldName = "NGAY";
             this.colNGAY.Name = "colNGAY";
+            this.colNGAY.OptionsColumn.AllowEdit = false;
             this.colNGAY.Visible = true;
             this.colNGAY.VisibleIndex = 1;
             // 
@@ -122,6 +124,7 @@
             // 
             this.colNhaCC.FieldName = "NhaCC";
             this.colNhaCC.Name = "colNhaCC";
+            this.colNhaCC.OptionsColumn.AllowEdit = false;
             this.colNhaCC.Visible = true;
             this.colNhaCC.VisibleIndex = 2;
             // 
@@ -129,6 +132,7 @@
             // 
             this.colMANV.FieldName = "MANV";
             this.colMANV.Name = "colMANV";
+            this.colMANV.OptionsColumn.AllowEdit = false;
             this.colMANV.Visible = true;
             this.colMANV.VisibleIndex = 3;
             // 
@@ -136,6 +140,7 @@
             // 
             this.colMAKHO.FieldName = "MAKHO";
             this.colMAKHO.Name = "colMAKHO";
+            this.colMAKHO.OptionsColumn.AllowEdit = false;
             this.colMAKHO.Visible = true;
             this.colMAKHO.VisibleIndex = 4;
             // 
@@ -173,7 +178,7 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.datHangGridControl);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmChonDonDatHang";
             this.Text = "frmChonDonDatHang";
             this.Load += new System.EventHandler(this.frmChonDonDatHang_Load);

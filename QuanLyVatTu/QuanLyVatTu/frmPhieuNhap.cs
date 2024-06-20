@@ -272,7 +272,6 @@ namespace QuanLyVatTu
             bds.AddNew();
             if (btnMeNuChonCheDo.Links[0].Caption == "Phiếu Nhập")
             {   
-               
                 this.gbxPhieuNhap.Enabled = true;
                 this.txtMaPhieuNhap.Enabled = true;
 
@@ -284,7 +283,6 @@ namespace QuanLyVatTu
 
                 this.txtMaNhanVien.Text = Program.userName;
                 this.txtMaKho.Text = Program.maKhoDuocChon;
-
 
                 /*Gan tu dong may truong du lieu nay*/
                 ((DataRowView)(bdsPhieuNhap.Current))["NGAY"] = DateTime.Now;
@@ -534,7 +532,7 @@ namespace QuanLyVatTu
                     return false;
                 }
 
-                if (Regex.IsMatch(txtMaPhieuNhap.Text, @"^[A-Za-z ]+$") == false)
+                if (Regex.IsMatch(txtMaPhieuNhap.Text, @"^[A-Za-z 0-9 ]+$") == false)
                 {
                     MessageBox.Show("mã phiếu nhập chỉ có chữ cái và khoảng trắng !", "Thông báo", MessageBoxButtons.OK);
                     return false;
@@ -546,6 +544,11 @@ namespace QuanLyVatTu
                     return false;
                 }
 
+                if (Regex.IsMatch(txtMaKho.Text, @"^[A-Za-z 0-9 ]+$") == false)
+                {
+                    MessageBox.Show("mã kho chỉ có chữ cái và khoảng trắng !", "Thông báo", MessageBoxButtons.OK);
+                    return false;
+                }
                 if (txtMaDonDatHang.Text == "")
                 {
                     MessageBox.Show("Không bỏ trống mã đơn đặt hàng !", "Thông báo", MessageBoxButtons.OK);
