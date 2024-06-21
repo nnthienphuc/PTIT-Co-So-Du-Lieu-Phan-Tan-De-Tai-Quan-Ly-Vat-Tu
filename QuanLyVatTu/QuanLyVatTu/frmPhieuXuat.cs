@@ -165,7 +165,8 @@ namespace QuanLyVatTu
             if (Program.role == "CONGTY")
             {
                 cboChiNhanh.Enabled = true;
-
+                this.txtTenKhachHang.Enabled = false;
+                this.btnChonKhoHang.Enabled = false;
                 this.btnThem.Enabled = false;
                 this.btnXoa.Enabled = false;
                 this.btnGhi.Enabled = false;
@@ -182,7 +183,8 @@ namespace QuanLyVatTu
             if (Program.role == "CHINHANH" || Program.role == "USER")
             {
                 cboChiNhanh.Enabled = false;
-
+                this.txtTenKhachHang.Enabled = false;
+                this.btnChonKhoHang.Enabled = false;
                 this.btnThem.Enabled = true;
                 bool turnOn = (bdsPhieuXuat.Count > 0) ? true : false;
                 this.btnXoa.Enabled = turnOn;
@@ -460,13 +462,13 @@ namespace QuanLyVatTu
                 drv = ((DataRowView)(bdsChiTietPhieuXuat.Current));
                 int soLuong = int.Parse(drv["SOLUONG"].ToString().Trim());
                 float donGia = float.Parse(drv["DONGIA"].ToString().Trim());
-                String maPhieuXuat = drv["MAPN"].ToString().Trim();
+                String maPhieuXuat = drv["MAPX"].ToString().Trim();
                 String maVatTu = drv["MAVT"].ToString().Trim();
 
                 cauTruyVan = "UPDATE DBO.CTPX " +
                     "SET " +
                     "SOLUONG = " + soLuong + " " +
-                    "DOGIA = " + donGia + " " +
+                    "DONGIA = " + donGia + " " +
                     "WHERE MAPX = '" + maPhieuXuat + "' " +
                     "AND MAVT = '" + maVatTu + "' ";
             }
@@ -576,19 +578,7 @@ namespace QuanLyVatTu
             bdsPhieuXuat.Position = viTri;
         }
 
-        private void btnLAMMOI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            try
-            {
-                this.phieuXuatTableAdapter.Fill(this.dataSet.PhieuXuat);
-                this.chiTietPhieuXuatTableAdapter.Fill(this.dataSet.CTPX);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Loi lam moi \n\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
-            }
-        }
-
+       
         private void btnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DataRowView drv;
@@ -632,7 +622,6 @@ namespace QuanLyVatTu
                     return;
                 }
 
-
                 drv = ((DataRowView)bdsChiTietPhieuXuat[bdsChiTietPhieuXuat.Position]);
                 cauTruyVanHoanTac = "INSERT INTO DBO.CTPX(MAPX, MAVT, SOLUONG, DONGIA) " +
                     "VALUES('" + drv["MAPX"].ToString().Trim() + "', '" +
@@ -640,7 +629,7 @@ namespace QuanLyVatTu
                     drv["SOLUONG"].ToString().Trim() + ", " +
                     drv["DONGIA"].ToString().Trim() + ")";
             }
-
+           
             undoList.Push(cauTruyVanHoanTac);
             //Console.WriteLine("Line 825");
             //Console.WriteLine(cauTruyVanHoanTac);
@@ -658,7 +647,7 @@ namespace QuanLyVatTu
                     {
                         bdsPhieuXuat.RemoveCurrent();
                     }
-                    if (cheDo == "Chi Tiết Phiếu Nhập")
+                    if (cheDo == "Chi Tiết Phiếu Xuất")
                     {
                         bdsChiTietPhieuXuat.RemoveCurrent();
                     }
@@ -746,13 +735,8 @@ namespace QuanLyVatTu
             bool ketQua = kiemTraDuLieuDauVao(cheDo);
             if (ketQua == false) return;
 
-
-
             /*Step 3*/
             string cauTruyVanHoanTac = taoCauTruyVanHoanTac(cheDo);
-            //Console.WriteLine("CAU TRUY VAN HOAN TAC");
-            //Console.WriteLine(cauTruyVanHoanTac);
-
 
             /*Step 4*/
             String maPhieuXuat = txtMaPhieuXuat.Text.Trim();
@@ -862,6 +846,19 @@ namespace QuanLyVatTu
                         return;
                     }
                 }
+            }
+        }
+
+        private void btnLamMoi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                this.phieuXuatTableAdapter.Fill(this.dataSet.PhieuXuat);
+                this.chiTietPhieuXuatTableAdapter.Fill(this.dataSet.CTPX);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loi lam moi \n\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
             }
         }
     }

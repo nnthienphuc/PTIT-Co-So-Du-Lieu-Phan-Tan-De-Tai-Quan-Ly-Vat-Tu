@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace QuanLyVatTu.ReportForm
@@ -27,6 +28,17 @@ namespace QuanLyVatTu.ReportForm
             txtTienChu.BeforePrint += ConvertMoney_BeforePrint;
         }
 
+        private void TableCell2_BeforePrint(object sender, CancelEventArgs e)
+        {
+            String input = tableCell2.Text;
+            Console.WriteLine(input);
+            String nam = input.Substring(0, 4);
+            String thang = input.Substring(5, 2);
+            Console.WriteLine(thang);
+            Console.WriteLine(nam);
+            tableCell2.Text = thang + "-" + nam;
+        }
+
         private void ConvertMoney_BeforePrint(object sender, CancelEventArgs e)
         {
             if (txtTongTriGia.Text.ToString().Equals(""))
@@ -38,6 +50,17 @@ namespace QuanLyVatTu.ReportForm
                 String currencyToWords = ConvertMoney.ConvertToText(int.Parse(txtTongTriGia.Summary.GetResult().ToString().Replace(".00", "")));
                 txtTienChu.Text = "đồng  (" + currencyToWords + ")";
             }
+        }
+
+        private void TongThang_BeforePrint(object sender, CancelEventArgs e)
+        {
+            String input = txtTongThang.Text;
+            Console.WriteLine(input);
+            String nam = input.Substring(0, 4);
+            String thang = input.Substring(5, 2);
+            Console.WriteLine(thang);
+            Console.WriteLine(nam);
+            txtTongThang.Text = thang + "-" + nam;
         }
     }
 }

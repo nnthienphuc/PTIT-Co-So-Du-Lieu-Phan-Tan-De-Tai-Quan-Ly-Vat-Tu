@@ -396,6 +396,17 @@ namespace QuanLyVatTu
                     " AND MAVT = '" + drv["MAVT"].ToString().Trim() + "'";
 
             }
+
+            /*Dang xoa chi tiet don dat hang*/
+            if (cheDo == "Chi Tiết Đơn Đặt Hàng" && dangThemMoi == true)
+            {
+                drv = ((DataRowView)bdsCTDH[bdsCTDH.Position]);
+                cauTruyVan = "INSERT INTO DBO.CTDDH(MasoDDH, SOLUONG, DONGIA, MAVT) " +
+                    "VALUES('" + drv["MasoDDH"].ToString().Trim() + "', '" +
+                    drv["SOLUONG"].ToString() + "', '" +
+                    drv["DONGIA"].ToString() + "', '" +
+                    drv["MAVT"].ToString().Trim() + "')";
+            }
             return cauTruyVan;
         }
 

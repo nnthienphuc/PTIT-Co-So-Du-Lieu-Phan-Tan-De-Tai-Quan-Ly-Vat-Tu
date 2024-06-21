@@ -34,29 +34,6 @@ namespace QuanLyVatTu
             return null;
         }
 
-        private static int CalculateAge(DateTime dateOfBirth)
-        {
-            int age = 0;
-            age = DateTime.Now.Year - dateOfBirth.Year;
-            if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
-                age = age - 1;
-
-            return age;
-        }
-
-        public frmNhanVien()
-        {
-            InitializeComponent();
-        }
-
-        private void nhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsNhanVien.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-
-        }
-
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             /*Step 1*/
@@ -74,8 +51,7 @@ namespace QuanLyVatTu
             this.phieuNhapTableAdapter.Connection.ConnectionString = Program.connstr;
             this.phieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
 
-            /*source thầy đưa chưa sửa được lỗi*/
-            maCN = ((DataRowView)bdsNhanVien[0])["MACN"].ToString();    // maCN của nhân viên đầu tiên
+            maCN = ((DataRowView)bdsNhanVien[0])["MACN"].ToString(); // maCN của nhân viên đầu tiên
             /*Step 2*/
             cboChiNhanh.DataSource = Program.bindingSource; // sao chép binding source từ login form
             cboChiNhanh.DisplayMember = "TENCN";
@@ -121,6 +97,30 @@ namespace QuanLyVatTu
 
         }
 
+        private static int CalculateAge(DateTime dateOfBirth)
+        {
+            int age = 0;
+            age = DateTime.Now.Year - dateOfBirth.Year;
+            if (DateTime.Now.DayOfYear < dateOfBirth.DayOfYear)
+                age = age - 1;
+
+            return age;
+        }
+
+        public frmNhanVien()
+        {
+            InitializeComponent();
+        }
+
+        private void nhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.bdsNhanVien.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dataSet);
+
+        }
+
+
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
@@ -147,7 +147,6 @@ namespace QuanLyVatTu
             viTri = bdsNhanVien.Position;
             this.pnlNhapLieu.Enabled = true;
             dangThemMoi = true;
-
 
             /*Step 2*/
             /*AddNew tự động nhảy xuống cuối thêm 1 dòng mới*/

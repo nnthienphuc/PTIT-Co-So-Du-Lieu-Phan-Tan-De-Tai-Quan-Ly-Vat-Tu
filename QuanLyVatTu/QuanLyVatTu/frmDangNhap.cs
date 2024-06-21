@@ -91,9 +91,14 @@ namespace QuanLyVatTu
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtTaiKhoan.Text.Trim() == "" || txtMatKhau.Text.Trim() == "")
+            if (txtTaiKhoan.Text.Trim() == "")
             {
-                MessageBox.Show("Tài khoản & mật khẩu không thể bỏ trống", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản không được bỏ trống", "Thông Báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (txtMatKhau.Text.Trim() == "")
+            {
+                MessageBox.Show("Mật khẩu không được bỏ trống", "Thông Báo", MessageBoxButtons.OK);
                 return;
             }
 

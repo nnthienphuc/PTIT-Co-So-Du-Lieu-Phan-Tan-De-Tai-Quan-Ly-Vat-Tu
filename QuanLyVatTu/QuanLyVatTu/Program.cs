@@ -23,6 +23,7 @@ namespace QuanLyVatTu
         // Đăng nhập vào server phân mảnh
         public static String serverName = "";       // Tên Server phân mảnh sẽ kết nối tới
         public static String serverNameLeft = "";   // Tên phân mảnh còn lại
+
         public static String userName = "";
 
         public static String loginName = "";
