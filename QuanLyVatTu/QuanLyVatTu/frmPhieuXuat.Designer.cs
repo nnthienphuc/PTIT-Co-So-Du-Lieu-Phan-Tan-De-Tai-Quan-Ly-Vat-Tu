@@ -398,12 +398,13 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 45);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1671, 38);
+            this.panelControl1.Size = new System.Drawing.Size(1671, 78);
             this.panelControl1.TabIndex = 8;
             // 
             // cboChiNhanh
             // 
             this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChiNhanh.Enabled = false;
             this.cboChiNhanh.FormattingEnabled = true;
             this.cboChiNhanh.Location = new System.Drawing.Point(283, 17);
             this.cboChiNhanh.Name = "cboChiNhanh";
@@ -457,7 +458,7 @@
             // 
             this.gcPhieuXuat.DataSource = this.bdsPhieuXuat;
             this.gcPhieuXuat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcPhieuXuat.Location = new System.Drawing.Point(0, 83);
+            this.gcPhieuXuat.Location = new System.Drawing.Point(0, 123);
             this.gcPhieuXuat.MainView = this.gridView1;
             this.gcPhieuXuat.MenuManager = this.barManager1;
             this.gcPhieuXuat.Name = "gcPhieuXuat";

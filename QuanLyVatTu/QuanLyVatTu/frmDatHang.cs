@@ -288,7 +288,7 @@ namespace QuanLyVatTu
                     MessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự ", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
-                if (Regex.IsMatch(txtMaDonDatHang.Text, @"^[A-Za-z ]+$") == false)
+                if (Regex.IsMatch(txtMaDonDatHang.Text, @"^[A-Za-z 0-9 ]+$") == false)
                 {
                     MessageBox.Show("Mã đơn đặt hàng chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                     return false;

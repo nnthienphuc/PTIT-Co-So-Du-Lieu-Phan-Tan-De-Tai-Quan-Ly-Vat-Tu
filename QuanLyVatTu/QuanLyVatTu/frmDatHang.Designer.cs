@@ -389,14 +389,15 @@
             this.panelControl1.Location = new System.Drawing.Point(0, 45);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1540, 5);
+            this.panelControl1.Size = new System.Drawing.Size(1540, 72);
             this.panelControl1.TabIndex = 5;
             // 
             // cboChiNhanh
             // 
             this.cboChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboChiNhanh.Enabled = false;
             this.cboChiNhanh.FormattingEnabled = true;
-            this.cboChiNhanh.Location = new System.Drawing.Point(283, 17);
+            this.cboChiNhanh.Location = new System.Drawing.Point(308, 17);
             this.cboChiNhanh.Name = "cboChiNhanh";
             this.cboChiNhanh.Size = new System.Drawing.Size(520, 21);
             this.cboChiNhanh.TabIndex = 1;
@@ -444,11 +445,11 @@
             // 
             this.gcDatHang.DataSource = this.bdsDatHang;
             this.gcDatHang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gcDatHang.Location = new System.Drawing.Point(0, 50);
+            this.gcDatHang.Location = new System.Drawing.Point(0, 117);
             this.gcDatHang.MainView = this.gridView1;
             this.gcDatHang.MenuManager = this.barManager1;
             this.gcDatHang.Name = "gcDatHang";
-            this.gcDatHang.Size = new System.Drawing.Size(1540, 274);
+            this.gcDatHang.Size = new System.Drawing.Size(1540, 266);
             this.gcDatHang.TabIndex = 6;
             this.gcDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -524,20 +525,20 @@
             this.gcDDH.Controls.Add(this.gbxDonDatHang);
             this.gcDDH.Controls.Add(this.groupBox2);
             this.gcDDH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcDDH.Location = new System.Drawing.Point(0, 324);
+            this.gcDDH.Location = new System.Drawing.Point(0, 383);
             this.gcDDH.Name = "gcDDH";
-            this.gcDDH.Size = new System.Drawing.Size(1540, 448);
+            this.gcDDH.Size = new System.Drawing.Size(1540, 389);
             this.gcDDH.TabIndex = 11;
             this.gcDDH.Text = "Thông Tin";
             // 
             // gcChiTietDonDatHang
             // 
             this.gcChiTietDonDatHang.DataSource = this.bdsCTDH;
-            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(702, 53);
+            this.gcChiTietDonDatHang.Location = new System.Drawing.Point(695, 50);
             this.gcChiTietDonDatHang.MainView = this.gridView2;
             this.gcChiTietDonDatHang.MenuManager = this.barManager1;
             this.gcChiTietDonDatHang.Name = "gcChiTietDonDatHang";
-            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(833, 356);
+            this.gcChiTietDonDatHang.Size = new System.Drawing.Size(840, 359);
             this.gcChiTietDonDatHang.TabIndex = 3;
             this.gcChiTietDonDatHang.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
