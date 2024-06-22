@@ -85,7 +85,7 @@ namespace QuanLyVatTu
             gc = gcDatHang;
             /*Step 2*/
             /*Bat chuc nang cua don dat hang*/
-            txtMaDonDatHang.Enabled = false;
+            txtMaDonDatHang.Enabled = true;
             dteNgay.Enabled = false;
             
             txtNhaCungCap.Enabled = true;
@@ -102,8 +102,9 @@ namespace QuanLyVatTu
 
             /*Bat cac grid control len*/
             gcDatHang.Enabled = true;
+            gbxDonDatHang.Enabled = true;
             gcChiTietDonDatHang.Enabled = true;
-
+            
             /*CONG TY chi xem du lieu*/
             if (Program.role == "CONGTY")
             {
@@ -163,7 +164,7 @@ namespace QuanLyVatTu
 
             /*Bat chuc nang cua chi tiet don hang*/
             txtMaVatTu.Enabled = false;
-            btnChonVatTu.Enabled = false;
+            btnChonVatTu.Enabled = true;
             txtSoLuong.Enabled = true;
             txtDonGia.Enabled = true;
 
@@ -200,7 +201,7 @@ namespace QuanLyVatTu
                 this.btnThem.Enabled = true;
                 bool turnOn = (bdsCTDH.Count > 0) ? true : false;
                 this.btnXoa.Enabled = turnOn;
-                this.btnGhi.Enabled = false;
+                this.btnGhi.Enabled = true;
 
                 this.btnHoanTac.Enabled = false;
                 this.btnLamMoi.Enabled = true;
@@ -359,7 +360,7 @@ namespace QuanLyVatTu
             {
                 drv = ((DataRowView)bdsDatHang[bdsDatHang.Position]);
                 /*Ngay can duoc xu ly dac biet hon*/
-                DateTime ngay = ((DateTime)drv["NGAY"]);
+                    DateTime ngay = ((DateTime)drv["NGAY"]);
 
                 cauTruyVan = "UPDATE DBO.DATHANG " +
                     "SET " +
@@ -390,8 +391,8 @@ namespace QuanLyVatTu
 
                 cauTruyVan = "UPDATE DBO.CTDDH " +
                     "SET " +
-                    "SOLUONG = " + txtSoLuong.Text.ToString() + " , " +
-                    "DONGIA = " + txtDonGia.Text.ToString() + " " +
+                    "SOLUONG = " + drv["SOLUONG"].ToString() + " , " +
+                    "DONGIA = " + drv["DONGIA"].ToString() + " " +
                     "WHERE MasoDDH = '" + drv["MasoDDH"].ToString().Trim() + "'" +
                     " AND MAVT = '" + drv["MAVT"].ToString().Trim() + "'";
 
