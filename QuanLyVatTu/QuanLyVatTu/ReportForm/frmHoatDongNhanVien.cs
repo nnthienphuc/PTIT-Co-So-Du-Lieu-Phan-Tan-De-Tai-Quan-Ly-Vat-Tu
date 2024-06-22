@@ -24,17 +24,28 @@ namespace QuanLyVatTu.ReportForm
         }
 
         private void btnXemTruoc_Click(object sender, EventArgs e)
-        {
-            string maNhanVien = txtMaNV.Text;
-            DateTime fromDate = dteTuNgay.DateTime;
-            DateTime toDate = dteToiNgay.DateTime;
-            rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
-            report.txtHoTenNV.Text = Program.hoTen;
-            report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
-            report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
-            report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            ReportPrintTool printTool = new ReportPrintTool(report);
-            printTool.ShowPreviewDialog();
+        {            
+            if (txtMaNV.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng chọn Nhân viên", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                string maNhanVien = txtMaNV.Text;
+                DateTime fromDate = dteTuNgay.DateTime;
+                DateTime toDate = dteToiNgay.DateTime;
+                rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
+                report.txtHoTenNV.Text = Program.hoTen;
+                report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
+                report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                ReportPrintTool printTool = new ReportPrintTool(report);
+                printTool.ShowPreviewDialog();
+            }
         }
 
         private void btnChonNhanVien_Click(object sender, EventArgs e)
@@ -56,36 +67,46 @@ namespace QuanLyVatTu.ReportForm
         {
             try
             {
-                string maNhanVien = txtMaNV.Text;
-                DateTime fromDate = dteTuNgay.DateTime;
-                DateTime toDate = dteToiNgay.DateTime;
-
-                rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
-                report.txtHoTenNV.Text = Program.hoTen + " - " + maNhanVien;
-                report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
-                report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
-                report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
-
-                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
-
-                if (File.Exists(filePath))
+                if (txtMaNV.Text.Equals(""))
                 {
-                    DialogResult dr = MessageBox.Show("File ReportHoatDongNhanVien.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
-                        "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (dr == DialogResult.Yes)
+                    MessageBox.Show("Vui lòng chọn Nhân viên", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
+                {
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }   
+                else
+                {
+                    string maNhanVien = txtMaNV.Text;
+                    DateTime fromDate = dteTuNgay.DateTime;
+                    DateTime toDate = dteToiNgay.DateTime;
+                    rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
+                    report.txtHoTenNV.Text = Program.hoTen + " - " + maNhanVien;
+                    report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
+                    report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                    report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+
+                    string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
+
+                    if (File.Exists(filePath))
+                    {
+                        DialogResult dr = MessageBox.Show("File ReportHoatDongNhanVien.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
+                            "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dr == DialogResult.Yes)
+                        {
+                            report.ExportToPdf(filePath);
+                            MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
+                                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            OpenPdf(filePath);
+                        }
+                    }
+                    else
                     {
                         report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
                             "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         OpenPdf(filePath);
                     }
-                }
-                else
-                {
-                    report.ExportToPdf(filePath);
-                    MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
-                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    OpenPdf(filePath);
                 }
 
             }

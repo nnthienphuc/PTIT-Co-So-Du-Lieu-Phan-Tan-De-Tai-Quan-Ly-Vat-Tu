@@ -30,13 +30,16 @@ namespace QuanLyVatTu.ReportForm
 
         private void TableCell2_BeforePrint(object sender, CancelEventArgs e)
         {
-            String input = tableCell2.Text;
-            Console.WriteLine(input);
-            String nam = input.Substring(0, 4);
-            String thang = input.Substring(5, 2);
-            Console.WriteLine(thang);
-            Console.WriteLine(nam);
-            tableCell2.Text = thang + "-" + nam;
+            if (tableCell2.Text != "")
+            {
+                String input = tableCell2.Text;
+                Console.WriteLine(input);
+                String nam = input.Substring(0, 4);
+                String thang = input.Substring(5, 2);
+                Console.WriteLine(thang);
+                Console.WriteLine(nam);
+                tableCell2.Text = thang + "-" + nam;
+            }
         }
 
         private void ConvertMoney_BeforePrint(object sender, CancelEventArgs e)
@@ -54,13 +57,16 @@ namespace QuanLyVatTu.ReportForm
 
         private void TongThang_BeforePrint(object sender, CancelEventArgs e)
         {
-            String input = txtTongThang.Text;
-            Console.WriteLine(input);
-            String nam = input.Substring(0, 4);
-            String thang = input.Substring(5, 2);
-            Console.WriteLine(thang);
-            Console.WriteLine(nam);
-            txtTongThang.Text = thang + "-" + nam;
+            if (txtTongThang.Text != "")
+            {
+                String input = txtTongThang.Text;
+                Console.WriteLine(input);
+                String nam = input.Substring(0, 4);
+                String thang = input.Substring(5, 2);
+                Console.WriteLine(thang);
+                Console.WriteLine(nam);
+                txtTongThang.Text = thang + "-" + nam;
+            }
         }
     }
 }
