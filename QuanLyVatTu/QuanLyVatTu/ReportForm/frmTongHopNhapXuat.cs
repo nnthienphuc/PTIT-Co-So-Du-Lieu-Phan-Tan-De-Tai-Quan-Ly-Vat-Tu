@@ -75,8 +75,8 @@ namespace QuanLyVatTu.ReportForm
             layDanhSachPhanManh("SELECT TOP 2 * FROM view_DanhSachPhanManh");
             cboChiNhanh.SelectedIndex = Program.brand;
 
-            dteTuNgay.EditValue = "16-08-2003";
-            dteToiNgay.EditValue = DateTime.Now.ToString();
+            dteTuNgay.EditValue = "01-01-2017";
+            dteToiNgay.EditValue = DateTime.Now.ToString("dd-MM-yyyy");
         }
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,82 +121,6 @@ namespace QuanLyVatTu.ReportForm
             printTool.ShowPreviewDialog();
         }
 
-        //private void btnXuatBan_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        DateTime fromDate = (DateTime)dteTuNgay.DateTime;
-        //        DateTime toDate = (DateTime)dteToiNgay.DateTime;
-        //        string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
-
-        //        rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
-        //        report.txtChiNhanh.Text = chiNhanh;
-        //        report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-        //        report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
-
-        //        if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
-        //        {
-        //            if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf"))
-        //            {
-        //                DialogResult dr = MessageBox.Show("File ReportTongHopNhapXuatChiNhanh1.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
-        //                    "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        //                if (dr == DialogResult.Yes)
-        //                {
-        //                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf");
-        //                    MessageBox.Show("File ReportTongHopNhapXuatChiNhanh1.pdf đã được ghi thành công tại folder ReportFiles",
-        //            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf");
-        //                MessageBox.Show("File ReportTongHopNhapXuatChiNhanh1.pdf đã được ghi thành công tại folder ReportFiles",
-        //            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //        }
-        //        else
-        //        {
-        //            if (File.Exists(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf"))
-        //            {
-        //                DialogResult dr = MessageBox.Show("File ReportTongHopNhapXuatChiNhanh2.pdf tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
-        //                    "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-        //                if (dr == DialogResult.Yes)
-        //                {
-        //                    report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf");
-        //                    MessageBox.Show("File ReportTongHopNhapXuatChiNhanh2.pdf đã được ghi thành công tại folder ReportFiles",
-        //            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                }
-
-        //            }
-        //            else
-        //            {
-        //                report.ExportToPdf(@"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf");
-        //                MessageBox.Show("File ReportTongHopNhapXuatChiNhanh2.pdf đã được ghi thành công tại folder ReportFiles",
-        //            "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //        }
-        //        if (Program.role != "CONGTY")
-        //        {
-        //            this.Close();
-        //        }
-        //    }
-        //    catch (IOException ex)
-        //    {
-        //        if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
-        //        {
-        //            MessageBox.Show("Vui lòng đóng file ReportTongHopNhapXuatChiNhanh1.pdf",
-        //            "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-        //            return;
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Vui lòng đóng file ReportTongHopNhapXuatChiNhanh2.pdf",
-        //            "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
-        //            return;
-        //        }
-        //    }
-        //}
         private void btnXuatBan_Click(object sender, EventArgs e)
         {
             try
@@ -252,6 +176,16 @@ namespace QuanLyVatTu.ReportForm
                 MessageBox.Show($"Vui lòng đóng file {message}",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
             }
+        }
+
+        private void dteToiNgay_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dteTuNgay_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

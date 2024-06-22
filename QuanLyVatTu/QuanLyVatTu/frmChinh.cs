@@ -16,6 +16,7 @@ namespace QuanLyVatTu
         public frmChinh()
         {
             InitializeComponent();
+            btnDangNhap.PerformClick();
         }
 
         private Form CheckExists(Type ftype)
@@ -48,6 +49,7 @@ namespace QuanLyVatTu
             pageBaoCao.Visible = false;
             btnDangXuat.Enabled = false;
             btnTaoTaiKhoan.Enabled = false;
+          
         }
 
         private void logout()
@@ -66,7 +68,7 @@ namespace QuanLyVatTu
             else
             {
                 frmDangNhap form = new frmDangNhap();
-                //form.MdiParent = this;
+                form.MdiParent = this;
                 form.Show();
             }
         }

@@ -43,7 +43,7 @@ namespace QuanLyVatTu.ReportForm
         {
             this.cboLoaiPhieu.SelectedIndex = 1;
             this.dteTuNgay.EditValue = "01-01-2017";
-            this.dteToiNgay.EditValue = "01-01-2018";
+            this.dteToiNgay.EditValue = DateTime.Now.ToString("dd-MM-yyyy");
 
         }
 

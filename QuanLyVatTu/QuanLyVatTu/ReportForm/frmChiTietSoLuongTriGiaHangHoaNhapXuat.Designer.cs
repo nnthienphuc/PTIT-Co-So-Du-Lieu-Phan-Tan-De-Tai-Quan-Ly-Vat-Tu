@@ -133,6 +133,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dteTuNgay.Properties.MaskSettings.Set("mask", "d");
             this.dteTuNgay.Size = new System.Drawing.Size(149, 28);
             this.dteTuNgay.TabIndex = 17;
             this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
@@ -148,6 +149,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteToiNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dteToiNgay.Properties.MaskSettings.Set("mask", "d");
             this.dteToiNgay.Size = new System.Drawing.Size(149, 28);
             this.dteToiNgay.TabIndex = 18;
             this.dteToiNgay.EditValueChanged += new System.EventHandler(this.dteToiNgay_EditValueChanged);

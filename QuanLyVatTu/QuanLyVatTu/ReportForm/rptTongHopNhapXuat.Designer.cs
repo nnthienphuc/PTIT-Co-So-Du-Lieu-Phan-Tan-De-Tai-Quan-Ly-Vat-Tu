@@ -132,6 +132,7 @@
             this.txtToiNgay.StylePriority.UseTextAlignment = false;
             this.txtToiNgay.Text = ".....";
             this.txtToiNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.txtToiNgay.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // txtTuNgay
             // 
@@ -145,6 +146,7 @@
             this.txtTuNgay.StylePriority.UseTextAlignment = false;
             this.txtTuNgay.Text = ".....";
             this.txtTuNgay.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.txtTuNgay.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // lblToiNgay
             // 
@@ -404,6 +406,7 @@
             this.tableCell8.StylePriority.UseBorders = false;
             this.tableCell8.StylePriority.UseTextAlignment = false;
             this.tableCell8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell8.TextFormatString = "{0:0.00%}";
             this.tableCell8.Weight = 0.2544669070692534D;
             // 
             // tableCell9
@@ -435,6 +438,7 @@
             this.tableCell10.StylePriority.UseBorders = false;
             this.tableCell10.StylePriority.UseTextAlignment = false;
             this.tableCell10.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.tableCell10.TextFormatString = "{0:0.00%}";
             this.tableCell10.Weight = 0.24991905784302731D;
             // 
             // sqlDataSource1

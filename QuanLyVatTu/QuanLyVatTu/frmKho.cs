@@ -45,13 +45,6 @@ namespace QuanLyVatTu
             InitializeComponent();
         }
 
-        private void khoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsKho.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-
-        }
         /*
          *Step 1: tat kiem tra khoa ngoai & do du lieu vao form
          *Step 2: lay du lieu dang nhap tu form dang nhap

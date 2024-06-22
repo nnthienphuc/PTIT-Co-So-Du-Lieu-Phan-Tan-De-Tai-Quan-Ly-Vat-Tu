@@ -581,7 +581,7 @@ namespace QuanLyVatTu
 
             if (result == 1 && viTriConTro != viTriMaNhanVien)
             {
-                MessageBox.Show("Mã nhân viên này đã được sử dụng !", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Mã nhân viên này đã được sử dụng!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             else/*them moi | sua nhan vien*/
@@ -606,7 +606,6 @@ namespace QuanLyVatTu
                         this.nhanVienTableAdapter.Update(this.dataSet.NhanVien);
                         this.gclNhanVien.Enabled = true;
 
-                        /*lưu 1 câu truy vấn để hoàn tác yêu cầu*/
                         String cauTruyVanHoanTac = "";
                         /*trước khi ấn btnGHI là btnTHEM*/
                         if (dangThemMoi == true)
@@ -686,14 +685,12 @@ namespace QuanLyVatTu
             Console.WriteLine("Ma chi nhanh hien tai: " + maChiNhanhHienTai);
             Console.WriteLine("Ma chi nhanh moi: " + maChiNhanhMoi);
 
-            /*Step 3*/
             String cauTruyVanHoanTac = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhHienTai + "'";
             undoList.Push(cauTruyVanHoanTac);
 
             Program.serverNameLeft = chiNhanh; /*Lấy tên chi nhánh tới để làm tính năng hoàn tác*/
             Console.WriteLine("Ten server con lai: " + Program.serverNameLeft);
 
-            /*Step 4*/
             String cauTruyVan = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhMoi + "'";
             Console.WriteLine("Cau Truy Van: " + cauTruyVan);
             Console.WriteLine("Cau Truy Van Hoan Tac: " + cauTruyVanHoanTac);
@@ -731,13 +728,12 @@ namespace QuanLyVatTu
                 return;
             }
 
-            /*Step 1 - Kiem tra trang thai xoa*/
             if (chkTrangThaiXoa.Checked)
             {
                 MessageBox.Show("Nhân viên này không còn ở chi nhánh này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            /*Step 2 Kiem tra xem form da co trong bo nho chua*/
+            /*Kiem tra xem form da co trong bo nho chua*/
             Form f = this.CheckExists(typeof(frmChuyenChiNhanh));
             if (f != null)
             {
@@ -746,7 +742,6 @@ namespace QuanLyVatTu
             frmChuyenChiNhanh form = new frmChuyenChiNhanh();
             form.Show();
 
-            /*Step 3*/
             /*đóng gói hàm chuyenChiNhanh từ formNHANVIEN đem về formChuyenChiNhanh để làm việc*/
             form.branchTransfer = new frmChuyenChiNhanh.MyDelegate(chuyenChiNhanh);
 

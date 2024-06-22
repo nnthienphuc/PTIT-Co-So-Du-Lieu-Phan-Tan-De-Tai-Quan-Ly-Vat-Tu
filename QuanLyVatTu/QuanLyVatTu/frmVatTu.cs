@@ -28,13 +28,6 @@ namespace QuanLyVatTu
             InitializeComponent();
         }
 
-        private void vattuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsVatTu.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-        }
-
         private void frmVatTu_Load(object sender, EventArgs e)
         {
             dataSet.EnforceConstraints = false;

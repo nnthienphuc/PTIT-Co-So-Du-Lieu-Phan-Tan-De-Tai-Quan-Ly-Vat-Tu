@@ -12,7 +12,7 @@ namespace QuanLyVatTu.ReportForm
         {
             InitializeComponent();
         }
-        public rptChiTietSoLuongTriGiaHangHoaNhapXuat (String vaiTro, String loaiPhieu, DateTime fromDate, DateTime toDate)
+        public rptChiTietSoLuongTriGiaHangHoaNhapXuat(String vaiTro, String loaiPhieu, DateTime fromDate, DateTime toDate)
         {
             InitializeComponent();
             this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
@@ -20,7 +20,8 @@ namespace QuanLyVatTu.ReportForm
             this.sqlDataSource1.Queries[0].Parameters[1].Value = loaiPhieu;
             this.sqlDataSource1.Queries[0].Parameters[2].Value = fromDate;
             this.sqlDataSource1.Queries[0].Parameters[3].Value = toDate;
-            this.sqlDataSource1.Fill();   
+            this.sqlDataSource1.Fill();
         }
+
     }
 }
