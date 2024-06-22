@@ -288,7 +288,7 @@ namespace QuanLyVatTu
                     MessageBox.Show("Mã đơn đặt hàng không quá 8 kí tự ", "Thông báo", MessageBoxButtons.OK);
                     return false;
                 }
-                if (Regex.IsMatch(txtMaDonDatHang.Text, @"^[A-Za-z 0-9 ]+$") == false)
+                if (Regex.IsMatch(txtMaDonDatHang.Text, @"^[A-Za-z 0-9]+$") == false)
                 {
                     MessageBox.Show("Mã đơn đặt hàng chỉ có chữ cái và khoảng trắng", "Thông báo", MessageBoxButtons.OK);
                     return false;
@@ -390,8 +390,8 @@ namespace QuanLyVatTu
 
                 cauTruyVan = "UPDATE DBO.CTDDH " +
                     "SET " +
-                    "SOLUONG = " + drv["SOLUONG"].ToString() + " , " +
-                    "DONGIA = " + drv["DONGIA"].ToString() + " " +
+                    "SOLUONG = " + txtSoLuong.Text.ToString() + " , " +
+                    "DONGIA = " + txtDonGia.Text.ToString() + " " +
                     "WHERE MasoDDH = '" + drv["MasoDDH"].ToString().Trim() + "'" +
                     " AND MAVT = '" + drv["MAVT"].ToString().Trim() + "'";
 
@@ -552,6 +552,7 @@ namespace QuanLyVatTu
                         return;
                     }
                 }
+
             }
         }
 
