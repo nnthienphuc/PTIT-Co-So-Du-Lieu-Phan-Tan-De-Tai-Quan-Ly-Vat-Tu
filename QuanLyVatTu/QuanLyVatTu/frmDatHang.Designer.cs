@@ -354,7 +354,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 772);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 836);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1540, 20);
             // 
@@ -364,7 +364,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 727);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 791);
             // 
             // barDockControlRight
             // 
@@ -372,7 +372,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1540, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 727);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 791);
             // 
             // btnChonChe
             // 
@@ -527,7 +527,7 @@
             this.gcDDH.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcDDH.Location = new System.Drawing.Point(0, 383);
             this.gcDDH.Name = "gcDDH";
-            this.gcDDH.Size = new System.Drawing.Size(1540, 389);
+            this.gcDDH.Size = new System.Drawing.Size(1540, 453);
             this.gcDDH.TabIndex = 11;
             this.gcDDH.Text = "Thông Tin";
             // 
@@ -717,7 +717,7 @@
             // txtDonGia
             // 
             this.txtDonGia.EditValue = new decimal(new int[] {
-            0,
+            100000,
             0,
             0,
             0});
@@ -728,6 +728,11 @@
             this.txtDonGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDonGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDonGia.Properties.Increment = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.txtDonGia.Size = new System.Drawing.Size(150, 20);
             this.txtDonGia.TabIndex = 7;
             // 
@@ -773,7 +778,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1540, 792);
+            this.ClientSize = new System.Drawing.Size(1540, 856);
             this.Controls.Add(this.gcDDH);
             this.Controls.Add(this.gcDatHang);
             this.Controls.Add(this.panelControl1);
