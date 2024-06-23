@@ -29,9 +29,11 @@ namespace QuanLyVatTu
         private void btnChonNhanVien_Click(object sender, EventArgs e)
         {
             frmChonNhanVien form = new frmChonNhanVien();
+            Program.dangTaoTaiKhoan = true;
             form.ShowDialog();
 
             txtMaNhanVien.Text = Program.maNhanVienDuocChon;
+            txtHoTenNV.Text = Program.hoTen;
         }
 
         private bool kiemTraDuLieuDauVao()
@@ -107,6 +109,7 @@ namespace QuanLyVatTu
                 Console.WriteLine(ex.Message);
                 return;
             }
+            Program.dangTaoTaiKhoan = false;
         }
 
         private void frmTaoTaiKhoan_Load(object sender, EventArgs e)

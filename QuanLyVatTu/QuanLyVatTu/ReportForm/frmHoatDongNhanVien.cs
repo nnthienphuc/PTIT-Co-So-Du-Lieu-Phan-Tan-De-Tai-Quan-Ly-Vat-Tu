@@ -21,6 +21,7 @@ namespace QuanLyVatTu.ReportForm
         public frmHoatDongNhanVien()
         {
             InitializeComponent();
+            Program.dangTaoTaiKhoan = false;
         }
 
         private void btnXemTruoc_Click(object sender, EventArgs e)

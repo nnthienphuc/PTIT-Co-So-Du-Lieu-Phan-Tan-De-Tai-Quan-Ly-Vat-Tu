@@ -146,13 +146,13 @@
             this.txtTuNgay,
             this.xrLabel3,
             this.label1});
-            this.ReportHeader.HeightF = 118.8334F;
+            this.ReportHeader.HeightF = 100.0834F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // xrLabel6
             // 
             this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(57.04908F, 84.92514F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(49.75748F, 70.84182F);
             this.xrLabel6.Multiline = true;
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -164,7 +164,7 @@
             // 
             // txtNgayLapBaoCao
             // 
-            this.txtNgayLapBaoCao.LocationFloat = new DevExpress.Utils.PointFloat(187.7774F, 84.92514F);
+            this.txtNgayLapBaoCao.LocationFloat = new DevExpress.Utils.PointFloat(180.4858F, 70.84182F);
             this.txtNgayLapBaoCao.Multiline = true;
             this.txtNgayLapBaoCao.Name = "txtNgayLapBaoCao";
             this.txtNgayLapBaoCao.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -177,7 +177,7 @@
             // xrLabel5
             // 
             this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Arial", 9.75F, DevExpress.Drawing.DXFontStyle.Bold);
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(58.61076F, 61.92516F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(51.31915F, 47.84184F);
             this.xrLabel5.Multiline = true;
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -189,7 +189,7 @@
             // 
             // txtHoTenNV
             // 
-            this.txtHoTenNV.LocationFloat = new DevExpress.Utils.PointFloat(187.7774F, 61.92516F);
+            this.txtHoTenNV.LocationFloat = new DevExpress.Utils.PointFloat(180.4858F, 47.84184F);
             this.txtHoTenNV.Multiline = true;
             this.txtHoTenNV.Name = "txtHoTenNV";
             this.txtHoTenNV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);

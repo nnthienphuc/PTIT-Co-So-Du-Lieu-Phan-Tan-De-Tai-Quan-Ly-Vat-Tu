@@ -69,6 +69,9 @@ namespace QuanLyVatTu
         public static string diaChi = "";
         public static string ngaySinh = "";
 
+        // Tao tai khoan form
+        public static bool dangTaoTaiKhoan = false;
+
         // BindingSource -> Liên kết dữ liệu từ bảng dữ liệu vào chương trình
         // bidingsource danh sách phân mảnh
         public static BindingSource bindingSource = new BindingSource();

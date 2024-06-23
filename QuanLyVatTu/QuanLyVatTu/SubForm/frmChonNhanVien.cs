@@ -37,7 +37,7 @@ namespace QuanLyVatTu.SubForm
             cboChiNhanh.ValueMember = "TENSERVER";
             cboChiNhanh.SelectedIndex = Program.brand;
 
-            if (Program.role == "CONGTY")
+            if (Program.role == "CONGTY" && Program.dangTaoTaiKhoan == false)
             {
                 cboChiNhanh.Enabled = true;
             }
