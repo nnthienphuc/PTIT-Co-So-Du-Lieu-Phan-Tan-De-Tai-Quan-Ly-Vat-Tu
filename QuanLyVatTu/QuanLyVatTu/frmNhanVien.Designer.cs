@@ -347,7 +347,7 @@
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 501);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
             this.barDockControlBottom.Manager = this.barButton;
             this.barDockControlBottom.Size = new System.Drawing.Size(1141, 20);
             // 
@@ -357,7 +357,7 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barButton;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 456);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 611);
             // 
             // barDockControlRight
             // 
@@ -365,7 +365,7 @@
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(1141, 45);
             this.barDockControlRight.Manager = this.barButton;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 456);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 611);
             // 
             // pnlChiNhanh
             // 
@@ -589,7 +589,7 @@
             this.pnlNhapLieu.Location = new System.Drawing.Point(0, 494);
             this.pnlNhapLieu.Margin = new System.Windows.Forms.Padding(4);
             this.pnlNhapLieu.Name = "pnlNhapLieu";
-            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 7);
+            this.pnlNhapLieu.Size = new System.Drawing.Size(1141, 162);
             this.pnlNhapLieu.TabIndex = 7;
             // 
             // chkTrangThaiXoa
@@ -750,7 +750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1141, 521);
+            this.ClientSize = new System.Drawing.Size(1141, 676);
             this.Controls.Add(this.pnlNhapLieu);
             this.Controls.Add(this.gclNhanVien);
             this.Controls.Add(this.pnlChiNhanh);

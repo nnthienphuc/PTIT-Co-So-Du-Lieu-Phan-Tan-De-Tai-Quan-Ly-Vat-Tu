@@ -537,16 +537,14 @@ namespace QuanLyVatTu
             /*Lay du lieu truoc khi chon btnGHI - phuc vu btnHOANTAC - sau khi OK thi da la du lieu moi*/
             String maNhanVien = txtMaNV.Text.Trim();// Trim() de loai bo khoang trang thua
             DataRowView drv = ((DataRowView)bdsNhanVien[bdsNhanVien.Position]);
-            String ho = drv["HO"].ToString();
-            String ten = drv["TEN"].ToString();
-            String soCMND = drv["SOCMND"].ToString();
-            String diaChi = drv["DIACHI"].ToString();
+            String ho = txtHo.Text.ToString();
+            String ten = txtTen.Text.ToString();
+            String soCMND = txtCMND.Text.ToString();
+            String diaChi = txtDiaChi.Text.ToString();
 
-            DateTime ngaySinh = ((DateTime)drv["NGAYSINH"]);
-            Console.WriteLine(ngaySinh);
+            DateTime ngaySinh = dteNgaySinh.DateTime;
 
-            int luong = int.Parse(drv["LUONG"].ToString());
-            String maChiNhanh = drv["MACN"].ToString();
+            String luong = txtLuong.Value.ToString();
             int trangThai = (chkTrangThaiXoa.Checked == true) ? 1 : 0;
 
             String cauTruyVan =
@@ -626,7 +624,7 @@ namespace QuanLyVatTu
                                 "DIACHI = '" + diaChi + "', " +
                                 "NGAYSINH = CAST('" + ngaySinh.ToString("yyyy-MM-dd") + "' AS DATETIME)," +
                                 "LUONG = '" + luong + "', " +
-                                "MACN = '" + maCN + "', " +
+                                "MACN = '" + maCN.Trim() + "', " +
                                 "TrangThaiXoa = '" + trangThai + "' " +
                                 "WHERE MANV = '" + maNhanVien + "'";
                         }
@@ -715,6 +713,7 @@ namespace QuanLyVatTu
                 return;
             }
             this.nhanVienTableAdapter.Update(this.dataSet.NhanVien);
+            this.nhanVienTableAdapter.Fill(this.dataSet.NhanVien);
         }
 
         private void btnChuyenChiNhanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
