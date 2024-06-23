@@ -377,8 +377,8 @@ namespace QuanLyVatTu
                             cauTruyVanHoanTac =
                                 "UPDATE DBO.VATTU " +
                                 "SET " +
-                                "TENVT = '" + tenVatTu + "'," +
-                                "DVT = '" + donViTinh + "'," +
+                                "TENVT = '" + tenVatTu + "', " +
+                                "DVT = '" + donViTinh + "', " +
                                 "SOLUONGTON = " + soLuongTon + " " +
                                 "WHERE MAVT = '" + maVatTu + "'";
                         }
@@ -503,8 +503,8 @@ namespace QuanLyVatTu
 
             string cauTruyVanHoanTac =
             "INSERT INTO DBO.VATTU( MAVT,TENVT,DVT,SOLUONGTON) " +
-            " VALUES( '" + txtMaVT.Text + "','" +
-                        txtTenVT.Text + "','" +
+            " VALUES( '" + txtMaVT.Text + "', '" +
+                        txtTenVT.Text + "', '" +
                         txtDonViTinh.Text + "', " +
                         txtSoLuongTon.Value + " ) ";
 

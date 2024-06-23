@@ -152,7 +152,7 @@ namespace QuanLyVatTu
             /*AddNew tự động nhảy xuống cuối thêm 1 dòng mới*/
             bdsNhanVien.AddNew();
             txtMaCN.Text = maCN;
-            dteNgaySinh.EditValue = "";
+            dteNgaySinh.EditValue = "16-08-2003";
             txtLuong.Value = 4000000;
 
             /*Step 3*/
@@ -315,8 +315,8 @@ namespace QuanLyVatTu
             DateTime NGAYSINH = (DateTime)((DataRowView)bdsNhanVien[bdsNhanVien.Position])["NGAYSINH"];
 
             string cauTruyVanHoanTac =
-                string.Format("INSERT INTO DBO.NHANVIEN(MANV,HO,TEN,SOCMND,DIACHI,NGAYSINH,LUONG,MACN)" +
-            "VALUES({0},'{1}','{2}','{3}','{4}',CAST({5} AS DATETIME), {6},'{7}')", txtMaNV.Text, txtHo.Text, txtTen.Text, txtCMND.Text, txtDiaChi.Text, NGAYSINH.ToString("yyyy-MM-dd"), txtLuong.Value, txtMaCN.Text.Trim());
+                string.Format("INSERT INTO DBO.NHANVIEN(MANV,HO,TEN,SOCMND,DIACHI,NGAYSINH,LUONG,MACN,TrangThaiXoa)" +
+            "VALUES({0},'{1}','{2}','{3}','{4}',CAST({5} AS DATETIME),{6},'{7}', {8})", txtMaNV.Text, txtHo.Text, txtTen.Text, txtCMND.Text, txtDiaChi.Text, NGAYSINH.ToString("yyyy-MM-dd"), txtLuong.Value, txtMaCN.Text, trangThai);
 
             Console.WriteLine(cauTruyVanHoanTac);
             undoList.Push(cauTruyVanHoanTac);
@@ -620,13 +620,14 @@ namespace QuanLyVatTu
                             cauTruyVanHoanTac =
                                 "UPDATE DBO.NhanVien " +
                                 "SET " +
-                                "HO = '" + ho + "'," +
-                                "TEN = '" + ten + "'," +
-                                "SOCMND = '" + soCMND + "'," +
-                                "DIACHI = '" + diaChi + "'," +
+                                "HO = '" + ho + "', " +
+                                "TEN = '" + ten + "', " +
+                                "SOCMND = '" + soCMND + "', " +
+                                "DIACHI = '" + diaChi + "', " +
                                 "NGAYSINH = CAST('" + ngaySinh.ToString("yyyy-MM-dd") + "' AS DATETIME)," +
-                                "LUONG = '" + luong + "'," +
-                                "TrangThaiXoa = " + trangThai + " " +
+                                "LUONG = '" + luong + "', " +
+                                "MACN = '" + maCN + "', " +
+                                "TrangThaiXoa = '" + trangThai + "' " +
                                 "WHERE MANV = '" + maNhanVien + "'";
                         }
                         Console.WriteLine(cauTruyVanHoanTac);
