@@ -68,7 +68,7 @@ namespace QuanLyVatTu
             bool ketQua = kiemTraDuLieuDauVao();
             if (ketQua == false) return;
 
-            taiKhoan = Program.hoTen;
+            taiKhoan = Program.hoTen + " " + Program.maNhanVienDuocChon;
             matKhau = txtMatKhau.Text;
             maNhanVien = Program.maNhanVienDuocChon;
             if (vaiTro != "CONGTY")
