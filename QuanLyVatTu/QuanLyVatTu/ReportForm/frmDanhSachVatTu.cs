@@ -36,6 +36,8 @@ namespace QuanLyVatTu.ReportForm
         private void btnXemTruoc_Click(object sender, EventArgs e)
         {
             rptDanhSachVatTu report = new rptDanhSachVatTu();
+            report.txtNguoiLap.Text = Program.staff;
+            report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
@@ -43,6 +45,8 @@ namespace QuanLyVatTu.ReportForm
         private void btnXuatBan_Click(object sender, EventArgs e)
         {
             rptDanhSachVatTu report = new rptDanhSachVatTu();
+            report.txtNguoiLap.Text = Program.staff;
+            report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
             string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf";
 
             try

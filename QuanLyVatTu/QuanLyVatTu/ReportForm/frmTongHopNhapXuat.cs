@@ -108,65 +108,99 @@ namespace QuanLyVatTu.ReportForm
 
         private void btnXemTruoc_Click(object sender, EventArgs e)
         {
-            DateTime fromDate = (DateTime)dteTuNgay.DateTime;
-            DateTime toDate = (DateTime)dteToiNgay.DateTime;
-            string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
+            if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
+            {
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
+            {
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //else if (dteToiNgay.DateTime > DateTime.Now)
+            //{
+            //    dteToiNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            //}
+            else
+            {
+                DateTime fromDate = (DateTime)dteTuNgay.DateTime;
+                DateTime toDate = (DateTime)dteToiNgay.DateTime;
+                string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
 
-            rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
-            report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-            report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
-            report.txtChiNhanh.Text = chiNhanh;
+                rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
+                report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
+                report.txtNguoiLap.Text = Program.staff;
+                report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
+                report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
+                report.txtChiNhanh.Text = chiNhanh;
 
-            ReportPrintTool printTool = new ReportPrintTool(report);
-            printTool.ShowPreviewDialog();
+                ReportPrintTool printTool = new ReportPrintTool(report);
+                printTool.ShowPreviewDialog();
+            }
         }
 
         private void btnXuatBan_Click(object sender, EventArgs e)
         {
             try
             {
-                DateTime fromDate = dteTuNgay.DateTime;
-                DateTime toDate = dteToiNgay.DateTime;
-                string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
-
-                rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
-                report.txtChiNhanh.Text = chiNhanh;
-                report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
-                report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
-
-                string filePath = "";
-
-                if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
+                if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
                 {
-                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf";
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
+                {
+                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                //else if (dteToiNgay.DateTime > DateTime.Now)
+                //{
+                //    dteToiNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+                //}
                 else
                 {
-                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf";
-                }
+                    DateTime fromDate = dteTuNgay.DateTime;
+                    DateTime toDate = dteToiNgay.DateTime;
+                    string chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
 
-                if (File.Exists(filePath))
-                {
-                    DialogResult dr = MessageBox.Show($"File {Path.GetFileName(filePath)} tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
-                        "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                    if (dr == DialogResult.Yes)
+                    rptTongHopNhapXuat report = new rptTongHopNhapXuat(fromDate, toDate);
+                    report.txtChiNhanh.Text = chiNhanh;
+                    report.txtNguoiLap.Text = Program.staff;
+                    report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
+                    report.txtTuNgay.Text = dteTuNgay.EditValue.ToString();
+                    report.txtToiNgay.Text = dteToiNgay.EditValue.ToString();
+
+                    string filePath = "";
+
+                    if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
+                    {
+                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf";
+                    }
+                    else
+                    {
+                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf";
+                    }
+
+                    if (File.Exists(filePath))
+                    {
+                        DialogResult dr = MessageBox.Show($"File {Path.GetFileName(filePath)} tại folder ReportFiles đã có!\nBạn có muốn tạo lại?",
+                            "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        if (dr == DialogResult.Yes)
+                        {
+                            report.ExportToPdf(filePath);
+                            MessageBox.Show($"File {Path.GetFileName(filePath)} đã được ghi thành công tại folder ReportFiles",
+                                "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Program.OpenPdf(filePath);
+                        }
+                    }
+                    else
                     {
                         report.ExportToPdf(filePath);
                         MessageBox.Show($"File {Path.GetFileName(filePath)} đã được ghi thành công tại folder ReportFiles",
                             "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Program.OpenPdf(filePath);
                     }
-                }
-                else
-                {
-                    report.ExportToPdf(filePath);
-                    MessageBox.Show($"File {Path.GetFileName(filePath)} đã được ghi thành công tại folder ReportFiles",
-                        "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Program.OpenPdf(filePath);
-                }
-                if (Program.role != "CONGTY")
-                {
-                    this.Close();
+                    if (Program.role != "CONGTY")
+                    {
+                        this.Close();
+                    }
                 }
             }
             catch (IOException ex)

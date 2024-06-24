@@ -125,6 +125,8 @@ namespace QuanLyVatTu.ReportForm
             rptDanhSachNhanVien report = new rptDanhSachNhanVien();
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             report.txtChiNhanh.Text = chiNhanh.ToUpper();
+            report.txtNguoiLap.Text = Program.staff;
+            report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
@@ -136,6 +138,8 @@ namespace QuanLyVatTu.ReportForm
                 rptDanhSachNhanVien report = new rptDanhSachNhanVien();
                 /*GAN TEN CHI NHANH CHO BAO CAO*/
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
+                report.txtNguoiLap.Text = Program.staff;
+                report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
                 string filePath;
                 if (cboChiNhanh.SelectedValue.ToString().Contains("1"))

@@ -114,6 +114,8 @@ namespace QuanLyVatTu.ReportForm
             rptDonHangKhongPhieuNhap report = new rptDonHangKhongPhieuNhap();
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             report.txtChiNhanh.Text = chiNhanh.ToUpper();
+            report.txtNguoiLap.Text = Program.staff;
+            report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
@@ -123,6 +125,8 @@ namespace QuanLyVatTu.ReportForm
             try
             {
                 rptDonHangKhongPhieuNhap report = new rptDonHangKhongPhieuNhap();
+                report.txtNguoiLap.Text = Program.staff;
+                report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
                 /* GÁN TÊN CHI NHÁNH CHO BÁO CÁO */
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
 

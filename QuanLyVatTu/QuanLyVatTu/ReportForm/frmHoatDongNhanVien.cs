@@ -34,6 +34,14 @@ namespace QuanLyVatTu.ReportForm
             {
                 MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
+            {
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            //else if (dteToiNgay.DateTime > DateTime.Now)
+            //{
+            //    dteToiNgay.Text = DateTime.Now.ToString("MM/dd/yyyy");
+            //}
             else
             {
                 string maNhanVien = txtMaNV.Text;
@@ -43,6 +51,7 @@ namespace QuanLyVatTu.ReportForm
                 report.txtHoTenNV.Text = Program.hoTen;
                 report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
                 report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                report.txtNguoiLapBaoCao.Text = Program.staff;
                 report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
                 ReportPrintTool printTool = new ReportPrintTool(report);
                 printTool.ShowPreviewDialog();
@@ -75,7 +84,11 @@ namespace QuanLyVatTu.ReportForm
                 else if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
                 {
                     MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }   
+                }
+                else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
+                {
+                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                 {
                     string maNhanVien = txtMaNV.Text;
@@ -85,6 +98,7 @@ namespace QuanLyVatTu.ReportForm
                     report.txtHoTenNV.Text = Program.hoTen + " - " + maNhanVien;
                     report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
                     report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                    report.txtNguoiLapBaoCao.Text = Program.staff;
                     report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
 
                     string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
