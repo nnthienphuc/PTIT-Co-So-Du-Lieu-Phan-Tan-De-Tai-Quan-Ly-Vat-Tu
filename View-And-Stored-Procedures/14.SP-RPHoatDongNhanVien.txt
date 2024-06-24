@@ -1,5 +1,11 @@
-create PROCEDURE [dbo].[sp_HoatDongNhanVien]
-@MANV int,
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_HoatDongNhanVien]    Script Date: 24-Jun-24 8:50:46 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[sp_HoatDongNhanVien] @MANV int,
 @DATEFROM DATETIME,
 @DATETO DATETIME
 AS
@@ -18,10 +24,10 @@ BEGIN
 
     -- Thêm dữ liệu từ PhieuNhap vào bảng tạm
     INSERT INTO #TEMP
-    SELECT FORMAT(PN.NGAY,'MM-yyyy') AS THANGNAM,
+    SELECT FORMAT(PN.NGAY,'yyyy-MM') AS THANGNAM,
 				PN.NGAY, 
 				PN.MAPN AS MAPHIEU,
-				N'Nhập' AS LOAIPHIEU,
+				N'Nhap' AS LOAIPHIEU,
 				null as HOTENKH,
 				TENVT, 
 				SOLUONG,
@@ -39,10 +45,10 @@ BEGIN
 
     -- Thêm dữ liệu từ PhieuXuat vào bảng tạm
     INSERT INTO #TEMP
-    SELECT FORMAT(PX.NGAY,'MM-yyyy') AS THANGNAM,
+    SELECT FORMAT(PX.NGAY,'yyyy-MM') AS THANGNAM,
 				PX.NGAY, 
 				PX.MAPX AS MAPHIEU,
-				N'Xuất' AS LOAIPHIEU,
+				N'Xuat' AS LOAIPHIEU,
 				HOTENKH,
 				TENVT, 
 				SOLUONG,

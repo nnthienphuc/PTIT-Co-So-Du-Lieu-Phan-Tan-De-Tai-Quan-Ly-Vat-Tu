@@ -1,4 +1,11 @@
-create procedure sp_TraCuu_KiemTraMaKho
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_TraCuu_KiemTraMaKho]    Script Date: 24-Jun-24 8:53:54 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[sp_TraCuu_KiemTraMaKho]
 	@MAKHO nchar(4)
 as
 begin

@@ -1,18 +1,20 @@
-CREATE PROC sp_DangNhap
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_DangNhap]    Script Date: 24-Jun-24 8:57:32 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[sp_DangNhap]
 	@TENLOGIN NVARCHAR( 100)
 AS
-	DECLARE @UID INT
-	DECLARE @MANV NVARCHAR(100)
+	DECLARE @UID INT,
+	@MANV NVARCHAR(100)
 	SELECT @UID= uid , @MANV= NAME FROM sys.sysusers 
   	WHERE sid = SUSER_SID(@TENLOGIN)
 
-	SELECT  MAGV= @MANV, 
+	SELECT  MANV= @MANV, 
        		HOTEN = (SELECT HO+ ' '+TEN FROM dbo.NHANVIEN WHERE MANV=@MANV ), 
        		TENNHOM=NAME
   	FROM sys.sysusers
     	WHERE UID = (SELECT groupuid FROM sys.sysmembers WHERE memberuid=@uid)
-
-- NAME chứa cả username & lẫn tên nhóm quyền
-- sys.sysmembers chứa groupUid và memberUid
-
-- Xem ket qua: sp_DangNhap 'TT'

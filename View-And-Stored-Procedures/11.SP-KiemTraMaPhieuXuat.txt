@@ -1,4 +1,11 @@
-CREATE PROCEDURE sp_KiemTraMaPhieuXuat
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_KiemTraMaPhieuXuat]    Script Date: 24-Jun-24 8:54:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[sp_KiemTraMaPhieuXuat]
 	@MAPX nChar(8)
 AS
 BEGIN

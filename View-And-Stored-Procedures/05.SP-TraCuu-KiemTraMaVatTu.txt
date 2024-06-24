@@ -1,14 +1,17 @@
-CREATE PROC sp_TraCuu_KiemTraMaVatTu
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_TraCuu_KiemTraMaVatTu]    Script Date: 24-Jun-24 8:54:45 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROC [dbo].[sp_TraCuu_KiemTraMaVatTu]
 @MAVT nchar(4)
 AS
 BEGIN
 	IF EXISTS(SELECT 1 
 			  FROM Vattu VT  
 			  WHERE VT.MAVT = @MAVT)
-			RETURN 1; 
-	ELSE IF EXISTS(SELECT 1
-				   FROM LINK1.QLVT_DATHANG.DBO.Vattu VT  
-				   WHERE VT.MAVT = @MAVT)
-			RETURN 1; 
+			RETURN 1;
 	RETURN 0;
 END

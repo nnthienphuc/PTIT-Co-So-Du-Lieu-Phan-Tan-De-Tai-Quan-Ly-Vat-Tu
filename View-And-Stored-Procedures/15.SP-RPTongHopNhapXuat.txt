@@ -1,14 +1,15 @@
-*Mục đích: lấy tổng số tiền nhập và xuất của một ngày, tính tỉ lệ số tiền nhập | xuât trong 1 ngày với tổng số tiền từ ngày X tới ngày Y
-*Cú pháp:
-CREATE PROCEDURE sp_TongHopNhapXuat
+USE [QLVT_DATHANG]
+GO
+/****** Object:  StoredProcedure [dbo].[sp_TongHopNhapXuat]    Script Date: 24-Jun-24 8:53:04 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[sp_TongHopNhapXuat]
 @FromDate DATETIME,
 @ToDate DATETIME
 AS
 BEGIN
-	IF(1=0)
-	BEGIN
-		SET FMTONLY OFF
-	END
 	--------------------phieu nhap--------------------------
 	SELECT PN.NGAY,
 			NHAP = SUM (CT.DONGIA * CT.SOLUONG),

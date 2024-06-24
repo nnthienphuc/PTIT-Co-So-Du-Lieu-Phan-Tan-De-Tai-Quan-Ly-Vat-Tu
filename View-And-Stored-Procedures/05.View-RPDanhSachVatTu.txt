@@ -1,5 +1,4 @@
 CREATE VIEW [dbo].[view_DanhSachVatTu]
 AS
-SELECT        TOP (100) PERCENT MAVT, TENVT, DVT, SOLUONGTON
-FROM            dbo.Vattu
-With (INDEX = IX_TENVT)
+SELECT        MAVT, TENVT, DVT, SOLUONGTON
+FROM            dbo.Vattu WITH (INDEX = IX_TENVT)
