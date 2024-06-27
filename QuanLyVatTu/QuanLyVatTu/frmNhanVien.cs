@@ -36,7 +36,6 @@ namespace QuanLyVatTu
 
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
-            /*Step 1*/
             dataSet.EnforceConstraints = false;
 
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -52,14 +51,11 @@ namespace QuanLyVatTu
             this.phieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
 
             maCN = ((DataRowView)bdsNhanVien[0])["MACN"].ToString(); // maCN của nhân viên đầu tiên
-            /*Step 2*/
             cboChiNhanh.DataSource = Program.bindingSource; // sao chép binding source từ login form
             cboChiNhanh.DisplayMember = "TENCN";
             cboChiNhanh.ValueMember = "TENSERVER";
             cboChiNhanh.SelectedIndex = Program.brand;
 
-            /*Step 3*/
-            // CONGTY chỉ xem dữ liệu
             if (Program.role == "CONGTY")
             {
                 cboChiNhanh.Enabled = true;
@@ -76,8 +72,7 @@ namespace QuanLyVatTu
                 this.pnlNhapLieu.Enabled = false;
             }
 
-            // CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
-            // chuyen sang chi nhanh khac
+
             if (Program.role == "CHINHANH" || Program.role == "USER")
             {
                 cboChiNhanh.Enabled = false;
@@ -702,7 +697,7 @@ namespace QuanLyVatTu
 
                 if (Program.myReader == null)
                 {
-                    return;/*khong co ket qua tra ve thi ket thuc luon*/
+                    return;
                 }
             }
             catch (Exception ex)
@@ -719,7 +714,6 @@ namespace QuanLyVatTu
         private void btnChuyenChiNhanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             int viTriHienTai = bdsNhanVien.Position;
-            //int trangThaiXoa = int.Parse(((DataRowView)(bdsNhanVien[viTriHienTai]))["TrangThaiXoa"].ToString());
             string maNhanVien = ((DataRowView)(bdsNhanVien[viTriHienTai]))["MANV"].ToString();
 
             if (maNhanVien == Program.userName)
@@ -745,7 +739,6 @@ namespace QuanLyVatTu
             /*đóng gói hàm chuyenChiNhanh từ formNHANVIEN đem về formChuyenChiNhanh để làm việc*/
             form.branchTransfer = new frmChuyenChiNhanh.MyDelegate(chuyenChiNhanh);
 
-            /*Step 4*/
             this.btnHoanTac.Enabled = true;
         }
     }
