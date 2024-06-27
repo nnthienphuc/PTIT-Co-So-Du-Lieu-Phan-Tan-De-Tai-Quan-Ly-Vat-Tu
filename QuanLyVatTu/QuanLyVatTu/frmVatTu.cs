@@ -94,13 +94,11 @@ namespace QuanLyVatTu
 
             Program.serverName = cboChiNhanh.SelectedValue.ToString();
 
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
             if (cboChiNhanh.SelectedIndex != Program.brand)
             {
                 Program.loginName = Program.remoteLogin;
                 Program.loginPassword = Program.remotePassword;
             }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
             else
             {
                 Program.loginName = Program.currentLogin;
@@ -298,7 +296,7 @@ namespace QuanLyVatTu
 
             /*Step 1*/
             /*Lay du lieu truoc khi chon btnGHI - phuc vu btnHOANTAC*/
-            String maVatTu = txtMaVT.Text.Trim();// Trim() de loai bo khoang trang thua
+            String maVatTu = txtMaVT.Text.Trim();
             DataRowView drv = ((DataRowView)bdsVatTu[bdsVatTu.Position]);
             String tenVatTu = drv["TENVT"].ToString();
             String donViTinh = drv["DVT"].ToString();
@@ -328,7 +326,6 @@ namespace QuanLyVatTu
             }
             Program.myReader.Read();
             int result = int.Parse(Program.myReader.GetValue(0).ToString());
-            //Console.WriteLine(result);
             Program.myReader.Close();
 
 
@@ -389,7 +386,6 @@ namespace QuanLyVatTu
 
                         this.bdsVatTu.EndEdit();
                         this.vattuTableAdapter.Update(this.dataSet.Vattu);
-                        /*cập nhật lại trạng thái thêm mới cho chắc*/
                         dangThemMoi = false;
                         MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
                     }
@@ -455,8 +451,6 @@ namespace QuanLyVatTu
             }
             Program.myReader.Read();
             int result = int.Parse(Program.myReader.GetValue(0).ToString());
-            //Console.WriteLine("line 535");
-            //Console.WriteLine(result);
             Program.myReader.Close();
 
             /*result = 1 nghia la vat tu nay dang duoc su dung o chi nhanh con lai*/
@@ -492,7 +486,7 @@ namespace QuanLyVatTu
             }
 
             /*kiem tra xem no co dang duoc su dung tai chi nhanh khac hay khong ?*/
-            String maVatTu = txtMaVT.Text.Trim();// Trim() de loai bo khoang trang thua
+            String maVatTu = txtMaVT.Text.Trim();
             int ketQua = kiemTraVatTuCoSuDungTaiChiNhanhKhac(maVatTu);
 
             if (ketQua == 1)
