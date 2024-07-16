@@ -14,6 +14,5 @@ namespace QuanLyVatTu.ReportForm
             this.sqlDataSource1.Connection.ConnectionString = Program.connstr;
             this.sqlDataSource1.Fill();
         }
-
     }
 }
