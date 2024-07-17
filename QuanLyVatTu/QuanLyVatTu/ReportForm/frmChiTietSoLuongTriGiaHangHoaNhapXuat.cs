@@ -42,8 +42,8 @@ namespace QuanLyVatTu.ReportForm
         private void frmChiTietSoLuongTriGiaHangHoaNhapXuat_Load(object sender, EventArgs e)
         {
             this.cboLoaiPhieu.SelectedIndex = 1;
-            this.dteTuNgay.EditValue = "01-01-2017";
-            this.dteToiNgay.EditValue = DateTime.Now.ToString("dd-MM-yyyy");
+            this.dteTuNgay.EditValue = "01/01/2017";
+            this.dteToiNgay.EditValue = DateTime.Now.ToString("MM/dd/yyyy");
 
         }
 

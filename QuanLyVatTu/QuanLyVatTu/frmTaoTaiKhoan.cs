@@ -70,9 +70,9 @@ namespace QuanLyVatTu
             bool ketQua = kiemTraDuLieuDauVao();
             if (ketQua == false) return;
 
-            taiKhoan = Program.hoTen + " " + Program.maNhanVienDuocChon;
-            matKhau = txtMatKhau.Text;
-            maNhanVien = Program.maNhanVienDuocChon;
+            taiKhoan = txtMaNhanVien.Text;
+            matKhau = txtMatKhau.Text.Trim();
+            maNhanVien = txtMaNhanVien.Text;
             if (vaiTro != "CONGTY")
             {
                 vaiTro = (rdoChiNhanh.Checked == true) ? "CHINHANH" : "USER";
@@ -83,9 +83,6 @@ namespace QuanLyVatTu
             Console.WriteLine(maNhanVien);
             Console.WriteLine(vaiTro);
 
-            /*declare @returnedResult int
-             exec @returnedResult = sp_TraCuu_KiemTraMaNhanVien '20'
-             select @returnedResult*/
             String cauTruyVan =
                     "EXEC sp_TaoTaiKhoan '" + taiKhoan + "' , '" + matKhau + "', '"
                     + maNhanVien + "', '" + vaiTro + "'";

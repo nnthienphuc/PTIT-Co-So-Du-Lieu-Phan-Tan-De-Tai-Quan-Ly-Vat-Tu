@@ -69,8 +69,8 @@ namespace QuanLyVatTu.ReportForm
 
         private void frmHoatDongNhanVien_Load(object sender, EventArgs e)
         {
-            dteTuNgay.EditValue = "16-08-2003";
-            dteToiNgay.EditValue = DateTime.Now.ToString("dd/MM/yyyy");
+            dteTuNgay.EditValue = "08/16/2003";
+            dteToiNgay.EditValue = DateTime.Now.ToString("MM/dd/yyyy");
         }
 
         private void btnXuatBan_Click(object sender, EventArgs e)
