@@ -14,10 +14,10 @@ namespace QuanLyVatTu
 {
     static class Program
     {
-        // Kết nối đến cơ sở dữ liệu gốc
-        public static SqlConnection conn = new SqlConnection(); // biến để kết nối đến csdl gốc
+        // Connecting publisher
+        public static SqlConnection conn = new SqlConnection(); // variable which is used connect to publisher.
         public static String connstr = "";                      
-        public static String connstrPublisher = "Data Source = RUFFA; Initial Catalog = QLVT_DATHANG; Integrated Security = true"; // Bat mode dang nhap bang tai khoan
+        public static String connstrPublisher = "Data Source = RUFFA; Initial Catalog = QLVT_DATHANG; Integrated Security = true"; // Using Windows Authentication to connect.
         public static SqlDataReader myReader;
 
         // Đăng nhập vào server phân mảnh
