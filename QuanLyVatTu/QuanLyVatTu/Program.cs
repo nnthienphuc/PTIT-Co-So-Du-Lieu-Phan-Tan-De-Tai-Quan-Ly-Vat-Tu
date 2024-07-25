@@ -14,94 +14,80 @@ namespace QuanLyVatTu
 {
     static class Program
     {
-        // Connecting publisher
-        public static SqlConnection conn = new SqlConnection(); // variable which is used connect to publisher.
+        // Kết nối đến publisher
+        public static SqlConnection conn = new SqlConnection(); // Biến kết nối
         public static String connstr = "";                      
-        public static String connstrPublisher = "Data Source = RUFFA; Initial Catalog = QLVT_DATHANG; Integrated Security = true"; // Using Windows Authentication to connect.
+        public static String connstrPublisher = "Data Source = RUFFA; Initial Catalog = QLVT_DATHANG; Integrated Security = true"; // Kết nối bằng Windows Auth
         public static SqlDataReader myReader;
 
-        // Đăng nhập vào server phân mảnh
-        public static String serverName = "";       // Tên Server phân mảnh sẽ kết nối tới
-        public static String serverNameLeft = "";   // Tên phân mảnh còn lại
+        // Đăng nhập vào server phân mảnh
+        public static String serverName = "";       // Tên server phân mảnh kết nối
+        public static String userName = "";         // userName trong phân mảnh (mặc định là mã  nhân viên)
+        public static String loginName = "";        
+        public static String loginPassword = "";   
+        public static String database = "QLVT_DATHANG";
+        public static String serverNameLeft = "";   // Tên server phân mảnh còn lại
 
-        public static String userName = "";
-
-        public static String loginName = "";
-        public static String loginPassword = "";
-
-        // Remote
-        public static String database = "QLVT_DATHANG"; // Tên CSDL cần làm việc
-        // Remote login và remote password dùng để kết nối đến server còn lại
+        // Kết nối đến server còn lại thông qua tài khoản HOTROKETNOI
         public static String remoteLogin = "HOTROKETNOI";
         public static String remotePassword = "123456";
-        // current Login và current Password để quay trở lại server hiện tại
+
+        // Lưu tài khoản login hiện tại để có thể trở về sau khi change index bên combobox
         public static String currentLogin = "";
         public static String currentPassword = "";
 
-        // Hiển thị thông tin nhân viên đang đăng nhập
-        public static String role = "";     // CONGTY - CHINHANH - USER
-        public static String staff = "";    // Họ tên nhân viên
+        // Hiển thị thông tin Nhân viên đăng nhập
+        public static String role = "";     // 3 Role CongTy, ChiNhanh và User
+        public static String staff = "";    // Họ và tên Nhân viên
         public static int brand = 0;        // Chi nhánh
 
-        // Tạo mới đơn đặt hàng
-        /**********************************************
-         * maKhoDuocChon | maVatTuDuocChon biến lưu trữ mã kho được chọn phục vụ 
-         * cho btnChonKhoHang trong phần tạo mới đơn đặt hàng
-         * 
-         * maSoDonDatHangDuocChon luu tru ma don hang duoc chon phuc vu
-         * cho btnChonDonDatHang trong phan tao moi phieu nhap
-         * soLuongVatTu bien luu tru so luong vat tu duoc chon
-         * 
-         **********************************************/
+        // Dùng trong frmDatHang
         public static string maKhoDuocChon = "";
         public static string maVatTuDuocChon = "";
 
-        // Phục vụ cho việc IN BÁO CÁO
+        // Dùng trong frmPhieuNhap và frmDatHang
         public static int soLuongVatTu = 0;
         public static string maDonDatHangDuocChon = "";
         public static string maDonDatHangDuocChonChiTiet = "";
         public static int donGia = 0;
 
-        //  Phục vụ cho tính năng HOẠT ĐỘNG NHÂN VIÊN
+        //  Dùng trong RptHoatDongNhanVien, frmTaoTaiKhoan
         public static string maNhanVienDuocChon = "";
         public static string hoTen = "";
         public static string soCMND = "";
         public static string diaChi = "";
         public static string ngaySinh = "";
 
-        // Tao tai khoan form
+        // Biến để biết có đang tạo tài khoản hay là chỉ chọn nhân viên để in report (dùng subformChonNhanVien)
         public static bool dangTaoTaiKhoan = false;
 
-        // BindingSource -> Liên kết dữ liệu từ bảng dữ liệu vào chương trình
-        // bidingsource danh sách phân mảnh
+        // Là nơi chỉ ra (Binding) để thao tác dữ liệu, là cầu nối giữa DataGridView và DataTable
         public static BindingSource bindingSource = new BindingSource();
 
-        // Các form của toàn dự án -> chỉ là con trỏ chưa phải là đối tượng (về sau mới là đối tượng)
+        // Các form trong suốt quá trình làm đồ án
+        // Nghiệp vụ
         public static frmDangNhap frmDangNhap;
         public static frmChinh frmChinh;
         public static frmNhanVien frmNhanVien;
-
         public static frmChuyenChiNhanh frmChuyenChiNhanh;
         public static frmVatTu frmVatTu;
         public static frmKho frmKho;
-
         public static frmDatHang frmDatHang;
         public static frmChonKhoHang frmChonKhoHang;
         public static gclChiTietPhieuNhap gclChiTietPhieuNhap;
-
         public static frmChonDonDatHang frmChonDonDatHang;
         public static frmChonChiTietDonDatHang frmChonChiTietDonDatHang;
         public static frmPhieuXuat frmPhieuXuat;
 
+        // Report
         public static frmDanhSachNhanVien frmDanhSachNhanVien;
         public static frmDanhSachVatTu frmDanhSachVatTu;
         public static frmDonHangKhongPhieuNhap frmDonHangKhongPhieuNhap;
-
         public static frmChiTietSoLuongTriGiaHangHoaNhapXuat frmChiTietSoLuongTriGiaHangHoaNhapXuat;
         public static frmHoatDongNhanVien frmHoatDongNhanVien;
         public static frmTongHopNhapXuat frmTongHopNhapXuat;
 
-        // Mo file pdf
+        // Mở file pdf khi ấn xuất bản
         public static void OpenPdf(string filePath)
         {
             try
@@ -118,7 +104,7 @@ namespace QuanLyVatTu
             }
         }
 
-        // Kết nối tới server phân mảnh
+        // Kết nối tới server phân mảnh bằng SQL Server Auth
         public static int KetNoi()
         {
             if (Program.conn != null && Program.conn.State == ConnectionState.Open)
@@ -131,24 +117,24 @@ namespace QuanLyVatTu
                 Program.conn.ConnectionString = Program.connstr;
 
                 Program.conn.Open();
-                return 1;
+                return 0;
             }
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " + e.Message, "", MessageBoxButtons.OK);
-                //Console.WriteLine(e.Message);
-                return 0;
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nXem lại tài khoản và mật khẩu.\n " + e.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 1;
             }
         }
 
-        // Chỉ lấy dữ liệu từ View chứ không thao tác
+        // Đọc dữ liệu chứ không được phép ghi
         public static SqlDataReader ExecSqlDataReader(String strLenh)
         {
             SqlDataReader myreader;
-            // Tạo SqlCommnad để gọi sp, view, func gồm cmd và conn
+            // SQLCommand để gọi sp, view, function
             SqlCommand sqlcmd = new SqlCommand(strLenh, Program.conn);
-            sqlcmd.CommandType = CommandType.Text; // Dùng Text cho tiện đỡ phải đặt Sp, View, ...
+            sqlcmd.CommandType = CommandType.Text; // Để thuận tiện khỏi phải đặt Sp, view hay function
             if (Program.conn.State == ConnectionState.Closed)
                 Program.conn.Open();
             try
@@ -164,10 +150,7 @@ namespace QuanLyVatTu
             }
         }
 
-        /**********************************************
-         * ExecSqlDataTable thực hiện câu lệnh mà dữ liệu trả về có thể
-         * xem - thêm - xóa - sửa tùy ý
-         **********************************************/
+        // Đọc ghi sửa dữ liệu (toàn quyền) nhưng chậm
         public static DataTable ExecSqlDataTable(String cmd)
         {
             DataTable dt = new DataTable();
@@ -178,13 +161,13 @@ namespace QuanLyVatTu
             return dt;
         }
 
-        // Cập nhật trên một stored procedure và không trả về giá trị
+        // Cập nhật trên một sp, view và không trả về giá trị
         public static int ExecSqlNonQuery(String strlenh)
         {
             SqlCommand Sqlcmd = new SqlCommand(strlenh, conn);
             Sqlcmd.CommandType = CommandType.Text;
             // Làm tự động hàng loạt bên CSDL
-            Sqlcmd.CommandTimeout = 600;// 10 phut
+            Sqlcmd.CommandTimeout = 600;// 10 phút
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
@@ -195,14 +178,11 @@ namespace QuanLyVatTu
             {
                 MessageBox.Show(ex.Message);
                 conn.Close();
-                return ex.State;    // Trạng thái lỗi gởi từ RAISEERROR trong SQL
+                return ex.State;    // Trạng thái lỗi từ RaiseError trong SQL Server
 
             }
         }
 
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

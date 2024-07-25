@@ -27,12 +27,12 @@ namespace QuanLyVatTu
             {
                 connPublisher.ConnectionString = Program.connstrPublisher;
                 connPublisher.Open();
-                return 1;
+                return 0;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi kết nối về cơ sở dữ liệu gốc.\nBạn xem lại Tên Server của Publisher, và tên CSDL trong chuỗi kết nối.\n" + ex.Message, "", MessageBoxButtons.OK);
-                return 0;
+                return 1;
             }
         }
 
@@ -81,7 +81,7 @@ namespace QuanLyVatTu
         {
             txtTaiKhoan.Text = "NH";
             txtMatKhau.Text = "123456";
-            if (ketNoiDatabaseGoc() == 0)
+            if (ketNoiDatabaseGoc() == 1)
                 return;
 
             layDanhSachPhanManh("SELECT * FROM view_DanhSachPhanManh");
@@ -101,16 +101,13 @@ namespace QuanLyVatTu
                 MessageBox.Show("Mật khẩu không được bỏ trống", "Thông Báo", MessageBoxButtons.OK);
                 return;
             }
-
             Program.loginName = txtTaiKhoan.Text.Trim();
             Program.loginPassword = txtMatKhau.Text.Trim();
-            if (Program.KetNoi() == 0)
+            if (Program.KetNoi() == 1)
                 return;
-
             Program.brand = cboChiNhanh.SelectedIndex;
             Program.currentLogin = Program.loginName;
             Program.currentPassword = Program.loginPassword;
-
             String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";
             Program.myReader = Program.ExecSqlDataReader(statement);
             if (Program.myReader == null)
@@ -124,7 +121,7 @@ namespace QuanLyVatTu
             {
                 MessageBox.Show("Tài khoản này không có quyền truy cập\nHãy thử tài khoản khác", "Thông Báo", MessageBoxButtons.OK);
             }
-
+            Console.WriteLine("4");
             Program.staff = Program.myReader.GetString(1);
             Program.role = Program.myReader.GetString(2);
 

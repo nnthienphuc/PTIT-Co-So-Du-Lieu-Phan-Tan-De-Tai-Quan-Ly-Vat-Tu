@@ -16,14 +16,9 @@ namespace QuanLyVatTu
 {
     public partial class frmNhanVien : Form
     {
-        // vị trí của con trỏ trên grid view
-        int viTri = 0;
-
-        // false -> có thể là btnGhi hoặc btnXoa
+        int viTri = 0; // vị trí con trỏ trên GridView
         bool dangThemMoi = false;
-
         String maCN = "";
-
         Stack undoList = new Stack();
 
         private Form CheckExists(Type ftype)
@@ -215,7 +210,7 @@ namespace QuanLyVatTu
                     Program.loginName = Program.remoteLogin;
                     Program.loginPassword = Program.remotePassword;
 
-                    if (Program.KetNoi() == 0)
+                    if (Program.KetNoi() == 1)
                     {
                         return;
                     }
@@ -236,7 +231,7 @@ namespace QuanLyVatTu
             }
             else
             {
-                if (Program.KetNoi() == 0)
+                if (Program.KetNoi() == 1)
                 {
                     return;
                 }
@@ -363,7 +358,7 @@ namespace QuanLyVatTu
                 Program.loginPassword = Program.currentPassword;
             }
 
-            if (Program.KetNoi() == 0)
+            if (Program.KetNoi() == 1)
             {
                 MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
             }

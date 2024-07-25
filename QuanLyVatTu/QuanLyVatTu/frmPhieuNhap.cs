@@ -876,7 +876,7 @@ namespace QuanLyVatTu
                 Program.loginPassword = Program.currentPassword;
             }
 
-            if (Program.KetNoi() == 0)
+            if (Program.KetNoi() == 1)
             {
                 MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
             }
