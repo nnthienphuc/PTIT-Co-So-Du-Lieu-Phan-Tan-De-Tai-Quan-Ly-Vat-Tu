@@ -280,7 +280,7 @@ namespace QuanLyVatTu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể thực hiện hành động này: \n\n" + ex.Message, "Lỗi",
+                MessageBox.Show("Không thể thực hiện hành động này: \n" + ex.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
                 return;
@@ -388,7 +388,7 @@ namespace QuanLyVatTu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Không thể thực hiện hành động này: \n\n" + ex.Message, "Thông báo",
+                MessageBox.Show("Không thể thực hiện hành động này: \n" + ex.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
                 return 1;
@@ -446,8 +446,7 @@ namespace QuanLyVatTu
             Console.WriteLine(cauTruyVanHoanTac);
             undoList.Push(cauTruyVanHoanTac);
 
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo",
-                MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 try
                 {
@@ -462,7 +461,7 @@ namespace QuanLyVatTu
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi xóa nhân viên. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa vật tư: \n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.vattuTableAdapter.Fill(this.dataSet.Vattu);
                     bdsVatTu.Position = viTri;
                     return;

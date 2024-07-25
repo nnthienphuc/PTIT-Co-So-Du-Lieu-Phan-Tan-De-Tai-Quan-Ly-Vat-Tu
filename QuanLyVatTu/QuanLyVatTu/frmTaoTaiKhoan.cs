@@ -65,6 +65,23 @@ namespace QuanLyVatTu
             return true;
         }
 
+        private void frmTaoTaiKhoan_Load(object sender, EventArgs e)
+        {
+            // Kiểm tra người đang đăng nhập là role gì để set quyền tạo tài khoản cho role phù hợp.
+            if (Program.role == "CONGTY")
+            {
+                vaiTro = "CONGTY";
+                rdoChiNhanh.Enabled = false;
+                rdoUser.Enabled = false;
+            }
+            else
+            {
+                rdoChiNhanh.Enabled = true;
+                rdoChiNhanh.Checked = true;
+                rdoUser.Enabled = true;
+            }
+        }
+
         private void btnXacNhan_Click(object sender, EventArgs e)
         {
             bool ketQua = kiemTraDuLieuDauVao();
@@ -107,22 +124,6 @@ namespace QuanLyVatTu
                 return;
             }
             Program.dangTaoTaiKhoan = false;
-        }
-
-        private void frmTaoTaiKhoan_Load(object sender, EventArgs e)
-        {
-            if (Program.role == "CONGTY")
-            {
-                vaiTro = "CONGTY";
-                rdoChiNhanh.Enabled = false;
-                rdoUser.Enabled = false;
-            }
-            else
-            {
-                rdoChiNhanh.Enabled = true;
-                rdoChiNhanh.Checked = true;
-                rdoUser.Enabled = true;
-            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
