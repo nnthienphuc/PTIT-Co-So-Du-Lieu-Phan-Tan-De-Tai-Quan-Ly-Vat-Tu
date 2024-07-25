@@ -29,7 +29,6 @@ namespace QuanLyVatTu
 
         public void enableButtons()
         {
-
             btnDangNhap.Enabled = false;
             btnDangXuat.Enabled = true;
 
@@ -49,7 +48,6 @@ namespace QuanLyVatTu
             pageBaoCao.Visible = false;
             btnDangXuat.Enabled = false;
             btnTaoTaiKhoan.Enabled = false;
-          
         }
 
         private void logout()
@@ -84,7 +82,6 @@ namespace QuanLyVatTu
 
             pageNhapXuat.Visible = false;
             pageBaoCao.Visible = false;
-            //pageTaiKhoan.Visible = false;
 
             Form f = this.CheckExists(typeof(frmDangNhap));
             if (f != null)
@@ -94,7 +91,6 @@ namespace QuanLyVatTu
             else
             {
                 frmDangNhap form = new frmDangNhap();
-                //form.MdiParent = this;
                 form.Show();
             }
 

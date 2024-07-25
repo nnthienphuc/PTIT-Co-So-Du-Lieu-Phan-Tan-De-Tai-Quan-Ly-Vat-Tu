@@ -17,13 +17,6 @@ namespace QuanLyVatTu.SubForm
             InitializeComponent();
         }
 
-        private void khoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsKhoHang.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-        }
-
         private void frmChonKhoHang_Load(object sender, EventArgs e)
         {
             // Không kiểm tra khóa ngoại
@@ -33,13 +26,6 @@ namespace QuanLyVatTu.SubForm
            
         }
 
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
-        }
         private void btnChon_Click(object sender, EventArgs e)
         {
             string maKhoHang = ((DataRowView)bdsKhoHang.Current)["MAKHO"].ToString();

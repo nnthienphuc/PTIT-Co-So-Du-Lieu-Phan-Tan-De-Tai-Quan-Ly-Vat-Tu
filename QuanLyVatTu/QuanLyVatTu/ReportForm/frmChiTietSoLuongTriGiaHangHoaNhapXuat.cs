@@ -44,18 +44,17 @@ namespace QuanLyVatTu.ReportForm
             this.cboLoaiPhieu.SelectedIndex = 1;
             this.dteTuNgay.EditValue = "01/01/2017";
             this.dteToiNgay.EditValue = DateTime.Now.ToString("MM/dd/yyyy");
-
         }
 
         private void btnXemTruoc_Click(object sender, EventArgs e)
         {
             if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
             {
-                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
             {
-                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             //else if (dteToiNgay.DateTime > DateTime.Now)
             //{
@@ -68,13 +67,15 @@ namespace QuanLyVatTu.ReportForm
 
                 DateTime fromDate = dteTuNgay.DateTime;
                 DateTime toDate = dteToiNgay.DateTime;
+
                 rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
-                /*GAN TEN CHI NHANH CHO BAO CAO*/
+
                 report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
                 report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
                 report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
                 report.txtNguoiLap.Text = Program.staff;
                 report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
                 ReportPrintTool printTool = new ReportPrintTool(report);
                 printTool.ShowPreviewDialog();
             }
@@ -89,11 +90,11 @@ namespace QuanLyVatTu.ReportForm
             {
                 if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
                 {
-                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
                 {
-                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 //else if (dteToiNgay.DateTime > DateTime.Now)
                 //{

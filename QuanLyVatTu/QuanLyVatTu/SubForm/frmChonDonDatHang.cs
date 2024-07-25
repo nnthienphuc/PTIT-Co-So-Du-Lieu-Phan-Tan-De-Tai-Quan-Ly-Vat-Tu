@@ -18,14 +18,6 @@ namespace QuanLyVatTu.SubForm
             InitializeComponent();
         }
 
-        private void datHangBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsDonDatHang.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-
-        }
-
         private void frmChonDonDatHang_Load(object sender, EventArgs e)
         {
             dataSet.EnforceConstraints = false;
@@ -39,12 +31,7 @@ namespace QuanLyVatTu.SubForm
         {
             this.Dispose();
         }
-        /*Kiem tra xem don hang co phieu nhap chua. Moi don hang thi
-       * chi co duy nhat mot phieu nhap 
-       * 
-       * Tra ve 0 neu don hang chua co phieu nhap
-       * Tra ve 1 neu don hang da co phieu nhap | xay ra loi bat ki
-       */
+
         private int kiemTraDonHangCoPhieuNhap(String maDonHang)
         {
 
@@ -58,7 +45,6 @@ namespace QuanLyVatTu.SubForm
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
-                /*khong co ket qua tra ve thi ket thuc luon*/
                 if (Program.myReader == null)
                 {
                     return 1;
@@ -66,14 +52,13 @@ namespace QuanLyVatTu.SubForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Thực thi Stored Procedure thất bại!\n\n" + ex.Message, "Thông báo",
+                MessageBox.Show("Không thể thực hiện hành động này: \n" + ex.Message, "Lỗi",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Console.WriteLine(ex.Message);
                 return 1;
             }
             Program.myReader.Read();
             int result = int.Parse(Program.myReader.GetValue(0).ToString());
-            //Console.WriteLine(result);
             Program.myReader.Close();
 
             return result;
@@ -94,7 +79,6 @@ namespace QuanLyVatTu.SubForm
             }
 
             int ketQua = kiemTraDonHangCoPhieuNhap(maDonHang);
-
             if (ketQua == 1)
             {
                 MessageBox.Show("Đơn hàng này đã có phiếu nhập không thể tạo thêm", "Thông báo", MessageBoxButtons.OK);
@@ -103,10 +87,6 @@ namespace QuanLyVatTu.SubForm
 
             Program.maDonDatHangDuocChon = maDonHang;
             Program.maKhoDuocChon = maKho;
-
-            //Console.WriteLine("Don dat hang duoc chon");
-            //Console.WriteLine(maDonHang);
-            //Console.WriteLine(maKho);
 
             this.Close();
         }

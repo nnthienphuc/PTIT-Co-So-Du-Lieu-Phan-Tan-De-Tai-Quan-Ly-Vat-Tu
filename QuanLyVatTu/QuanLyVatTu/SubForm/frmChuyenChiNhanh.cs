@@ -19,18 +19,9 @@ namespace QuanLyVatTu.SubForm
             InitializeComponent();
         }
 
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
-        }
-
         private void frmChuyenChiNhanh_Load(object sender, EventArgs e)
         {
             cboChiNhanh.DataSource = Program.bindingSource.DataSource;
-            /*sao chep bingding source tu frm dang nhap*/
             cboChiNhanh.DisplayMember = "TENCN";
             cboChiNhanh.ValueMember = "TENSERVER";
             cboChiNhanh.SelectedIndex = Program.brand;
@@ -57,8 +48,8 @@ namespace QuanLyVatTu.SubForm
                 MessageBox.Show("Vui lòng chọn chi nhánh", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            /*Step 2*/
-            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn chuyển nhân viên này đi?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn chuyển nhân viên này đi?", "Thông báo",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.OK)
             {

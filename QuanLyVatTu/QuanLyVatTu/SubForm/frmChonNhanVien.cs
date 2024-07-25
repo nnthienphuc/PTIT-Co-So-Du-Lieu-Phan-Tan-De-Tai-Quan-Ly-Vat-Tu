@@ -23,7 +23,6 @@ namespace QuanLyVatTu.SubForm
             this.Validate();
             this.bdsNhanVien.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dataSet);
-
         }
 
         private void frmChonNhanVien_Load(object sender, EventArgs e)
@@ -32,7 +31,7 @@ namespace QuanLyVatTu.SubForm
             this.nhanVienTableAdapter.Connection.ConnectionString = Program.connstr;
             this.nhanVienTableAdapter.Fill(this.dataSet.NhanVien);
 
-            cboChiNhanh.DataSource = Program.bindingSource;/*sao chep bingding source tu form dang nhap*/
+            cboChiNhanh.DataSource = Program.bindingSource;
             cboChiNhanh.DisplayMember = "TENCN";
             cboChiNhanh.ValueMember = "TENSERVER";
             cboChiNhanh.SelectedIndex = Program.brand;
@@ -45,19 +44,16 @@ namespace QuanLyVatTu.SubForm
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
 
             Program.serverName = cboChiNhanh.SelectedValue.ToString();
 
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
             if (cboChiNhanh.SelectedIndex != Program.brand)
             {
                 Program.loginName = Program.remoteLogin;
                 Program.loginPassword = Program.remotePassword;
             }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
             else
             {
                 Program.loginName = Program.currentLogin;
@@ -66,7 +62,7 @@ namespace QuanLyVatTu.SubForm
 
             if (Program.KetNoi() == 1)
             {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể kết nối tới chi nhánh hiện tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {

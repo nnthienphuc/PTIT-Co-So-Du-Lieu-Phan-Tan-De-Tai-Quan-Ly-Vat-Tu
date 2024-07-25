@@ -36,7 +36,6 @@ namespace QuanLyVatTu.ReportForm
             cboChiNhanh.DataSource = Program.bindingSource;
             cboChiNhanh.DisplayMember = "TENCN";
             cboChiNhanh.ValueMember = "TENSERVER";
-
         }
 
         private int KetNoiDatabaseGoc()
@@ -52,7 +51,8 @@ namespace QuanLyVatTu.ReportForm
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể kết nối đến cơ sở dữ liệu gốc:\n" + e.Message, "Lỗi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 0;
             }
         }
@@ -81,19 +81,16 @@ namespace QuanLyVatTu.ReportForm
 
         private void cboChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cboChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
 
             Program.serverName = cboChiNhanh.SelectedValue.ToString();
 
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
             if (cboChiNhanh.SelectedIndex != Program.brand)
             {
                 Program.loginName = Program.remoteLogin;
                 Program.loginPassword = Program.remotePassword;
             }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
             else
             {
                 Program.loginName = Program.currentLogin;
@@ -102,7 +99,7 @@ namespace QuanLyVatTu.ReportForm
 
             if (Program.KetNoi() == 1)
             {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể kết nối tới chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -110,11 +107,11 @@ namespace QuanLyVatTu.ReportForm
         {
             if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
             {
-                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
             {
-                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             //else if (dteToiNgay.DateTime > DateTime.Now)
             //{
@@ -144,11 +141,11 @@ namespace QuanLyVatTu.ReportForm
             {
                 if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
                 {
-                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
                 {
-                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 //else if (dteToiNgay.DateTime > DateTime.Now)
                 //{

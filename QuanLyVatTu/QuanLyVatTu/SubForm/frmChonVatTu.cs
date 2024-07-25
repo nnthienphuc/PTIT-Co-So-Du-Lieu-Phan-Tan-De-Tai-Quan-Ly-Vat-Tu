@@ -17,16 +17,8 @@ namespace QuanLyVatTu.SubForm
             InitializeComponent();
         }
 
-        private void vattuBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsVatTu.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-        }
-
         private void frmChonVatTu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet.Vattu' table. You can move, or remove it, as needed.
             dataSet.EnforceConstraints = false;
             this.vattuTableAdapter.Connection.ConnectionString = Program.connstr;
             this.vattuTableAdapter.Fill(this.dataSet.Vattu);

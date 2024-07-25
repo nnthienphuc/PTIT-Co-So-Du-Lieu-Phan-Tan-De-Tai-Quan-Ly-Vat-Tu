@@ -172,7 +172,7 @@ namespace QuanLyVatTu
 
             if (undoList.Count == 0)
             {
-                MessageBox.Show("Không còn thao tác nào để khôi phục", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không còn thao tác nào để hoàn tác", "Thông báo", MessageBoxButtons.OK);
                 btnHoanTac.Enabled = false;
                 return;
             }
@@ -348,8 +348,7 @@ namespace QuanLyVatTu
                     {
                         Console.WriteLine(ex.Message);
                         bdsVatTu.RemoveCurrent();
-                        MessageBox.Show("Đã xảy ra lỗi khi ghi dữ liệu: " + ex.Message, "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Đã xảy ra lỗi khi ghi dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
                 }

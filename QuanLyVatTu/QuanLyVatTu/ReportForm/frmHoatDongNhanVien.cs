@@ -28,15 +28,15 @@ namespace QuanLyVatTu.ReportForm
         {            
             if (txtMaNV.Text.Equals(""))
             {
-                MessageBox.Show("Vui lòng chọn Nhân viên", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn Nhân viên", "Thông Báo", MessageBoxButtons.OK);
             }
             else if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
             {
-                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
             {
-                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
             }
             //else if (dteToiNgay.DateTime > DateTime.Now)
             //{
@@ -79,15 +79,15 @@ namespace QuanLyVatTu.ReportForm
             {
                 if (txtMaNV.Text.Equals(""))
                 {
-                    MessageBox.Show("Vui lòng chọn Nhân viên", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn Nhân viên", "Thông báo", MessageBoxButtons.OK);
                 }
                 else if (dteTuNgay.Text.Equals("") || dteToiNgay.Text.Equals(""))
                 {
-                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Vui lòng chọn ngày bắt đầu và ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 else if (dteTuNgay.DateTime > dteToiNgay.DateTime)
                 {
-                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc", "Thông Báo", MessageBoxButtons.OK);
                 }
                 else
                 {
@@ -112,7 +112,7 @@ namespace QuanLyVatTu.ReportForm
                             report.ExportToPdf(filePath);
                             MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
                                 "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            OpenPdf(filePath);
+                            Program.OpenPdf(filePath);
                         }
                     }
                     else
@@ -120,7 +120,7 @@ namespace QuanLyVatTu.ReportForm
                         report.ExportToPdf(filePath);
                         MessageBox.Show("File ReportHoatDongNhanVien.pdf đã được ghi thành công tại folder ReportFiles",
                             "Xác nhận", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        OpenPdf(filePath);
+                        Program.OpenPdf(filePath);
                     }
                 }
 
@@ -130,22 +130,6 @@ namespace QuanLyVatTu.ReportForm
                 MessageBox.Show("Vui lòng đóng file ReportHoatDongNhanVien.pdf",
                     "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 return;
-            }
-        }
-
-        private void OpenPdf(string filePath)
-        {
-            try
-            {
-                Process process = new Process();
-                process.StartInfo.FileName = filePath;
-                process.StartInfo.UseShellExecute = true;
-                process.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể mở file PDF: " + ex.Message,
-                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

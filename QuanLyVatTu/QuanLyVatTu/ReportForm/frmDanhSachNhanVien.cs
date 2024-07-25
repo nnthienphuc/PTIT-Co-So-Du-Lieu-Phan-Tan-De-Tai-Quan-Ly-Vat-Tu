@@ -63,21 +63,12 @@ namespace QuanLyVatTu.ReportForm
             }
         }
 
-        private void nhanVienBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsNhanVien.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dataSet);
-
-        }
-
         private void frmDanhSachNhanVien_Load(object sender, EventArgs e)
         {
             if (Program.role == "CONGTY")
             {
                 this.cboChiNhanh.Enabled = true;
             }
-            // TODO: This line of code loads data into the 'dataSet.NhanVien' table. You can move, or remove it, as needed.
             dataSet.EnforceConstraints = false;
 
             if (KetNoiDatabaseGoc() == 0)
@@ -96,13 +87,11 @@ namespace QuanLyVatTu.ReportForm
 
             Program.serverName = cboChiNhanh.SelectedValue.ToString();
 
-            /*Neu chon sang chi nhanh khac voi chi nhanh hien tai*/
             if (cboChiNhanh.SelectedIndex != Program.brand)
             {
                 Program.loginName = Program.remoteLogin;
                 Program.loginPassword = Program.remotePassword;
             }
-            /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
             else
             {
                 Program.loginName = Program.currentLogin;
@@ -111,7 +100,7 @@ namespace QuanLyVatTu.ReportForm
 
             if (Program.KetNoi() == 1)
             {
-                MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể kết nối tới chi nhánh hiện tại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             chiNhanh = cboChiNhanh.SelectedValue.ToString().Contains("1") ? "Chi Nhánh 1" : "Chi Nhánh 2";
@@ -123,10 +112,11 @@ namespace QuanLyVatTu.ReportForm
         private void btnXemTruoc_Click(object sender, EventArgs e)
         {
             rptDanhSachNhanVien report = new rptDanhSachNhanVien();
-            /*GAN TEN CHI NHANH CHO BAO CAO*/
+
             report.txtChiNhanh.Text = chiNhanh.ToUpper();
             report.txtNguoiLap.Text = Program.staff;
             report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
+
             ReportPrintTool printTool = new ReportPrintTool(report);
             printTool.ShowPreviewDialog();
         }
@@ -136,7 +126,7 @@ namespace QuanLyVatTu.ReportForm
             try
             {
                 rptDanhSachNhanVien report = new rptDanhSachNhanVien();
-                /*GAN TEN CHI NHANH CHO BAO CAO*/
+
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
                 report.txtNguoiLap.Text = Program.staff;
                 report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");

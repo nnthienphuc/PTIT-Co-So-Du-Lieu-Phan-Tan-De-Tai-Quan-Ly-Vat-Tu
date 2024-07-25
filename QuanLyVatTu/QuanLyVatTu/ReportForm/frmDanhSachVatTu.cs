@@ -28,9 +28,7 @@ namespace QuanLyVatTu.ReportForm
 
         private void frmDanhSachVatTu_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet.Vattu' table. You can move, or remove it, as needed.
             this.vattuTableAdapter.Fill(this.dataSet.Vattu);
-
         }
 
         private void btnXemTruoc_Click(object sender, EventArgs e)

@@ -31,7 +31,8 @@ namespace QuanLyVatTu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi kết nối về cơ sở dữ liệu gốc.\nBạn xem lại Tên Server của Publisher, và tên CSDL trong chuỗi kết nối.\n" + ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối về cơ sở dữ liệu gốc.\nBạn xem lại Tên Server của Publisher, và tên CSDL trong chuỗi kết nối.\n" + ex.Message,
+                    "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return 1;
             }
         }
@@ -58,20 +59,6 @@ namespace QuanLyVatTu
             cboChiNhanh.ValueMember = "TENSERVER";
         }
 
-        /******************************************************************
-         * Để tránh việc người dùng ấn vào 1 form đến 2 lần chúng ta 
-         * cần sử dụng hàm này để kiểm tra xem cái form hiện tại đã 
-         * có trong bộ nhớ chưa
-         * Nếu có trả về "f"
-         * Nếu không trả về "null"
-         ******************************************************************/
-        private Form CheckExists(Type ftype)
-        {
-            foreach (Form f in this.MdiChildren)
-                if (f.GetType() == ftype)
-                    return f;
-            return null;
-        }
         public frmDangNhap()
         {
             InitializeComponent();
@@ -103,11 +90,14 @@ namespace QuanLyVatTu
             }
             Program.loginName = txtTaiKhoan.Text.Trim();
             Program.loginPassword = txtMatKhau.Text.Trim();
+
             if (Program.KetNoi() == 1)
                 return;
+
             Program.brand = cboChiNhanh.SelectedIndex;
             Program.currentLogin = Program.loginName;
             Program.currentPassword = Program.loginPassword;
+
             String statement = "EXEC sp_DangNhap '" + Program.loginName + "'";
             Program.myReader = Program.ExecSqlDataReader(statement);
             if (Program.myReader == null)
