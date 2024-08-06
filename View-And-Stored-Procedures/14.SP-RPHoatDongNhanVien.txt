@@ -10,7 +10,6 @@ ALTER PROCEDURE [dbo].[sp_HoatDongNhanVien] @MANV int,
 @DATETO DATETIME
 AS
 BEGIN
-    -- Tạo bảng tạm để lưu kết quả
     CREATE TABLE #TEMP (
         THANGNAM NVARCHAR(7),
         NGAY DATETIME,
@@ -22,7 +21,6 @@ BEGIN
         DONGIA DECIMAL(18, 2)
     );
 
-    -- Thêm dữ liệu từ PhieuNhap vào bảng tạm
     INSERT INTO #TEMP
     SELECT FORMAT(PN.NGAY,'yyyy-MM') AS THANGNAM,
 				PN.NGAY, 
@@ -43,7 +41,6 @@ BEGIN
 		WHERE PN.MAPN =CTPN.MAPN
 		AND VT.MAVT = CTPN.MAVT
 
-    -- Thêm dữ liệu từ PhieuXuat vào bảng tạm
     INSERT INTO #TEMP
     SELECT FORMAT(PX.NGAY,'yyyy-MM') AS THANGNAM,
 				PX.NGAY, 
@@ -66,10 +63,8 @@ BEGIN
 		WHERE PX.MAPX =CTPX.MAPX
 		AND VT.MAVT = CTPX.MAVT
 
-    -- Truy vấn kết quả từ bảng tạm và sắp xếp
     SELECT * FROM #TEMP
     ORDER BY NGAY, MAPHIEU, TENVT;
 
-    -- Xóa bảng tạm
     DROP TABLE #TEMP;
 END;

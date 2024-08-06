@@ -10,7 +10,7 @@ ALTER PROCEDURE [dbo].[sp_TongHopNhapXuat]
 @ToDate DATETIME
 AS
 BEGIN
-	--------------------phieu nhap--------------------------
+	--------------------IMPORT--------------------------
 	SELECT PN.NGAY,
 			NHAP = SUM (CT.DONGIA * CT.SOLUONG),
 			TYLENHAP = (SUM (CT.DONGIA * CT.SOLUONG)/ (SELECT SUM(DONGIA * SOLUONG)
@@ -22,7 +22,7 @@ BEGIN
 	AND PN.NGAY BETWEEN @FromDate AND @ToDate
 	GROUP BY PN.NGAY
 	
-	--------------------phieu xuat--------------------------
+	--------------------EXPORT--------------------------
 	SELECT PX.NGAY,
 			XUAT = SUM (CT.DONGIA * CT.SOLUONG),
 			TYLEXUAT = (SUM (CT.DONGIA * CT.SOLUONG)/ (SELECT SUM(DONGIA * SOLUONG)
@@ -33,7 +33,7 @@ BEGIN
 	WHERE PX.MAPX = CT.MAPX
 	AND PX.NGAY BETWEEN @FromDate AND @ToDate
 	GROUP BY PX.NGAY
-	-----------------------TONG HOP--------------------------------------
+	-----------------------SUM--------------------------------------
 	SELECT 
 		ISNULL(PN.NGAY,PX.NGAY) AS NGAY,
 		ISNULL(PN.NHAP, 0) AS NHAP,

@@ -11,13 +11,13 @@ ALTER PROC [dbo].[sp_TaoTaiKhoan]
 AS
   DECLARE @RET INT
   EXEC @RET= SP_ADDLOGIN @LGNAME, @PASS, 'QLVT_DATHANG'
-  IF (@RET =1)  -- LOGIN NAME BI TRUNG
+  IF (@RET =1)  
   BEGIN
      RAISERROR ('Login name bị trùng', 16,1)
 	 RETURN
   END 
   EXEC @RET= SP_GRANTDBACCESS @LGNAME, @USERNAME
-  IF (@RET =1)  -- USER  NAME BI TRUNG
+  IF (@RET =1)  
   BEGIN
        EXEC SP_DROPLOGIN @LGNAME
        RAISERROR ('Nhân viên dã có login name', 16,2)
