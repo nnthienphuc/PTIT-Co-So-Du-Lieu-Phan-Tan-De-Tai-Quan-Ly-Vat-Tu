@@ -134,7 +134,7 @@ namespace QuanLyVatTu.ReportForm
                 string filePath;
                 if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
                 {
-                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf";
+                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportDanhSachNhanVienChiNhanh1.pdf";
 
                     if (File.Exists(filePath))
                     {
@@ -158,7 +158,7 @@ namespace QuanLyVatTu.ReportForm
                 }
                 else
                 {
-                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf";
+                    filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportDanhSachNhanVienChiNhanh2.pdf";
 
                     if (File.Exists(filePath))
                     {

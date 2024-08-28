@@ -49,10 +49,10 @@ namespace QuanLyVatTu.ReportForm
                 DateTime toDate = dteToiNgay.DateTime;
                 rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
                 report.txtHoTenNV.Text = Program.hoTen;
-                report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
-                report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                report.txtTuNgay.Text = fromDate.ToString("MM/dd/yyyy");
+                report.txtDenNgay.Text = toDate.ToString("MM/dd/yyyy");
                 report.txtNguoiLapBaoCao.Text = Program.staff;
-                report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("MM/dd/yyyy");
                 ReportPrintTool printTool = new ReportPrintTool(report);
                 printTool.ShowPreviewDialog();
             }
@@ -96,12 +96,12 @@ namespace QuanLyVatTu.ReportForm
                     DateTime toDate = dteToiNgay.DateTime;
                     rptHoatDongNhanVien report = new rptHoatDongNhanVien(maNhanVien, fromDate, toDate);
                     report.txtHoTenNV.Text = Program.hoTen + " - " + maNhanVien;
-                    report.txtTuNgay.Text = fromDate.ToString("dd/MM/yyyy");
-                    report.txtDenNgay.Text = toDate.ToString("dd/MM/yyyy");
+                    report.txtTuNgay.Text = fromDate.ToString("MM/dd/yyyy");
+                    report.txtDenNgay.Text = toDate.ToString("MM/dd/yyyy");
                     report.txtNguoiLapBaoCao.Text = Program.staff;
-                    report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("dd/MM/yyyy");
+                    report.txtNgayLapBaoCao.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
-                    string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportHoatDongNhanVien.pdf";
+                    string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportHoatDongNhanVien.pdf";
 
                     if (File.Exists(filePath))
                     {

@@ -45,7 +45,7 @@ namespace QuanLyVatTu.ReportForm
             rptDanhSachVatTu report = new rptDanhSachVatTu();
             report.txtNguoiLap.Text = Program.staff;
             report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
-            string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDanhSachVatTu.pdf";
+            string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportDanhSachVatTu.pdf";
 
             try
             {

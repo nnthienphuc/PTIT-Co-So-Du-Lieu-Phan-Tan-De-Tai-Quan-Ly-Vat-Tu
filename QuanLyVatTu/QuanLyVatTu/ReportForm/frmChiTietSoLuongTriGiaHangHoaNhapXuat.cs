@@ -71,8 +71,8 @@ namespace QuanLyVatTu.ReportForm
                 rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
 
                 report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
-                report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
-                report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
+                report.txtTuNgay.Text = fromDate.ToString("MM/dd/yyyy");
+                report.txtToiNgay.Text = toDate.ToString("MM/dd/yyyy");
                 report.txtNguoiLap.Text = Program.staff;
                 report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
@@ -107,12 +107,12 @@ namespace QuanLyVatTu.ReportForm
 
                     rptChiTietSoLuongTriGiaHangHoaNhapXuat report = new rptChiTietSoLuongTriGiaHangHoaNhapXuat(vaiTro, loaiPhieu, fromDate, toDate);
                     report.txtLoaiPhieu.Text = cboLoaiPhieu.SelectedItem.ToString().ToUpper();
-                    report.txtTuNgay.Text = fromDate.ToString("dd-MM-yyyy");
-                    report.txtToiNgay.Text = toDate.ToString("dd-MM-yyyy");
+                    report.txtTuNgay.Text = fromDate.ToString("MM/dd/yyyy");
+                    report.txtToiNgay.Text = toDate.ToString("MM/dd/yyyy");
                     report.txtNguoiLap.Text = Program.staff;
                     report.txtNgayLap.Text = DateTime.Now.ToString("MM/dd/yyyy");
 
-                    string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf";
+                    string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportChiTietSoLuongTriGiaHangHoaNhapXuat.pdf";
 
                     if (File.Exists(filePath))
                     {

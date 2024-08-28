@@ -130,7 +130,7 @@ namespace QuanLyVatTu.ReportForm
                 /* GÁN TÊN CHI NHÁNH CHO BÁO CÁO */
                 report.txtChiNhanh.Text = chiNhanh.ToUpper();
 
-                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportDonHangKhongPhieuNhap.pdf";
+                string filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportDonHangKhongPhieuNhap.pdf";
 
                 if (File.Exists(filePath))
                 {

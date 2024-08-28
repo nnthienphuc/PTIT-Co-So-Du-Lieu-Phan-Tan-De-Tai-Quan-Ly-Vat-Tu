@@ -168,11 +168,11 @@ namespace QuanLyVatTu.ReportForm
 
                     if (cboChiNhanh.SelectedValue.ToString().Contains("1"))
                     {
-                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf";
+                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportTongHopNhapXuatChiNhanh1.pdf";
                     }
                     else
                     {
-                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-De-Tai-Quan-Ly-Vat-Tu\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf";
+                        filePath = @"D:\Github\PTIT-Co-So-Du-Lieu-Phan-Tan-Quan-Ly-Vat-Tu-2024\ReportFiles\ReportTongHopNhapXuatChiNhanh2.pdf";
                     }
 
                     if (File.Exists(filePath))
